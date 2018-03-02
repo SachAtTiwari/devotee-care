@@ -193,7 +193,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["L" /* MatTooltipModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["G" /* MatStepperModule */],
                 __WEBPACK_IMPORTED_MODULE_19_ng2_smart_table__["a" /* Ng2SmartTableModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: true })
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: true, useHash: true })
             ],
             exports: [
                 // Material Modules
@@ -336,14 +336,18 @@ var AttendanceComponent = /** @class */ (function () {
         this.devotees = [];
         this.getOTPData = false;
         this.counsellors = [
-            { value: "KVP" },
-            { value: "SGP" }
+            { value: "HG Shyam Gopal Prabhuji" },
+            { value: "HG Kalpvraksha Prabhuji" },
+            { value: "HG Vaidant Chaitnya Prabhuji" },
+            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
+            { value: "HG Jagdanand Pandit Prabhuji" },
         ];
         this.courses = [
             { value: "OTP" },
             { value: "TSSV" },
             { value: "ASHRAY1" },
-            { value: "ASHRAY2" }
+            { value: "ASHRAY2" },
+            { value: "OTHER" },
         ];
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         console.log("in constructor");
@@ -558,14 +562,18 @@ var AddDevoteeComponent = /** @class */ (function () {
         this.all = false;
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         this.counsellors = [
-            { value: "KVP" },
-            { value: "SGP" }
+            { value: "HG Shyam Gopal Prabhuji" },
+            { value: "HG Kalpvraksha Prabhuji" },
+            { value: "HG Vaidant Chaitnya Prabhuji" },
+            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
+            { value: "HG Jagdanand Pandit Prabhuji" },
         ];
         this.courses = [
             { value: "OTP" },
             { value: "TSSV" },
             { value: "ASHRAY1" },
-            { value: "ASHRAY2" }
+            { value: "ASHRAY2" },
+            { value: "OTHER" },
         ];
     }
     AddDevoteeComponent.prototype.ngOnInit = function () {
@@ -685,14 +693,17 @@ var ClassComponent = /** @class */ (function () {
         this.showForm = true;
         this.showSdlClass = false;
         this.speakers = [
-            { value: "KVP" },
-            { value: "SGP" }
+            { value: "HG Shyam Gopal Prabhuji" },
+            { value: "HG Kalpvraksha Prabhuji" },
+            { value: "HG Vaidant Chaitnya Prabhuji" },
+            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
+            { value: "HG Jagdanand Pandit Prabhuji" },
         ];
         this.courses = [
             { value: "OTP" },
             { value: "TSSV" },
             { value: "ASHRAY1" },
-            { value: "ASHRAY2" }
+            { value: "ASHRAY2" },
         ];
         /*counsellors = [
           {value:"KVP"},
@@ -790,7 +801,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(_http) {
         this._http = _http;
-        this._url = "http://localhost:3000/";
+        this._url = "/";
     }
     UserService.prototype.getOTPDevotees = function () {
         return this._http.get(this._url + "getOTPDevotees") //, options)
@@ -1000,11 +1011,14 @@ var DownloadsComponent = /** @class */ (function () {
             { value: "OTP" },
             { value: "TSSV" },
             { value: "ASHRAY1" },
-            { value: "ASHRAY2" }
+            { value: "ASHRAY2" },
         ];
         this.counsellors = [
-            { value: "KVP" },
-            { value: "SGP" }
+            { value: "HG Shyam Gopal Prabhuji" },
+            { value: "HG Kalpvraksha Prabhuji" },
+            { value: "HG Vaidant Chaitnya Prabhuji" },
+            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
+            { value: "HG Jagdanand Pandit Prabhuji" },
         ];
     }
     DownloadsComponent.prototype.ngOnInit = function () {

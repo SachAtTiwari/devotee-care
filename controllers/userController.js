@@ -3,10 +3,12 @@ const assert = require('assert');
 var mongo = require('mongodb');
 
 // Connection URL
-const url = 'mongodb://localhost:27017';
+//const url = 'mongodb://localhost:27017';
+const url = 'mongodb://iyfuser:h2so4na2co%23@ds253918.mlab.com:53918/iyfdb';
+
  
 // Database Name
-const dbName = 'users';
+const dbName = 'iyfdb';
 
 
 exports.addDevotee = function(req, res, next) {
@@ -130,6 +132,7 @@ exports.getDevotees = function(req, res, next) {
     
 
     dbClient.connect(url, function(err, client) {
+	console.log("err ", err)
         assert.equal(null, err);
         //check sdl classes for provided course
         const db = client.db(dbName);
@@ -141,7 +144,7 @@ exports.getDevotees = function(req, res, next) {
               db.collection("entity").find({course:course, date:date})
               .toArray(function(err, sdlResult) {
                if (err) throw err;
-               //console.log("sdl result ",sdlResult);
+               console.log("sdl result ",sdlResult);
                 //GET OTP devotees 
                 if (sdlResult){
                   //const db = client.db(dbName);      

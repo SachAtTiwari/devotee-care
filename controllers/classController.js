@@ -2,10 +2,12 @@ const dbClient = require('mongodb').MongoClient;
 const assert = require('assert');
  
 // Connection URL
-const url = 'mongodb://localhost:27017';
+//const url = 'mongodb://localhost:27017';
+const url = 'mongodb://iyfuser:h2so4na2co%23@ds253918.mlab.com:53918/iyfdb?authMode=scram-sha1';
+
  
 // Database Name
-const dbName = 'users';
+const dbName = 'iyfdb';
 
 exports.markAttendance = function(req, res, next) {
     dbClient.connect(url, function(err, client) {
@@ -29,7 +31,10 @@ exports.markAttendance = function(req, res, next) {
                   {$push:{attendance:req.body.attendance}},
                   {upsert:false}, 
                   function(err, resatt) {
-                    if (err) throw err;
+                    if (err) {
+                        res.send({result:"notok"});
+			throw err;
+		    }
                    // console.log("1 document find", res.result);
                     res.send({result:"ok"});
                  });
@@ -80,18 +85,22 @@ exports.checkClassSdl = function(req, res, next) {
              });
           }
   
-          db.collection("entity").insertOne(req.body.body, function(err, res) {
-            if (err) throw err;
-            console.log("1 document inserted", res.result);
+          db.collection("entity").insertOne(req.body.body, function(err, sdResult) {
+            if (err) {
+		throw err;
+                res.send({result:"notok"});
+	    }
+            console.log("1 document inserted", sdResult.result);
+     	    res.send({result:"ok"});
          });
       });
      });
-     res.send({status:"ok"});
   }
 
   exports.getSdlClasses = function(req, res, next) {
     console.log("i m here in sdl classes");
-    dbClient.connect(url, function(err, client) {
+      dbClient.connect(url, function(err, client) {
+//	console.log("errr in sdl", err)
         assert.equal(null, err);
         const db = client.db(dbName);
         db.listCollections().toArray(function(err, collections){
@@ -99,12 +108,15 @@ exports.checkClassSdl = function(req, res, next) {
             res.send({error:"No Collections present in DB"});
          }else{
             db.collection("entity").find().toArray(function(err, result) {
-              if (err) throw err;
+              if (err) {
+                res.send({result:"notok"});
+		throw err;
+	      }
               console.log(result);
               res.send({result:result});
             });
           }
-      });
+        });
      });
   };
 

@@ -16,8 +16,10 @@ const dbName = 'users';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  //res.render('index', { title: 'Express' });
+  res.sendFile('index.html');
 });
+
 
 //USER ROUTES
 /* Delete a record*/
