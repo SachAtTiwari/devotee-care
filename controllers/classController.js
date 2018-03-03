@@ -27,7 +27,7 @@ exports.markAttendance = function(req, res, next) {
               if (err) {
 			console.log("err is ", err);
                 	res.send({error:500});
-	      }
+	      }else{
               if(result.length === 0){
                 db.collection("devotees").update(
                   {contact:req.body.attendance.contact}, 
@@ -44,6 +44,7 @@ exports.markAttendance = function(req, res, next) {
               }else{
                 res.send({result:"notok"});
               }
+	     }
             });
           }
         });
@@ -68,16 +69,17 @@ exports.checkClassSdl = function(req, res, next) {
             if (err) {
 			console.log("err is ", err);
                 	res.send({error:500});
-	    }
+	    }else{
             console.log(result);
             res.send({result:result});
+	    }
           });
         }
       });
      });
   }
 
-  exports.sdlClass = function(req, res, next) {
+exports.sdlClass = function(req, res, next) {
     console.log("im here", req.body.body);
     dbClient.connect(url, function(err, client) {
         assert.equal(null, err);
@@ -98,9 +100,10 @@ exports.checkClassSdl = function(req, res, next) {
             if (err) {
 		console.log("err is ", err);
                 res.send({result:"notok"});
+	    }else{
+          	  //console.log("1 document inserted", sdResult);
+     	  	  res.send({result:"ok"});
 	    }
-            //console.log("1 document inserted", sdResult);
-     	    res.send({result:"ok"});
          });
       });
      });
@@ -120,9 +123,10 @@ exports.getSdlClasses = function(req, res, next) {
               if (err) {
 		console.log("err is ", err);
                 res.send({result:"notok"});
-	      }
+	      }else{
               console.log(result);
               res.send({result:result});
+              }
             });
           }
         });

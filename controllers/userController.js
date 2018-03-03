@@ -45,7 +45,7 @@ exports.addDevotee = function(req, res, next) {
                 .toArray(function(err, result) {
                    if (err) {
                 	res.send({error:500});
-		   }
+		   }else{
                    if (result.length === 0){
                      db.collection("devotees")
                      .insertOne(req.body.body, function(err, createRes) {
@@ -57,7 +57,8 @@ exports.addDevotee = function(req, res, next) {
                    }else{
                      res.send({result:"notok"});            
                   }
-                 }); 
+		}
+               }); 
 
               }else{
                //Find Sdl classes for today for given course to fetch counsellor details
@@ -67,7 +68,7 @@ exports.addDevotee = function(req, res, next) {
 			console.log("err is ", err);
                 	res.send({error:500});
 		
-		  }
+		  }else{
                   req.body.body.fp = new Date();
                   req.body.body.course = sdlResult[0].course;
                   req.body.body.counsellor = sdlResult[0].speaker;
@@ -99,15 +100,17 @@ exports.addDevotee = function(req, res, next) {
                             if (err) {
 				console.log("err ", err)
                      		res.send({error:500});            
-			    }
+			    }else{
                            // console.log("1 document find", res.result);
                             res.send({result:"ok"});
+			    }
                            });
                       });
                      }else{
                        res.send({result:"notok"});            
                     }
                    }); 
+		}
                 });
               }
           }
@@ -168,7 +171,7 @@ exports.getDevotees = function(req, res, next) {
                if (err) {
 		 console.log("err ", err)
                  res.send({error:500});            
-		}
+		}else{
                 console.log("sdl result ",sdlResult);
                 //GET OTP devotees 
                 if (sdlResult){
@@ -189,6 +192,7 @@ exports.getDevotees = function(req, res, next) {
                       }
                    });
                 }//OTP fetch finish
+		}
             });//Entity end
          }//else end
       });//list collection end
@@ -203,15 +207,16 @@ exports.getDevotees = function(req, res, next) {
                if (err) {
 			console.log("err is ", err);
                 	res.send({error:500});
+		}else{
+                //console.log(result);
+               	res.send({result:result});
 		}
-               //console.log(result);
-               res.send({result:result});
            });
           }
         });
     }
   });
-  };
+ };
 
 exports.getDevoteeDetail = function(req, res, next) {
    // console.log("im here", req.query.id);
@@ -230,9 +235,10 @@ exports.getDevoteeDetail = function(req, res, next) {
               if (err) {
 			console.log("err is ", err);
                 	res.send({error:500});
-	      }
+	      }else{
               //console.log(result);
               res.send({result:result});
+	     }
           });
         }
       });

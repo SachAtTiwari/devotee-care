@@ -28,9 +28,10 @@ exports.downloadToExcel =  function(req, res, next) {
                 if (err) {
 			console.log("err is ", err);
                 	res.send({erroe:500});
-		}
+		}else{
                 console.log("result is ",result);
                 res.send({result:result});
+		}
               });
           }
         });
