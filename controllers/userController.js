@@ -27,9 +27,11 @@ exports.addDevotee = function(req, res, next) {
         const db = client.db(dbName);
         db.listCollections().toArray(function(err, collections){
           if (collections === undefined){
-            db.createCollection("devotees", function(err, res) {
-              if (err) throw err;
-                console.log("Collection created!");
+            db.createCollection("devotees", function(err, resCol) {
+              if (err) {
+                res.send({error:500});
+	      }
+              console.log("Collection created!");
              });
           }
   
@@ -41,11 +43,15 @@ exports.addDevotee = function(req, res, next) {
               if(all){
                 db.collection("devotees").find({contact:req.body.body.contact})
                 .toArray(function(err, result) {
-                   if (err) throw err;
+                   if (err) {
+                	res.send({error:500});
+		   }
                    if (result.length === 0){
                      db.collection("devotees")
                      .insertOne(req.body.body, function(err, createRes) {
-                       if (err) throw err;
+                       if (err) {
+                	  res.send({error:500});
+			}
                        res.send({result:"ok"});
                      });
                    }else{
@@ -57,18 +63,28 @@ exports.addDevotee = function(req, res, next) {
                //Find Sdl classes for today for given course to fetch counsellor details
                 db.collection("entity").find({course:"OTP", date:date})
                 .toArray(function(err, sdlResult) {
-                  if (err) throw err;
+                  if (err){
+			console.log("err is ", err);
+                	res.send({error:500});
+		
+		  }
                   req.body.body.fp = new Date();
                   req.body.body.course = sdlResult[0].course;
                   req.body.body.counsellor = sdlResult[0].speaker;
 
                   db.collection("devotees").find({contact:req.body.body.contact})
                   .toArray(function(err, result) {
-                     if (err) throw err;
+                     if (err) {
+			console.log("err is ", err);
+                	res.send({error:500});
+		     }
                      if (result.length === 0){
                        db.collection("devotees")
                        .insertOne(req.body.body, function(err, createRes) {
-                         if (err) throw err;
+                         if (err) {
+				console.log("err ", err)
+                     		res.send({error:500});            
+			}
                         let attendance = {
                           date:date, 
                           speaker:sdlResult[0].speaker,
@@ -80,7 +96,10 @@ exports.addDevotee = function(req, res, next) {
                           {$push:{attendance:attendance}},
                           {upsert:false}, 
                           function(err, resatt) {
-                            if (err) throw err;
+                            if (err) {
+				console.log("err ", err)
+                     		res.send({error:500});            
+			    }
                            // console.log("1 document find", res.result);
                             res.send({result:"ok"});
                            });
@@ -112,7 +131,10 @@ exports.addDevotee = function(req, res, next) {
           db.collection("devotees").deleteOne({contact:req.query.contact},
     
             function(err, res) {
-              if (err) throw err;
+              if (err) {
+		 console.log("err ", err)
+                 res.send({error:500});            
+	      }
               console.log("1 document deleted", res.result);
       
            });
@@ -143,8 +165,11 @@ exports.getDevotees = function(req, res, next) {
            }else{
               db.collection("entity").find({course:course, date:date})
               .toArray(function(err, sdlResult) {
-               if (err) throw err;
-               console.log("sdl result ",sdlResult);
+               if (err) {
+		 console.log("err ", err)
+                 res.send({error:500});            
+		}
+                console.log("sdl result ",sdlResult);
                 //GET OTP devotees 
                 if (sdlResult){
                   //const db = client.db(dbName);      
@@ -154,7 +179,10 @@ exports.getDevotees = function(req, res, next) {
                       }else{
                          db.collection("devotees").find({course:course})
                          .toArray(function(err, result) {
-                             if (err) throw err;
+                             if (err) {
+				console.log("err is ", err);
+                		res.send({error:500});
+			     }
                              //console.log("devotee result", result);
                              res.send({result:result, sdlResult:sdlResult});
                           });
@@ -172,7 +200,10 @@ exports.getDevotees = function(req, res, next) {
           }else{
               db.collection("devotees").find()
               .toArray(function(err, result) {
-               if (err) throw err;
+               if (err) {
+			console.log("err is ", err);
+                	res.send({error:500});
+		}
                //console.log(result);
                res.send({result:result});
            });
@@ -196,7 +227,10 @@ exports.getDevotees = function(req, res, next) {
                 _id: new mongo.ObjectID(req.query.id),
               }
            ).toArray(function(err, result) {
-              if (err) throw err;
+              if (err) {
+			console.log("err is ", err);
+                	res.send({error:500});
+	      }
               //console.log(result);
               res.send({result:result});
           });

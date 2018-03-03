@@ -24,7 +24,10 @@ exports.markAttendance = function(req, res, next) {
                 "attendance.date":req.body.attendance.date,  
               }
             ).toArray(function(err, result) {
-              if (err) throw err;
+              if (err) {
+			console.log("err is ", err);
+                	res.send({error:500});
+	      }
               if(result.length === 0){
                 db.collection("devotees").update(
                   {contact:req.body.attendance.contact}, 
@@ -32,8 +35,8 @@ exports.markAttendance = function(req, res, next) {
                   {upsert:false}, 
                   function(err, resatt) {
                     if (err) {
+			console.log("err is ", err);
                         res.send({result:"notok"});
-			throw err;
 		    }
                    // console.log("1 document find", res.result);
                     res.send({result:"ok"});
@@ -62,7 +65,10 @@ exports.checkClassSdl = function(req, res, next) {
               date:req.query.date
             }
           ).toArray(function(err, result) {
-            if (err) throw err;
+            if (err) {
+			console.log("err is ", err);
+                	res.send({error:500});
+	    }
             console.log(result);
             res.send({result:result});
           });
@@ -80,14 +86,17 @@ exports.checkClassSdl = function(req, res, next) {
           console.log("collection list". collections);
           if (collections === undefined){
             db.createCollection("entity", function(err, res) {
-              if (err) throw err;
-                console.log("Collection created!");
+              if (err) {
+			console.log("err is ", err);
+                	res.send({error:500});
+	      }
+              console.log("Collection created!");
              });
           }
   
           db.collection("entity").insertOne(req.body.body, function(err, sdResult) {
             if (err) {
-		throw err;
+		console.log("err is ", err);
                 res.send({result:"notok"});
 	    }
             console.log("1 document inserted", sdResult.result);
@@ -97,7 +106,7 @@ exports.checkClassSdl = function(req, res, next) {
      });
   }
 
-  exports.getSdlClasses = function(req, res, next) {
+exports.getSdlClasses = function(req, res, next) {
     console.log("i m here in sdl classes");
       dbClient.connect(url, function(err, client) {
 //	console.log("errr in sdl", err)
@@ -109,8 +118,8 @@ exports.checkClassSdl = function(req, res, next) {
          }else{
             db.collection("entity").find().toArray(function(err, result) {
               if (err) {
+		console.log("err is ", err);
                 res.send({result:"notok"});
-		throw err;
 	      }
               console.log(result);
               res.send({result:result});

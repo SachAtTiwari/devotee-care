@@ -25,7 +25,10 @@ exports.downloadToExcel =  function(req, res, next) {
                 "attendance.date":req.query.date,  
               }
               ).toArray(function(err, result) {
-                if (err) throw err;
+                if (err) {
+			console.log("err is ", err);
+                	res.send({erroe:500});
+		}
                 console.log("result is ",result);
                 res.send({result:result});
               });
