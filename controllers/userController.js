@@ -116,7 +116,7 @@ exports.addDevotee = function(req, res, next) {
      });
   }
 
-  exports.delRecord = function(req, res, next) {
+exports.delRecord = function(req, res, next) {
     console.log("im here", req.query.contact);
     dbClient.connect(url, function(err, client) {
       assert.equal(null, err);
@@ -135,7 +135,7 @@ exports.addDevotee = function(req, res, next) {
 		 console.log("err ", err)
                  res.send({error:500});            
 	      }
-              console.log("1 document deleted", res.result);
+              //console.log("1 document deleted", res.result);
       
            });
         }
@@ -213,7 +213,7 @@ exports.getDevotees = function(req, res, next) {
   });
   };
 
-  exports.getDevoteeDetail = function(req, res, next) {
+exports.getDevoteeDetail = function(req, res, next) {
    // console.log("im here", req.query.id);
     dbClient.connect(url, function(err, client) {
         assert.equal(null, err);

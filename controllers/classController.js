@@ -99,7 +99,7 @@ exports.checkClassSdl = function(req, res, next) {
 		console.log("err is ", err);
                 res.send({result:"notok"});
 	    }
-            console.log("1 document inserted", sdResult.result);
+            //console.log("1 document inserted", sdResult);
      	    res.send({result:"ok"});
          });
       });
