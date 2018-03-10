@@ -30,6 +30,7 @@ app.use(express.static(distDir));
 app.use(cors());
 app.use('/', index);
 //app.use('/classSdl', index);
+app.use('/updateDevotee', index);
 app.use('/addDevotee', index);
 app.use('/markAttendance', index);
 app.use('/getOTPDevotees', index);

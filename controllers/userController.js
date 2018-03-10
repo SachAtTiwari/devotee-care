@@ -244,3 +244,54 @@ exports.getDevoteeDetail = function(req, res, next) {
       });
      });
   };
+
+
+exports.updateDevotee = function(req, res, next) {
+    console.log("i m in update", req.body.body);
+     var valuesToUpdate = {}
+     if(req.body.body.contact){
+        valuesToUpdate["contact"] = req.body.body.contact;
+     }
+     if(req.body.body.counsellor){
+        valuesToUpdate["counsellor"] = req.body.body.counsellor;
+     }
+     if(req.body.body.age){
+        valuesToUpdate["age"] = req.body.body.age;
+     }
+     if(req.body.body.dob){
+        valuesToUpdate["dob"] = req.body.body.dob;
+    }
+    if(req.body.body.name){
+        valuesToUpdate["name"] = req.body.body.name;
+     }
+     if(req.body.body.course){
+        valuesToUpdate["course"] = req.body.body.course;
+     } 
+     if(req.body.body.email){
+      valuesToUpdate["email"] = req.body.body.email;
+    } 
+    //console.log("value to update", valuesToUpdate);
+     dbClient.connect(url, function(err, client) {
+         assert.equal(null, err);
+         const db = client.db(dbName);
+         db.listCollections().toArray(function(err, collections){
+           if (collections === undefined){
+             res.send({error:"No Collections present in DB"});
+           }else{
+            var query = {_id: new mongo.ObjectID(req.body.body.id)};
+            var newvalues = { $set: valuesToUpdate };
+            db.collection("devotees").update(
+              query, newvalues, 
+              function(err, resUp) {
+                if (err) {
+                  res.send({result:"notok"})
+                }else{
+                  console.log("document updated");
+                  res.send({result:"ok"})
+                }
+             });
+         }
+       });
+      });
+};
+
