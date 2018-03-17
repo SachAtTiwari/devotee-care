@@ -25,9 +25,9 @@ exports.markAttendance = function(req, res, next) {
               }
             ).toArray(function(err, result) {
               if (err) {
-			console.log("err is ", err);
+			          console.log("err is ", err);
                 	res.send({error:500});
-	      }else{
+	            }else{
               if(result.length === 0){
                 db.collection("devotees").update(
                   {contact:req.body.attendance.contact}, 
@@ -35,8 +35,8 @@ exports.markAttendance = function(req, res, next) {
                   {upsert:false}, 
                   function(err, resatt) {
                     if (err) {
-			console.log("err is ", err);
-                        res.send({result:"notok"});
+			                console.log("err is ", err);
+                      res.send({result:"notok"});
 		    }
                    // console.log("1 document find", res.result);
                     res.send({result:"ok"});
@@ -133,4 +133,30 @@ exports.getSdlClasses = function(req, res, next) {
      });
   };
 
-  
+  exports.getTodayAttendance =  function(req, res, next) {
+    console.log("i m here", req.query);
+    dbClient.connect(url, function(err, client) {
+        assert.equal(null, err);
+        const db = client.db(dbName);
+        db.listCollections().toArray(function(err, collections){
+          if (collections === undefined){
+              res.send({error:"No Collections present in DB"});
+           }else{
+              db.collection("devotees").find(
+              { 
+                course:req.query.course, 
+                "attendance.date":"17-3-2018",  
+              }
+              ).toArray(function(err, result) {
+                if (err) {
+            			console.log("err is ", err);
+                	res.send({erroe:500});
+	            	}else{
+                console.log("result is ",result);
+                res.send({result:result});
+	            	}
+              });
+          }
+        });
+     });
+}

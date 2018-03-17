@@ -29,7 +29,8 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 app.use(cors());
 app.use('/', index);
-//app.use('/classSdl', index);
+app.use('/classSdl', index);
+app.use('/addDevotee', index);
 app.use('/updateDevotee', index);
 app.use('/addDevotee', index);
 app.use('/markAttendance', index);
@@ -41,6 +42,8 @@ app.use('/getSdlClasses', index);
 app.use('/delRecord', index);
 app.use('/getDetails', index);
 app.use('/getAllDevotees', index);
+app.use('/getSearchedDevotee', index);
+app.use('/getTodayAttendance', index);
 
 
 
