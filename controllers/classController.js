@@ -135,6 +135,11 @@ exports.getSdlClasses = function(req, res, next) {
 
   exports.getTodayAttendance =  function(req, res, next) {
     console.log("i m here", req.query);
+    let date = new Date();
+    let month = date.getMonth() + 1;
+    date =  date.getDate() + '-' + month + '-' + date.getFullYear();
+
+    console.log("date is ", date);
     dbClient.connect(url, function(err, client) {
         assert.equal(null, err);
         const db = client.db(dbName);
@@ -145,7 +150,7 @@ exports.getSdlClasses = function(req, res, next) {
               db.collection("devotees").find(
               { 
                 course:req.query.course, 
-                "attendance.date":"17-3-2018",  
+                "attendance.date":date,  
               }
               ).toArray(function(err, result) {
                 if (err) {
