@@ -441,16 +441,18 @@ var AttendanceComponent = /** @class */ (function () {
     };
     AttendanceComponent.prototype._getDevotees = function (params) {
         var _this = this;
+        console.log("in get devotees");
         this._userService.getDevotees(params["course"])
             .subscribe(function (userData) {
-            //        console.log("user data is 2", userData);
+            console.log("user data is 2", userData);
             /* if(userData.sdlResult && userData.sdlResult.length > 0 && params["course"] == "1"){
                this.router.navigateByUrl('/otpAttendance');
              }*/
             if (userData.sdlResult && userData.sdlResult.length > 0) {
                 _this.dataSource.data = userData.result;
             }
-            else if (!userData.sdlResult && userData.result.length > 0 && params["course"] == "5") {
+            else if (!userData.sdlResult && userData.result.length >= 0 && params["course"] == "5") {
+                console.log("in course 5");
                 _this.showAllSwitch = false;
                 _this.dataSource.data = userData.result;
             }
@@ -1199,7 +1201,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(_http) {
         this._http = _http;
-        // private _url : string = "http://localhost:3000/";
+        //private _url : string = "http://localhost:3000/";
         this._url = "/";
     }
     UserService.prototype.getOTPDevotees = function () {
@@ -1272,7 +1274,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getSdlClasses = function () {
         return this._http.get(this._url + "getSdlClasses")
             .map(function (response) {
-            console.log("mock data 1 ", response.json());
+            //  console.log("mock data 1 " , response.json());
             return response.json();
         });
     };
