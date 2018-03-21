@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation-->\n<nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\" id=\"mainNav\" style=\"background-color:#e9ecef;\">\n        <!--a class=\"navbar-brand\" href=\"#\">ISKCON YOUTH FORUM</a-->\n        <a href=\"#\" class=\"navbar-brand pull-left\"><img src=\"./assets/img/logo.jpeg\" style=\"\"></a> \n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\"></span>\n        </button>\n\n\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\" >\n          <ul class=\"navbar-nav navbar-sidenav\" id=\"menu\">\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 1 }\" \n                      routerActive=\"/attendance\">OTP DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/attendance\">TSSV DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/attendance\">ASHRAY 1 DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/attendance\">ASHRAY 2 DEVOTEES</a>\n                </li>\n                <li >\n                    <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\">\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <!-- Scroll to Top Button-->\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a>\n    \n     \n    \n<router-outlet></router-outlet>"
+module.exports = "<!-- Navigation-->\n<nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\" id=\"mainNav\" style=\"background-color:#e9ecef;\">\n        <!--a class=\"navbar-brand\" href=\"#\">ISKCON YOUTH FORUM</a-->\n        <a href=\"#\" class=\"navbar-brand pull-left\"><img src=\"./assets/img/logo.jpeg\" style=\"\"></a> \n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\"></span>\n        </button>\n\n\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\" >\n          <ul class=\"navbar-nav navbar-sidenav\" id=\"menu\">\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:black;\" routerLink=\"/otpattendance\" \n                      routerActive=\"/otpattendance\">OTP DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/attendance\">TSSV DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/attendance\">ASHRAY 1 DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/attendance\">ASHRAY 2 DEVOTEES</a>\n                </li>\n                <li >\n                    <a style=\"color:black;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\">\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <!-- Scroll to Top Button-->\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a>\n    \n     \n    \n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -135,7 +135,7 @@ var appRoutes = [
     { path: 'showDetails/:id', component: __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */] },
     { path: 'classSdl', component: __WEBPACK_IMPORTED_MODULE_16__class_class_component__["a" /* ClassComponent */] },
     { path: 'attendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["b" /* AttendanceComponent */] },
-    { path: 'otpAttendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* MainAttendanceComponent */] },
+    { path: 'otpattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* MainAttendanceComponent */] },
     { path: 'downloads', component: __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__["a" /* DownloadsComponent */] },
     { path: '', redirectTo: 'classSdl', pathMatch: "full" }
 ];
@@ -285,7 +285,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/attendance.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n <div class=\"content-wrapper\" style=\"background:#CCC;\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:15px;\">\n        <div class=\"card-header\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\">\n          <div class=\"table-responsive formClass\">\n\n\t\t\t\t\t<!--form>\n\t\t\t\t\t<mat-progress-spinner mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n\t\t\t\t\t\n\t\t\t\t\t\t<mat-form-field> <input matInput (blur)=\"getSearchedDevotee(devoteeData.contact)\"\n\t\t\t\t\t\t\t name=\"con\" [(ngModel)]=\"devoteeData.contact\"\n\t\t\t\t\t\t\tplaceholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n\t\t\t\t\t\t<mat-form-field> <input matInput\n\t\t\t\t\t\t\t name=\"name\" [(ngModel)]=\"devoteeData.name\"\n\t\t\t\t\t\t\tplaceholder=\"Name\" > </mat-form-field>\t\n\t\t\t\t\t\t<mat-form-field> <input matInput\n\t\t\t\t\t\t\t name=\"age\" [(ngModel)]=\"devoteeData.age\"\n\t\t\t\t\t\t\tplaceholder=\"Age\" > </mat-form-field>\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t<mat-form-field> <input type=\"email\" matInput\n\t\t\t\t\t\t\t name=\"email\" [(ngModel)]=\"devoteeData.email\"\n\t\t\t\t\t\t\tplaceholder=\"Email\" > </mat-form-field>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t<mat-form-field> <input  matInput\n\t\t\t\t\t\t\t name=\"course\" [(ngModel)]=\"devoteeData.course\"\n\t\t\t\t\t\t\tplaceholder=\"course\" > </mat-form-field>\t\t\n\t\t\t\t\t</form-->\n\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  Name Column\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  Contact Column\n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  counsellor Column\n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n              \n                  Actions Column\n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button \n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\">\n                       <i class=\"fa fa-fw fa-user\"></i>\n                       <span matTooltip=\"Click here to mark present\"></span>\n                     </button>  \n                    \n                     <button\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-address-card\"></i>\n                      <span matTooltip=\"Show Details\"></span>\n                   \n                     </button>\n\n                     <button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\">\n                     <i class=\"fa fa-edit\"></i>\n                     <span matTooltip=\"Edit Details\"></span>\n                  \n                    </button>\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20]\"\n                 >\n             </mat-paginator> \n            <!--table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n              <thead>\n                <tr>\n                  <th>Name</th>\n                  <th>Contact</th>\n                  <th>Counsellor</th>\n                  <th>Actions</th>\n\n                </tr>\n              </thead>\n\n              <tbody>\n                  <tr *ngFor=\"let dv of devotees;\">\n                  <td >{{dv.name}}</td>\n                  <td >{{dv.contact}}</td>\n                  <td >{{dv.counsellor}}</td>\n                  <td >\n                    <button \n                       mat-raised-button style=\"margin:5px;\" type=\"submit\" \n                       (click)=\"markPresent(dv)\" \n                       class=\"btn btn-primary\">\n                      <i class=\"fa fa-fw fa-user\"></i>\n                      <span matTooltip=\"Click here to mark present\"></span>\n                       \n                       \n                    </button>\n                    <button\n                       mat-raised-button style=\"margin:5px;\" type=\"submit\" \n                       (click)=\"delRecord(dv)\" \n                       class=\"btn btn-danger\">\n                      <i class=\"fa fa-fw fa-trash\"></i>\n                      <span matTooltip=\"Delete Record\"></span>\n                      \n                    </button>\n\n                    <button\n                      mat-raised-button style=\"margin:5px;\" type=\"submit\" \n                      (click)=\"showDetails(dv)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-address-card\"></i>\n                      <span matTooltip=\"Show Details\"></span>\n                   \n                    </button>\n                    \n\n                    </td>\n                </tr>\n              </tbody>\n            </table-->\n\n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
+module.exports = " \n <div class=\"content-wrapper\" style=\"background:#CCC;\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:15px;\">\n        <div class=\"card-header\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\">\n          <div class=\"table-responsive formClass\">\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  Name Column\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  Contact Column\n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  counsellor Column\n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n              \n                  Actions Column\n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\">\n                       <i class=\"fa fa-fw fa-user\"></i>\n                       <span matTooltip=\"Click here to mark present\"></span>\n                     </button>  \n                    \n                     <button\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-address-card\"></i>\n                      <span matTooltip=\"Show Details\"></span>\n                   \n                     </button>\n\n                     <button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\">\n                     <i class=\"fa fa-edit\"></i>\n                     <span matTooltip=\"Edit Details\"></span>\n                  \n                    </button>\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20]\"\n                 >\n             </mat-paginator> \n            <!--table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n              <thead>\n                <tr>\n                  <th>Name</th>\n                  <th>Contact</th>\n                  <th>Counsellor</th>\n                  <th>Actions</th>\n\n                </tr>\n              </thead>\n\n              <tbody>\n                  <tr *ngFor=\"let dv of devotees;\">\n                  <td >{{dv.name}}</td>\n                  <td >{{dv.contact}}</td>\n                  <td >{{dv.counsellor}}</td>\n                  <td >\n                    <button \n                       mat-raised-button style=\"margin:5px;\" type=\"submit\" \n                       (click)=\"markPresent(dv)\" \n                       class=\"btn btn-primary\">\n                      <i class=\"fa fa-fw fa-user\"></i>\n                      <span matTooltip=\"Click here to mark present\"></span>\n                       \n                       \n                    </button>\n                    <button\n                       mat-raised-button style=\"margin:5px;\" type=\"submit\" \n                       (click)=\"delRecord(dv)\" \n                       class=\"btn btn-danger\">\n                      <i class=\"fa fa-fw fa-trash\"></i>\n                      <span matTooltip=\"Delete Record\"></span>\n                      \n                    </button>\n\n                    <button\n                      mat-raised-button style=\"margin:5px;\" type=\"submit\" \n                      (click)=\"showDetails(dv)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-address-card\"></i>\n                      <span matTooltip=\"Show Details\"></span>\n                   \n                    </button>\n                    \n\n                    </td>\n                </tr>\n              </tbody>\n            </table-->\n\n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -345,6 +345,7 @@ var AttendanceComponent = /** @class */ (function () {
         this.loading = false;
         this.con = "";
         this.values = '';
+        this.showAllSwitch = true;
         this.dStatus = {};
         this.devotees = [];
         this.getOTPData = false;
@@ -443,13 +444,14 @@ var AttendanceComponent = /** @class */ (function () {
         this._userService.getDevotees(params["course"])
             .subscribe(function (userData) {
             //        console.log("user data is 2", userData);
-            if (userData.sdlResult && userData.sdlResult.length > 0 && params["course"] == "1") {
-                _this.router.navigateByUrl('/otpAttendance');
-            }
-            else if (userData.sdlResult && userData.sdlResult.length > 0) {
+            /* if(userData.sdlResult && userData.sdlResult.length > 0 && params["course"] == "1"){
+               this.router.navigateByUrl('/otpAttendance');
+             }*/
+            if (userData.sdlResult && userData.sdlResult.length > 0) {
                 _this.dataSource.data = userData.result;
             }
             else if (!userData.sdlResult && userData.result.length > 0 && params["course"] == "5") {
+                _this.showAllSwitch = false;
                 _this.dataSource.data = userData.result;
             }
             else {
@@ -518,14 +520,15 @@ var AttendanceComponent = /** @class */ (function () {
         });
         dialogRef.afterClosed().subscribe(function (result) {
             console.log('The dialog was closed', result);
-            result.dob = _this._userService.parseDate(result.dob);
-            console.log("date is ", result.dob);
+            //result.dob = this._userService.parseDate(result.dob);
+            //console.log("date is ", result.dob);
             if (!result.name || !result.email
-                || !result.contact || !result.dob) {
+                || !result.contact || !result.dob
+                || !result.counsellor || !result.course) {
                 _this.formError = "All fields are mandatory";
             }
             else {
-                _this._userService.addDevotee(result)
+                _this._userService.addDevoteeGeneric(result)
                     .subscribe(function (userData) {
                     console.log("Add record is ", userData);
                     if (userData["result"] === "ok") {
@@ -630,12 +633,12 @@ var MainAttendanceComponent = /** @class */ (function () {
         this._userService = _userService;
         this.router = router;
         this.snackBar = snackBar;
-        this.devoteeData = { contact: '', counsellor: '', course: '' };
+        this.devoteeData = { contact: '', counsellor: '', course: '', email: '', dob: '', name: '' };
         this.loading = false;
         this.dStatus = {};
+        this.attendanceArray = [];
         this.displayedColumns = ['Name', 'Contact', 'Attendance'];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */]([]);
-        this.attendanceArray = [];
         this.todayDate = new Date();
         this.month = this.todayDate.getMonth() + 1;
         console.log("in constructor");
@@ -651,6 +654,13 @@ var MainAttendanceComponent = /** @class */ (function () {
         var course = "OTP";
         var todayDate = new Date();
         var todayDateNew = this._userService.parseDate(todayDate);
+        this._userService.checkIfClassSdlForCourse(course, todayDateNew)
+            .subscribe(function (sdlresult) {
+            console.log("sdl result is", sdlresult);
+            if (sdlresult.result.length == 0) {
+                _this.router.navigateByUrl('/classSdl');
+            }
+        });
         this._userService.getTodayAttendance(course)
             .subscribe(function (userData) {
             if (userData.result.length != 0) {
@@ -660,7 +670,7 @@ var MainAttendanceComponent = /** @class */ (function () {
                     var objectToShow = {};
                     objectToShow["name"] = userData.result[i].name;
                     objectToShow["contact"] = userData.result[i].contact;
-                    console.log("result i ", userData.result[i].attendance, todayDateNew);
+                    //console.log("result i ", userData.result[i].attendance, todayDateNew);
                     for (var j = 0; j < userData.result[i].attendance.length; j++) {
                         if (userData.result[i].attendance[j].date.localeCompare(todayDateNew) == 0) {
                             objectToShow["date"] = userData.result[i].attendance[j].date;
@@ -673,34 +683,60 @@ var MainAttendanceComponent = /** @class */ (function () {
                     console.log("object to show", objectToShow);
                     result_json.push(objectToShow);
                 }
-                _this.dataSource.data = result_json;
+                _this.attendanceArray = result_json;
+                _this.dataSource.data = _this.attendanceArray;
+            }
+        });
+    };
+    MainAttendanceComponent.prototype._searchedDevotee = function (contact, isContact) {
+        var _this = this;
+        this._userService.getSearchedDevotee(contact)
+            .subscribe(function (userData) {
+            console.log("i m here", userData);
+            if (userData.sdlResult) {
+                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()('No Data Found, Please add details', "Hari Bol!", "error");
+                _this.loading = false;
+                if (isContact) {
+                    _this.devoteeData = { contact: contact,
+                        course: userData.sdlResult[0].course,
+                        counsellor: userData.sdlResult[0].counsellor,
+                        email: '', dob: '', name: '' };
+                }
+                else {
+                    _this.devoteeData = { email: contact,
+                        course: userData.sdlResult[0].course,
+                        counsellor: userData.sdlResult[0].counsellor,
+                        contact: '', dob: '', name: '' };
+                }
+            }
+            else if (userData.result == "notok") {
+                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()('Class not scheduled for OTP', "Hari Bol!", "error");
+                _this.loading = false;
+            }
+            else {
+                _this.devoteeData = userData.result[0];
+                console.log("devotee data", _this.devoteeData);
+                _this.loading = false;
             }
         });
     };
     MainAttendanceComponent.prototype.getSearchedDevotee = function (contact) {
-        var _this = this;
+        console.log("contact is", parseInt(contact));
         this.loading = true;
-        if (contact.length != 10 && contact != undefined) {
-            __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Invalid mobile no", "Hari Bol", 'error');
-            this.loading = false;
+        var isContact = false;
+        if (!isNaN(parseInt(contact))) {
+            console.log("contact is", contact);
+            if (contact.length != 10 && contact != undefined) {
+                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Invalid mobile no", "Hari Bol", 'error');
+                this.loading = false;
+            }
+            else if (contact.length == 10 && contact != "") {
+                isContact = true;
+                this._searchedDevotee(contact, isContact);
+            }
         }
-        else if (contact.length == 10 && contact != "") {
-            this._userService.getSearchedDevotee(contact)
-                .subscribe(function (userData) {
-                console.log("i m here", userData);
-                if (!userData.result) {
-                    __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()('No Data Found, Please add details', "Hari Bol!", "error");
-                    _this.loading = false;
-                    _this.devoteeData = { contact: contact,
-                        course: userData.sdlResult[0].course,
-                        counsellor: userData.sdlResult[0].counsellor };
-                }
-                else {
-                    _this.devoteeData = userData.result[0];
-                    console.log("devotee data", _this.devoteeData);
-                    _this.loading = false;
-                }
-            });
+        else {
+            this._searchedDevotee(contact, isContact);
         }
     };
     MainAttendanceComponent.prototype.addDevotee = function (devoteeForm) {
@@ -722,9 +758,19 @@ var MainAttendanceComponent = /** @class */ (function () {
                     //window.location.reload(); 
                     __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Hare Krishna, We have new devotee in IYF", "Hari Bol!!", 'success');
                     _this.loading = false;
+                    _this.attendanceArray.push({
+                        name: _this.devoteeData['name'],
+                        contact: _this.devoteeData['contact'],
+                        attendance: 'YES'
+                    });
+                    _this.dataSource.data = _this.attendanceArray;
+                }
+                else if (userData["result"] == "updated") {
+                    __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Hare Krishna, Devotee details are updated", "Hari Bol!", 'success');
+                    _this.loading = false;
                 }
                 else {
-                    __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Hare Krishna, We already have this record", "Hari Bol!", 'warning');
+                    __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Hare Krishna, Something went wrong, Please try again", "Hari Bol!", 'success');
                     _this.loading = false;
                 }
             });
@@ -750,27 +796,38 @@ var MainAttendanceComponent = /** @class */ (function () {
                             if (userData["result"] === "ok") {
                                 _this.loading = false;
                                 __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Attendance updated successfully", "Hari Bol!!", 'success');
-                                if (_this.attendanceArray.length == 0) {
-                                    _this.attendanceArray.push({ name: _this.devoteeData['name'], contact: _this.devoteeData['contact'], attendance: 'Yes' });
-                                }
+                                console.log("attendance array", _this.attendanceArray);
+                                _this.attendanceArray.push({
+                                    name: _this.devoteeData['name'],
+                                    contact: _this.devoteeData['contact'],
+                                    attendance: 'YES'
+                                });
                                 _this.dataSource.data = _this.attendanceArray;
                             }
                             else {
-                                if (_this.attendanceArray.length == 0) {
-                                    _this.attendanceArray.push({ name: _this.devoteeData['name'], contact: _this.devoteeData['contact'], attendance: 'Yes' });
-                                }
+                                /* if (this.attendanceArray.length == 0) {
+                                     this.attendanceArray.push(
+                                       {
+                                         name: this.devoteeData['name'],
+                                         contact: this.devoteeData['contact'],
+                                         attendance: 'Yes'
+                                        })
+                                 }*/
                                 __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()("Attendance already updated", "Hari Bol :)", 'warning');
                                 _this.dataSource.data = _this.attendanceArray;
                                 _this.loading = false;
                             }
-                            for (var i = 0; i < _this.attendanceArray.length; i++) {
-                                if (_this.attendanceArray[i].contact != _this.devoteeData['contact']) {
-                                    _this.attendanceArray.push({ name: _this.devoteeData['name'],
-                                        contact: _this.devoteeData['contact'],
-                                        attendance: 'Yes' });
+                            /*let obj = {};
+                            for (let i in this.attendanceArray) {
+                                this.attendanceArray.push({ name: this.devoteeData['name'], contact: this.devoteeData['contact'], attendance: 'Yes' })
+                                if (!obj[this.attendanceArray[i].contact]) {
+                                    obj[this.attendanceArray[i].contact] = this.attendanceArray[i]
                                 }
+                                var filterArray = [];
+                                for (let key in obj) filterArray.push(obj[key]);
                             }
-                            _this.dataSource.data = _this.attendanceArray;
+                              
+                            this.dataSource.data = filterArray;*/
                         });
                     }
                 }
@@ -955,7 +1012,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.formClass {\n\theight: 320px;\n\toverflow: hidden;\n}\n\nmat-form-field {\n\tmargin: 10px;\n\twidth: 400px;\n}", ""]);
+exports.push([module.i, "\n.formClass {\n\theight: 370px;\n\toverflow: hidden;\n\tborder-radius: 20px;\n    padding: 20px; \n}\n\nmat-form-field {\n\tmargin: 10px;\n\twidth: 400px;\n}\nmat-progress-spinner{\n  \n  margin: auto;\n}", ""]);
 
 // exports
 
@@ -968,7 +1025,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/main-attendance.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\" style=\"background:#CCC;\">\n        <div class=\"container-fluid\">  \n                 <!-- Breadcrumbs-->\n                 <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                    <li class=\"breadcrumb-item\">\n                      <a href=\"#\">COURSES</a>\n                    </li>\n                    <li class=\"breadcrumb-item active\">Attendance</li>\n                  </ol>  \n          <!-- Add New Devotee-->\n         \n            \n            <!-- Add new devotee End-->\n          <!-- Example DataTables Card-->\n        <div class=\"card mb-2 col-md-offset-2\" style=\"margin-top:15px;\">\n            <div class=\"card-header\">\n              <i class=\"fa fa-table\"></i> Devotee Search\n            </div>\n    \n            <div class=\"card-body\">\n              <div class=\"table-responsive col-md-offset-6 formClass mat-elevation-z12\" >\n    \n                        <form #devoteeForm=\"ngForm\">\n                        <mat-progress-spinner mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> <input matInput (blur)=\"getSearchedDevotee(devoteeData.contact)\"\n                                 name=\"contact\" [(ngModel)]=\"devoteeData.contact\"\n                                placeholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n                            <mat-form-field> <input matInput required\n                                 name=\"name\" [(ngModel)]=\"devoteeData.name\"\n                                placeholder=\"Name\" > </mat-form-field>\t\n                            \n                                \n                            <mat-form-field> <input type=\"email\" matInput required\n                                 name=\"email\" [(ngModel)]=\"devoteeData.email\"\n                                placeholder=\"Email\" > </mat-form-field>\n\n                            \n                        <mat-form-field>                                                              \n                        <input matInput name=\"dob\" [(ngModel)]=\"devoteeData.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker></mat-datepicker>                                   \n                      </mat-form-field>   \n\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<mat-select name=\"course\" placeholder=\"Course\" required\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.course\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV\">\n\t\t\t\t\t\tTSSV </mat-option> <mat-option value=\"ASHRAY1\"> ASHRAY1 </mat-option> <mat-option\n\t\t\t\t\t\t\tvalue=\"ASHRAY2\"> ASHRAY2 </mat-option> </mat-select> </mat-form-field>\n\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<mat-select name=\"counsellor\" placeholder=\"Counsellor\" required\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.counsellor\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n\t\t\t\t\t\t<mat-option value=\"HG Kalpvraksha Prabhuji\">\n\t\t\t\t\t\tHG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n\t\t\t\t\t\t\t<mat-option\n\t\t\t\t\t\t\tvalue=\"HG Jagdanand Pandit Prabhuji\"> HG Jagdanand Pandit Prabhuji </mat-option>\n\t\t\t\t\t\t\t </mat-select> </mat-form-field>\n\t\t\t\t\t\t\t \n            <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n             (click)=\"addDevotee(devoteeForm)\">Add or Update Devotee</button>\n            <button mat-raised-button color=\"accent\"\n             (click)=\"markAttendance(devoteeForm)\">Mark Attendance</button>\n\t\t\t\t\t</form>\n\n                    </div>\n                </div>\n      <div class=\"example-container mat-elevation-z12\" style=\"margin:10px;\">\n                    <div class=\"card-header\">\n                        <i class=\"fa fa-table\"></i> Today's Attendace\n                      </div>\n\n  <mat-table [dataSource]=\"dataSource\" matSort>\n\n    <!-- ID Column -->\n    <ng-container matColumnDef=\"Name\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.name}} </mat-cell>\n    </ng-container>\n\n    <!-- Progress Column -->\n    <ng-container matColumnDef=\"Contact\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Contact </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.contact}}</mat-cell>\n    </ng-container>\n\n    <!-- Name Column -->\n   \n\n    <!-- Color Column -->\n    <ng-container matColumnDef=\"Attendance\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Attendance </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\" > {{row.attendance}} </mat-cell>\n    </ng-container>\n    \n     \n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\">\n    </mat-row>\n  </mat-table>\n\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n                <div class=\"card-footer small text-muted\">\n                </div>\n        \n              </div>\n <!-- /.container-fluid-->\n <!-- /.content-wrapper-->"
+module.exports = "<div class=\"content-wrapper\" style=\"background:#CCC;\">\n        <div class=\"container-fluid\">  \n                 <!-- Breadcrumbs-->\n                 <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                    <li class=\"breadcrumb-item\">\n                      <a href=\"#\">COURSES</a>\n                    </li>\n                    <li class=\"breadcrumb-item active\">Attendance</li>\n                  </ol>  \n          <!-- Add New Devotee-->\n         \n            \n            <!-- Add new devotee End-->\n          <!-- Example DataTables Card-->\n        <div class=\"card mb-2 col-md-offset-2\" style=\"margin-top:15px;\">\n            <div class=\"card-header\">\n              <i class=\"fa fa-table\"></i> Devotee Search\n            </div>\n    \n            <div class=\"card-body\" >\n              <div class=\"table-responsive col-md-offset-6 formClass mat-elevation-z12\" >\n    \n                        <form #devoteeForm=\"ngForm\">\n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> <input matInput (blur)=\"getSearchedDevotee(devoteeData.contact)\"\n                                 name=\"contact\" [(ngModel)]=\"devoteeData.contact\"\n                                placeholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n                            <mat-form-field> <input matInput required\n                                 name=\"name\" [(ngModel)]=\"devoteeData.name\"\n                                placeholder=\"Name\" > </mat-form-field>\t\n                            \n                                \n                            <mat-form-field> <input type=\"email\" matInput\n                              (blur)=\"getSearchedDevotee(devoteeData.email)\" required\n                                 name=\"email\" [(ngModel)]=\"devoteeData.email\"\n                                placeholder=\"Email\" > </mat-form-field>\n\n                            \n                        <mat-form-field>                                                              \n                        <input matInput name=\"dob\" [(ngModel)]=\"devoteeData.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker></mat-datepicker>                                   \n                      </mat-form-field>   \n\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<mat-select name=\"course\" placeholder=\"Course\" required\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.course\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV\">\n\t\t\t\t\t\tTSSV </mat-option> <mat-option value=\"ASHRAY1\"> ASHRAY1 </mat-option> <mat-option\n\t\t\t\t\t\t\tvalue=\"ASHRAY2\"> ASHRAY2 </mat-option> </mat-select> </mat-form-field>\n\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<mat-select name=\"counsellor\" placeholder=\"Counsellor\" required\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.counsellor\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n\t\t\t\t\t\t<mat-option value=\"HG Kalpvraksha Prabhuji\">\n\t\t\t\t\t\tHG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n\t\t\t\t\t\t\t<mat-option\n\t\t\t\t\t\t\tvalue=\"HG Jagdanand Pandit Prabhuji\"> HG Jagdanand Pandit Prabhuji </mat-option>\n\t\t\t\t\t\t\t </mat-select> </mat-form-field>\n\t\t\t\t\t\t\t \n            <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n             (click)=\"addDevotee(devoteeForm)\">Add or Update Devotee</button>\n            <button mat-raised-button color=\"accent\"\n             (click)=\"markAttendance(devoteeForm)\">Mark Attendance</button>\n\t\t\t\t\t</form>\n\n                    </div>\n                </div>\n      <div class=\"example-container mat-elevation-z12\" style=\"margin:10px;\">\n                    <div class=\"card-header\">\n                        <i class=\"fa fa-table\"></i> Today's Attendace\n                      </div>\n\n  <mat-table [dataSource]=\"dataSource\" matSort>\n\n    <!-- ID Column -->\n    <ng-container matColumnDef=\"Name\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.name}} </mat-cell>\n    </ng-container>\n\n    <!-- Progress Column -->\n    <ng-container matColumnDef=\"Contact\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Contact </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.contact}}</mat-cell>\n    </ng-container>\n\n    <!-- Name Column -->\n   \n\n    <!-- Color Column -->\n    <ng-container matColumnDef=\"Attendance\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Attendance </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\" > {{row.attendance}} </mat-cell>\n    </ng-container>\n    \n     \n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\">\n    </mat-row>\n  </mat-table>\n\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n                <div class=\"card-footer small text-muted\">\n                </div>\n        \n              </div>\n <!-- /.container-fluid-->\n <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -1035,13 +1092,6 @@ var ClassComponent = /** @class */ (function () {
         this.ELEMENT_DATA = [];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
         this.sdlClasses = [];
-        /*
-          Add Contact in place of DOB
-          Add New sdl for new class
-          Time field
-          Check page flow
-      
-        */
         this.title = 'ISKCON YOUTH FORUM';
         this.ifNoClassScdlText = "Schedule Class for attendance";
         this.ifClassSdl = true;
@@ -1060,10 +1110,6 @@ var ClassComponent = /** @class */ (function () {
             { value: "ASHRAY1" },
             { value: "ASHRAY2" },
         ];
-        /*counsellors = [
-          {value:"KVP"},
-          {value:"SGP"}
-        ];*/
         this.topic = "";
         this.date = "";
     }
@@ -1086,9 +1132,6 @@ var ClassComponent = /** @class */ (function () {
             //console.log("class data is ", this.dataSource.data);
         });
     };
-    /*sdlClasses = [
-    {date: "Wed Jan 17 2018", course: "OTP", speaker: "KVP", counsellor: "SGP", topic: "Art of Mind", time:"5:00"},
-    ];*/
     ClassComponent.prototype.classSdl = function () {
         console.log("in click");
         this.showForm = true;
@@ -1168,10 +1211,19 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.getSearchedDevotee = function (contact) {
         console.log("in searched", contact);
+        var isContact = false;
+        if (!isNaN(parseInt(contact))) {
+            isContact = true;
+        }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('contact', contact);
+        if (isContact == true) {
+            searchParams.append('contact', contact);
+        }
+        else {
+            searchParams.append('email', contact);
+        }
         searchParams.append('course', "OTP");
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + "getSearchedDevotee", options)
@@ -1256,6 +1308,16 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.addDevotee = function (body) {
         return this._http.post(this._url + "addDevotee", {
+            body: body
+        })
+            .map(function (res) {
+            return res.json();
+        }, function (err) {
+            return err.json();
+        });
+    };
+    UserService.prototype.addDevoteeGeneric = function (body) {
+        return this._http.post(this._url + "addDevoteeGeneric", {
             body: body
         })
             .map(function (res) {
