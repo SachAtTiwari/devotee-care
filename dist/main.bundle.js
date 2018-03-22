@@ -1220,10 +1220,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = /** @class */ (function () {
-    //private _url : string = "/";
     function UserService(_http) {
         this._http = _http;
-        this._url = "http://localhost:3000/";
+        //private _url : string = "http://localhost:3000/";
+        this._url = "/";
     }
     UserService.prototype.getOTPDevotees = function () {
         return this._http.get(this._url + "getOTPDevotees") //, options)
