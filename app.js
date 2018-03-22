@@ -10,12 +10,14 @@ var users = require('./routes/users');
 // allow-cors
 const cors = require('cors');
 
-
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -23,16 +25,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
-// Create link to Angular build directory
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use('/', index);
-app.use('/classSdl', index);
 app.use('/addDevotee', index);
 app.use('/updateDevotee', index);
-app.use('/addDevotee', index);
 app.use('/markAttendance', index);
 app.use('/getOTPDevotees', index);
 app.use('/downloadToExcel', index);
@@ -69,7 +66,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 
 module.exports = app;
