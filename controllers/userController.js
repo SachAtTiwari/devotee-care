@@ -1,5 +1,7 @@
 const assert = require('assert');
 var mongo = require('mongodb');
+var bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 
 exports.addDevoteeGeneric = function(req, res, next) {
   try{
@@ -28,6 +30,45 @@ exports.addDevoteeGeneric = function(req, res, next) {
 }catch(err){
   console.log("Exception :", err);
 }
+
+}
+
+
+exports.adminLogin = function(req, res, next) {
+  try{
+  console.log("in admin login ", req.body.body)
+  pass = bcrypt.hashSync(req.body.body.password, 10);
+  console.log("in admin login pass ", pass)
+  
+  let db = req.app.locals.db;
+  db.collection("devotees").find(
+   {username:req.body.body.username})
+  .toArray(function(err, dvData) {
+      if (err) {
+       console.log("err is ", err);
+       res.send({result:"notok"});
+      }else{
+        //admin details find verify pass
+         console.log("result ", dvData);
+        if(dvData.length > 0 && 
+          bcrypt.compareSync(req.body.body.password, dvData[0].password)){
+            let token = jwt.sign({user:dvData}, 'khsandasinasfnasiu2194u19u41142i210',
+            {expiresIn:900});
+            console.log("token assigned", token);
+            res.status(200).json({
+              result:"ok",
+              message:"Logged in Successfully",
+              token:token,
+              userId: dvData._id,
+            })
+         }else{
+            res.send({result:"notok"});
+         }
+      }
+    })
+  }catch(err){
+    console.log("Exception :", err);
+  }
 
 }
 
@@ -150,13 +191,31 @@ exports.delRecord = function(req, res, next) {
 
 exports.getDevotees = function(req, res, next) {
   try{
-    console.log("i m here", req.query.course);
+    console.log("i m here", req.query);
+    let skip = 0;
+    let limit = 10;
+    if(req.query.skip){
+      skip = req.query.skip;
+    }
+    if(req.query.limit){
+      limit = req.query.limit;
+    }
     let course = req.query.course;
     let date = new Date();
     let month = date.getMonth() + 1
     date =  date.getDate() + '-' + month + '-' + date.getFullYear();
-    console.log("date is", date);
+    //console.log("date is", date);
     let db = req.app.locals.db;
+    let isLoggedIn = false;
+
+
+    if(req.query.token){
+      let decoded = jwt.verify(req.query.token,'khsandasinasfnasiu2194u19u41142i210');
+      if (decoded.user.length > 0){
+        isLoggedIn = true;
+      }  
+    }
+  
     if(course){
          db.listCollections().toArray(function(err, collections){
            if (collections === undefined){
@@ -166,7 +225,7 @@ exports.getDevotees = function(req, res, next) {
               .toArray(function(err, sdlResult) {
                if (err) {
 		            console.log("err ", err)
-                 res.send({error:500});            
+                 res.send({error:500, isLoggedIn:isLoggedIn});            
 		            }else{
                 console.log("sdl result ",sdlResult);
                 //GET OTP devotees 
@@ -176,14 +235,14 @@ exports.getDevotees = function(req, res, next) {
                       if (usrCollections === undefined){
                         res.send({error:"No Collections present in DB"});
                       }else{
-                         db.collection("devotees").find({course:course})
+                         db.collection("devotees").find({course:course}).skip(skip).limit(limit)
                          .toArray(function(err, result) {
                          if (err) {
 				                  console.log("err is ", err);
-                		      res.send({error:500});
+                		      res.send({error:500, isLoggedIn:isLoggedIn});
 			                  }
                              //console.log("devotee result", result);
-                        res.send({result:result, sdlResult:sdlResult});
+                        res.send({result:result, sdlResult:sdlResult, isLoggedIn:isLoggedIn});
                       });
                       }
                    });
@@ -194,18 +253,20 @@ exports.getDevotees = function(req, res, next) {
       });//list collection end
     }else{
       console.log("empty course");
+     
+      
       db.listCollections().toArray(function(err, usrCollections){
           if (usrCollections === undefined){
              res.send({error:"No Collections present in DB"});
           }else{
-              db.collection("devotees").find()
+              db.collection("devotees").find().sort({name:1})
               .toArray(function(err, result) {
                if (err) {
 			            console.log("err is ", err);
-                	res.send({error:500});
+                	res.send({error:500, isLoggedIn:isLoggedIn});
 	            	}else{
-                console.log(result);
-               	res.send({result:result});
+                //console.log(result);
+               	res.send({result:result, isLoggedIn:isLoggedIn});
 	          	}
            });
           }
@@ -219,9 +280,11 @@ exports.getDevotees = function(req, res, next) {
 exports.getDevoteeDetail = function(req, res, next) {
   try{
    // console.log("im here", req.query.id);
+
    let db = req.app.locals.db;
-    
-   db.listCollections().toArray(function(err, collections){
+   var decoded = jwt.verify(req.query.token, 'khsandasinasfnasiu2194u19u41142i210');
+   if(decoded.user.length > 0){
+     db.listCollections().toArray(function(err, collections){
           if (collections === undefined){
             res.send({error:"No Collections present in DB"});
           }else{
@@ -240,6 +303,10 @@ exports.getDevoteeDetail = function(req, res, next) {
           });
         }
       });
+    }else{
+        res.send({result:"notok", message:'not authenticated'});
+      
+    }
     }catch(err){
       console.log("Exception :", err);
 
@@ -250,12 +317,16 @@ exports.getDevoteeDetail = function(req, res, next) {
 exports.updateDevotee = function(req, res, next) {
   try{
     console.log("i m in update", req.body.body);
+    console.log("id is ", req.body.body._id);
      var valuesToUpdate = {}
      if(req.body.body.contact){
         valuesToUpdate["contact"] = req.body.body.contact;
      }
      if(req.body.body.counsellor){
         valuesToUpdate["counsellor"] = req.body.body.counsellor;
+     }
+     if(req.body.body.contact2){
+      valuesToUpdate["contact2"] = req.body.body.contact2;
      }
      if(req.body.body.age){
         valuesToUpdate["age"] = req.body.body.age;
@@ -272,19 +343,26 @@ exports.updateDevotee = function(req, res, next) {
      if(req.body.body.email){
       valuesToUpdate["email"] = req.body.body.email;
     } 
-    //console.log("value to update", valuesToUpdate);
+    if(req.body.body.bace){
+      valuesToUpdate["bace"] = req.body.body.bace;
+    } 
+    if(req.body.body.area){
+      valuesToUpdate["area"] = req.body.body.area;
+    } 
+    console.log("value to update", valuesToUpdate);
     let db = req.app.locals.db;
     
     db.listCollections().toArray(function(err, collections){
         if (collections === undefined){
           res.send({error:"No Collections present in DB"});
          }else{
-          var query = {_id: new mongo.ObjectID(req.body.body.id)};
+          var query = {_id: new mongo.ObjectID(req.body.body._id)};
           var newvalues = { $set: valuesToUpdate };
           db.collection("devotees").update(
              query, newvalues, 
              function(err, resUp) {
                if (err) {
+                 console.log("err is", err);
                  res.send({result:"notok"})
                }else{
                  console.log("document updated");
@@ -319,6 +397,24 @@ exports.getSearchedDevotee = function(req, res, next) {
           query = {email:regexp, course:req.query.course}
           
       }
+      query = {
+        course:req.query.course,
+        "$or":[
+           {contact:req.query.contact},
+           {contact2:req.query.contact}
+         ]
+       }
+       console.log("query is", query);
+     /* db.collection("devotees").find(
+        query
+      ).toArray(function(err, dataRes){
+        if(err){
+          console.log("err is", err);
+        }else{
+          console.log("data res", dataRes);
+          res.send({result:dataRes});
+        }
+      });*/
       db.collection("devotees").find(
         query
       ).toArray(function(err, result) {
@@ -363,3 +459,33 @@ exports.getSearchedDevotee = function(req, res, next) {
   }
 };
 
+exports.isTokenVerified = function(req, res, next) {
+    try{
+        console.log("token is verified ", req.query.token);
+        let db = req.app.locals.db;
+        //var decoded = jwt.verify(req.query.token, 'khsandasinasfnasiu2194u19u41142i210');
+        jwt.verify(req.query.token,'khsandasinasfnasiu2194u19u41142i210',
+        function(err, decoded){
+          if(err){
+            // respond to request with error
+            console.error("err in verification", err);
+            res.send({result:"notok"})
+            
+          }else{
+            // continue with the request
+            console.log("decoded ", decoded);
+            if(decoded.user.length > 0){
+                res.send({result:"ok"})
+            }else{
+              res.send({result:"notok"})
+            }
+          }
+        });
+        
+
+    }catch(err){
+      console.log("Exception :", err);
+//      res.send({result:"notok"})
+      
+  }
+}

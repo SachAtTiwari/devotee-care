@@ -7,13 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('app:server');
 var http = require('http');
+var bcrypt =  require('bcrypt');
+const DB_URL = process.env.DB_URL;
 
-//const url = 'mongodb://localhost:27017';
-const url = 'mongodb://iyfuser:h2so4na2co%23@ds253918.mlab.com:53918/iyfdb';
+
 
 const dbName = 'iyfdb';
 const dbClient = require('mongodb').MongoClient;
-
 
 /**
  * Get port from environment and store in Express.
@@ -89,12 +89,36 @@ function onError(error) {
  */
 
 function onListening() {
-  dbClient.connect(url, function(err, client) {
+  dbClient.connect(DB_URL, function(err, client) {
     if (err) {
       debug("Failed to connect to the database", err);
     }
     db = client.db(dbName);
-    db.collection("devotees").createIndex( { contact: 1, course:1, "attendance.date": 1 } )
+    db.collection("devotees").createIndex(
+       { contact: 1, course:1, "attendance.date": 1 } )
+
+    pass = bcrypt.hashSync('gaurnitai', 10)
+    db.collection("devotees").find(
+      {username:'admin'})
+    .toArray(function(err, dvData) {
+      if (err) {
+       console.log("err is ", err);
+      }else{
+        if(dvData.length == 0){
+        db.collection("devotees")
+        .insertOne({username:'admin', password:pass}, 
+        function(err, createRes) {
+            if (err) {
+               console.log("err is ", err);
+            }else{
+              console.log("Seed data added");
+            }
+        });
+      }else{
+        console.log("already have seed");
+      }
+     }
+    });
 
     app.locals.db = db;
     var addr = server.address();
