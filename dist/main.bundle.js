@@ -1609,6 +1609,7 @@ var ClassComponent = /** @class */ (function () {
         this.showForm = true;
     };
     ClassComponent.prototype.sdlClass = function (form) {
+        var _this = this;
         //  this.showSdlClass = true;
         // this.ifClassSdl = true;
         form.value.date = this._userService.parseDate(form.value.date);
@@ -1627,14 +1628,12 @@ var ClassComponent = /** @class */ (function () {
             });
         }
         else {
-            console.log("sdl result is", form.value);
             this._userService.checkIfClassSdlForCourse(form.value.course, form.value.date)
                 .subscribe(function (sdlresult) {
-                console.log("sdl result is", sdlresult);
                 if (sdlresult.result.length == 0) {
-                    //this._userService.SdlClass(form.value);
+                    _this._userService.SdlClass(form.value);
                     form.reset();
-                    //this.router.navigate(['/downloads']).then(() => { this.router.navigate(['/classSdl']); });
+                    _this.router.navigate(['/downloads']).then(function () { _this.router.navigate(['/classSdl']); });
                     __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
                         type: 'success',
                         title: 'Class Scheduled ',
@@ -1698,10 +1697,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = /** @class */ (function () {
-    //private _url : string = "/";
     function UserService(_http) {
         this._http = _http;
-        this._url = "http://localhost:3000/";
+        //private _url : string = "http://localhost:3000/";
+        this._url = "/";
     }
     UserService.prototype.adminLogin = function (form) {
         return this._http.post(this._url + "adminLogin", {
