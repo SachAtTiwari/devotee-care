@@ -36,6 +36,7 @@ app.use('/addDevotee', index);
 app.use('/markAttendance', index);
 app.use('/getOTPDevotees', index);
 app.use('/downloadToExcel', index);
+app.use('/downloadToExCounsellor', index);
 app.use('/checkClassSdl', index);
 app.use('/SdlClass', index);
 app.use('/getSdlClasses', index);
@@ -45,6 +46,9 @@ app.use('/getAllDevotees', index);
 app.use('/getSearchedDevotee', index);
 app.use('/getTodayAttendance', index);
 app.use('/addDevoteeGeneric', index);
+app.use('/adminLogin', index);
+app.use('/isTokenVerified', index);
+app.use('/checkDevoteeStatusForGivenDate', index);
 
 
 

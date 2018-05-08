@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/classSdl', function(req, res, next) {
   //res.render('index', { title: 'Express' });
-  res.sendfile('app.component.html');
+  res.sendFile('app.component.html');
 });
 
 //USER ROUTES
@@ -34,8 +34,16 @@ router.delete('/delRecord', userController.delRecord);
 /* add Devotee */
 router.post('/addDevotee', userController.addDevotee);
 
+/* admin Login */
+router.post('/adminLogin', userController.adminLogin);
+
+
 /* add Devotee */
 router.post('/addDevoteeGeneric', userController.addDevoteeGeneric);
+
+
+/* is token Verified */
+router.get('/isTokenVerified', userController.isTokenVerified);
 
 /* Get OTP Devotee */
 //router.get('/getOTPDevotees', userController.getOTPDevotees);
@@ -75,5 +83,12 @@ router.get('/getTodayAttendance', classController.getTodayAttendance);
 ///Download Controller
 /*Download to Excel */
 router.get('/downloadToExcel', downloadController.downloadToExcel);
+
+/*Download to Excel  Counsellor*/
+router.get('/downloadToExCounsellor', downloadController.downloadToExCounsellor);
+
+
+/*Download devottee status for given date*/
+router.get('/checkDevoteeStatusForGivenDate', downloadController.checkDevoteeStatusForGivenDate);
 
 module.exports = router;
