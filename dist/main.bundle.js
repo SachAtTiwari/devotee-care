@@ -150,7 +150,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation-->\n<nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\"\n       id=\"mainNav\" style=\"background-color:#343a40;\" >\n        <!--a class=\"navbar-brand\" href=\"#\">ISKCON YOUTH FORUM</a-->\n        \n        \n        <a href=\"#\" class=\"navbar-brand pull-left\">\n          <img src=\"./assets/img/logo.jpeg\" style=\"\">\n        </a> \n       \n        <a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n            routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n\n            <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:blue;\" class=\"pull-right\"\n            (click)=\"adminLogout();\" >\n                <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>\n  \n            <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:blue;\" class=\"pull-right\">\n            <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Hare Krishna, Admin</a>\n\n            \n\n        <a href=\"#\" class=\"pull-right\">\n            <img src=\"./assets/img/lokanathswami.jpg\" style=\"margin:15px;border-radius:50%;\"\n             width=\"44\" height=\"46\">\n          </a> \n          <a href=\"#\" class=\"pull-right\">\n              <img src=\"./assets/img/spp.jpg\" style=\"margin:15px;border-radius:50%;\" \n              width=\"44\" height=\"46\" >\n            </a> \n\n            \n\n            <!--marquee style=\"color:green;\">Hare Krishna Hare Krishna Krishna Krishna Hare Hare,\n                Hare Ram Hare Ram Ram Ram Hare Hare!!</marquee-->\n        <!--button \n        class=\"navbar-toggler navbar-toggler-right\" \n        type=\"button\" data-toggle=\"collapse\" \n        data-target=\"#navbarResponsive\" \n        aria-controls=\"navbarResponsive\" \n        aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\">I m here</span>I m heereer\n        </button-->\n\n\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\"  >\n          <ul class=\"navbar-nav navbar-sidenav \" id=\"sidebar\" style=\"background-color:#343a40\" >\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a style=\"color:#FFF;\" class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:#000;\" routerLink=\"/otpattendance\" \n                      routerActive=\"/otpattendance\">OTP DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/attendance\">TSSV DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/attendance\">ASHRAY 1 DEVOTEES</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/attendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/attendance\">ASHRAY 2 DEVOTEES</a>\n                </li>\n                <li >\n                    <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\" id=\"sidebar\">\n              <li class=\"nav-item\">\n                <a (click)=\"toggleClicked();\" class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\"id=\"homefooter\" >\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <!-- Scroll to Top Button-->\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a>\n    \n     \n    \n<router-outlet></router-outlet>"
+module.exports = "<!-- Navigation-->\n<nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\"\n       id=\"mainNav\" style=\"background-color:#343a40;\" >\n        <!--a class=\"navbar-brand\" href=\"#\">ISKCON YOUTH FORUM</a-->\n        \n        \n        <a href=\"#\" class=\"navbar-brand pull-left\">\n          <img src=\"./assets/img/logo.jpeg\" style=\"\">\n        </a> \n       \n        <a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n            routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n\n            <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:blue;\" class=\"pull-right\"\n            (click)=\"adminLogout();\" >\n                <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>\n  \n            <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:blue;\" class=\"pull-right\">\n            <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Hare Krishna, Admin</a>\n\n            \n\n        <a href=\"#\" class=\"pull-right\">\n            <img src=\"./assets/img/lokanathswami.jpg\" style=\"margin:15px;border-radius:50%;\"\n             width=\"44\" height=\"46\">\n          </a> \n          <a href=\"#\" class=\"pull-right\">\n              <img src=\"./assets/img/spp.jpg\" style=\"margin:15px;border-radius:50%;\" \n              width=\"44\" height=\"46\" >\n            </a> \n\n         <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\"  >\n          <ul class=\"navbar-nav navbar-sidenav \" id=\"sidebar\" style=\"background-color:#343a40\" >\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a style=\"color:#FFF;\" class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:#000;\" routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                      routerActive=\"/otpattendance\">OTP</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/tssvattendance\">TSSV-B10</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/ashrayattendance\">ASHRAY</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/umangattendance\">UMANG</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n                  routerActive=\"/bssattendance\">BSS</a>\n                </li>\n                <li >\n                    <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\" id=\"sidebar\">\n              <li class=\"nav-item\">\n                <a (click)=\"toggleClicked();\" class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\"id=\"homefooter\" >\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <!-- Scroll to Top Button-->\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a>\n    \n     \n    \n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -296,9 +296,13 @@ var appRoutes = [
     { path: 'classSdl', component: __WEBPACK_IMPORTED_MODULE_16__class_class_component__["a" /* ClassComponent */] },
     { path: 'attendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["b" /* AttendanceComponent */] },
     { path: 'otpattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'tssvattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'bssattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'umangattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'ashrayattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
     { path: 'downloads', component: __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__["a" /* DownloadsComponent */] },
     { path: 'adminLogin', component: __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */] },
-    { path: '', redirectTo: 'classSdl', pathMatch: "full" }
+    { path: '', redirectTo: 'classSdl', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -468,7 +472,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/attendance.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\" style=\"margin-top:70px;\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:15px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\">\n                       <i class=\"fa fa-fw fa-user\"></i>\n                       <span matTooltip=\"Click here to mark present\"></span>\n                     </button>  \n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-address-card\"></i>\n                      <span matTooltip=\"Show Details\"></span>\n                   \n                     </button>\n\n                     <button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\">\n                     <i class=\"fa fa-edit\"></i>\n                     <span matTooltip=\"Edit Details\"></span>\n                  \n                    </button>\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" (page)=\"pageEvent = getPageDetails($event)\"\n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
+module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\" style=\"margin-top:70px;\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:15px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\">\n                       <i class=\"fa fa-fw fa-user\"></i>\n                       <span matTooltip=\"Click here to mark present\"></span>\n                     </button>  \n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-address-card\"></i>\n                      <span matTooltip=\"Show Details\"></span>\n                   \n                     </button>\n\n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\">\n                      <i class=\"fa fa-trash\"></i>\n                      <span matTooltip=\"Delete Record\"></span>\n                   \n                     </button>\n\n                     <button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\">\n                     <i class=\"fa fa-edit\"></i>\n                     <span matTooltip=\"Edit Details\"></span>\n                  \n                    </button>\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" (page)=\"pageEvent = getPageDetails($event)\"\n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -520,11 +524,11 @@ var AttendanceComponent = /** @class */ (function () {
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
         this.launchModal = false;
         this.showAddDevotee = false;
-        this.formError = "";
-        this.topic = "";
+        this.formError = '';
+        this.topic = '';
         this.devoteeData = { contact: '' };
         this.loading = false;
-        this.con = "";
+        this.con = '';
         this.values = '';
         this.showAllSwitch = true;
         this.dStatus = {};
@@ -533,48 +537,24 @@ var AttendanceComponent = /** @class */ (function () {
         this.isLoggedIn = false;
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         this.counsellors = [
-            { value: "HG Shyam Gopal Prabhuji" },
-            { value: "HG Kalpvraksha Prabhuji" },
-            { value: "HG Vaidant Chaitnya Prabhuji" },
-            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
-            { value: "HG Jagadanand Pandit Prabhuji" },
+            { value: 'HG Shyam Gopal Prabhuji' },
+            { value: 'HG Kalpvraksha Prabhuji' },
+            { value: 'HG Vaidant Chaitnya Prabhuji' },
+            { value: 'HG Pundrik Vidhyanidhi Prabhuji' },
+            { value: 'HG Jagadanand Pandit Prabhuji' },
         ];
         this.courses = [
-            { value: "OTP" },
-            { value: "TSSV" },
-            { value: "ASHRAY1" },
-            { value: "ASHRAY2" },
-            { value: "UMANG" },
+            { value: 'OTP' },
+            { value: 'TSSV' },
+            { value: 'ASHRAY' },
+            { value: 'BSS' },
+            { value: 'UMANG' },
         ];
-        console.log("in constructor");
     }
-    AttendanceComponent.prototype.getPageDetails = function (e) {
-        console.log(e.pageSize);
-        this._getDevotees({ course: 5 });
-    };
-    AttendanceComponent.prototype.getSearchedDevotee = function (contact) {
-        var _this = this;
-        this.loading = true;
-        if (contact != undefined && contact.length != 10) {
-            alert('invalid mobile no');
-            this.loading = false;
-        }
-        else if (contact.length == 10 && contact != "") {
-            this._userService.getSearchedDevotee(contact)
-                .subscribe(function (userData) {
-                console.log(userData);
-                if (userData.result.length == 0) {
-                    alert('No Data Found, Please add details');
-                    _this.loading = false;
-                    _this.devoteeData = { contact: contact };
-                }
-                else {
-                    _this.devoteeData = userData.result[0];
-                    _this.loading = false;
-                }
-            });
-        }
-    };
+    /* getPageDetails(e) {
+      console.log(e.pageSize);
+      this._getDevotees({course:5});
+    }*/
     AttendanceComponent.prototype.ngAfterViewInit = function () {
         this.dataSource.paginator = this.paginator;
     };
@@ -583,30 +563,11 @@ var AttendanceComponent = /** @class */ (function () {
         filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
         this.dataSource.filter = filterValue;
     };
-    ;
     AttendanceComponent.prototype.ngOnInit = function () {
         var _this = this;
         // console.log("in attendance");
         this.route.queryParams.subscribe(function (params) {
-            console.log("param is ", params['course']);
-            if (params['course'] === "1") {
-                _this.showAddDevotee = true;
-                _this._getDevotees(params);
-            }
-            else if (params["course"] === "2") {
-                console.log("in tssvb8 ");
-                //this.showAddDevotee = false; 
-                _this._getDevotees(params);
-            }
-            else if (params["course"] === "3") {
-                //this.showAddDevotee = false;  
-                _this._getDevotees(params);
-            }
-            else if (params["course"] === "4") {
-                //this.showAddDevotee = false;        
-                _this._getDevotees(params);
-            }
-            else if (params["course"] === "5") {
+            if (params['course'] === '5') {
                 _this.showAddDevotee = true;
                 _this._getDevotees(params);
             }
@@ -619,26 +580,20 @@ var AttendanceComponent = /** @class */ (function () {
     };
     AttendanceComponent.prototype._getDevotees = function (params) {
         var _this = this;
-        var getLoggedIn = localStorage.getItem("token");
-        console.log("token is in atte init", getLoggedIn);
-        this._userService.getDevotees(params["course"], getLoggedIn)
+        var getLoggedIn = localStorage.getItem('token');
+        this._userService.getDevotees(params['course'], getLoggedIn)
             .subscribe(function (userData) {
-            console.log("in get devotees", userData);
+            console.log('in get devotees', userData);
             _this.isLoggedIn = userData.isLoggedIn;
             if (userData.result) {
                 userData.result = userData.result.filter(function (el) {
-                    return el.username !== "admin";
+                    return el.username !== 'admin';
                 });
             }
-            console.log("user data is 2", userData);
-            /* if(userData.sdlResult && userData.sdlResult.length > 0 && params["course"] == "1"){
-               this.router.navigateByUrl('/otpAttendance');
-             }*/
             if (userData.sdlResult && userData.sdlResult.length > 0) {
                 _this.dataSource.data = userData.result;
             }
-            else if (!userData.sdlResult && userData.result.length >= 0 && params["course"] == "5") {
-                console.log("in course 5");
+            else if (!userData.sdlResult && userData.result.length >= 0 && params['course'] === '5') {
                 _this.showAllSwitch = false;
                 _this.dataSource.data = userData.result;
             }
@@ -647,80 +602,81 @@ var AttendanceComponent = /** @class */ (function () {
             }
         });
     };
-    AttendanceComponent.prototype.updateOTPDevotees = function () {
-        var _this = this;
-        console.log("OTP devotess");
-        this._userService.getOTPDevotees()
-            .subscribe(function (userData) {
+    /* updateOTPDevotees() {
+      this._userService.getOTPDevotees()
+          .subscribe(userData => {
             console.log("user data is ", userData.result);
-            _this.devotees = userData.result;
-        });
-    };
+            this.devotees = userData.result;
+      });
+    }*/
     AttendanceComponent.prototype.showDetails = function (dv) {
-        console.log("show detials ", dv["_id"]);
-        this.router.navigate(['/showDetails', dv["_id"]]);
+        this.router.navigate(['/showDetails', dv['_id']]);
     };
-    AttendanceComponent.prototype.markPresent = function (dv) {
-        var _this = this;
-        //console.log("in  update", dv);
-        this.contact = dv.contact;
-        var dialogRef;
-        dialogRef = this.dialog.open(MarkpresentComponent, {
-            width: '300px',
-            hasBackdrop: false,
-        });
-        dialogRef.afterClosed().subscribe(function (result) {
-            // console.log('The dialog was closed', result.date);
-            result.date = _this._userService.parseDate(result.date);
-            _this._userService.checkIfClassSdlForCourse(dv.course, result.date)
-                .subscribe(function (userData) {
-                console.log("user data is ", userData.result);
-                if (userData.result.length > 0) {
-                    _this.dStatus["date"] = userData.result[0].date;
-                    _this.dStatus["present"] = "YES";
-                    _this.dStatus["topic"] = userData.result[0].topic;
-                    _this.dStatus["speaker"] = userData.result[0].speaker;
-                    if (dv.contact) {
-                        _this.dStatus["contact"] = dv.contact;
-                        _this._userService.markAttendance(_this.dStatus)
-                            .subscribe(function (userData) {
-                            if (userData["result"] === "ok") {
-                                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
-                                    type: 'success',
-                                    title: 'Attendance updated successfully',
-                                    html: "Hari Bol!!",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-                                //swal("" , "Hari Bol!!", 'success');
-                            }
-                            else {
-                                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
-                                    type: 'warning',
-                                    title: 'Attendance already updated',
-                                    html: "Hari Bol!!",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-                                //swal("", "Hari Bol :)", 'warning');
-                            }
-                        });
-                    }
-                }
-                else {
-                    console.log("No class sdl for selected date");
-                    // swal("", "Hari Bol..", 'error')
-                    __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
-                        type: 'error',
-                        title: 'No class sdl for selected date',
-                        html: "Hari Bol!!",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
+    /* markPresent(dv){
+      //console.log("in  update", dv);
+      this.contact = dv.contact;
+      let dialogRef : any;
+      dialogRef = this.dialog.open(MarkpresentComponent, {
+          width: '300px',
+          hasBackdrop: false,
+          //data: {all:true}
+       });
+  
+       dialogRef.afterClosed().subscribe(result => {
+           // console.log('The dialog was closed', result.date);
+            result.date = this._userService.parseDate(result.date);
+            this._userService.checkIfClassSdlForCourse(dv.course, result.date)
+            .subscribe(userData => {
+              console.log("user data is ", userData.result);
+              if (userData.result.length > 0){
+  
+                  this.dStatus["date"] = userData.result[0].date;
+                  this.dStatus["present"] = "YES";
+                  this.dStatus["topic"] = userData.result[0].topic;
+                  this.dStatus["speaker"] = userData.result[0].speaker;
+                  if(dv.contact){
+                    this.dStatus["contact"] =  dv.contact
+                    this._userService.markAttendance(this.dStatus)
+                      .subscribe(userData => {
+                        if(userData["result"] === "ok"){
+                            swal({
+  
+                                type: 'success',
+                                title: 'Attendance updated successfully',
+                                html: "Hari Bol!!",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                          //swal("" , "Hari Bol!!", 'success');
+                        }else{
+                            swal({
+  
+                                type: 'warning',
+                                title: 'Attendance already updated',
+                                html: "Hari Bol!!",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                          //swal("", "Hari Bol :)", 'warning');
+                        }
+                      });
+                  }
+              }else{
+                console.log("No class sdl for selected date");
+               // swal("", "Hari Bol..", 'error')
+                swal({
+  
+                    type: 'error',
+                    title: 'No class sdl for selected date',
+                    html: "Hari Bol!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+              }
             });
-        });
-    };
+  
+      });
+    }*/
     AttendanceComponent.prototype.handleDevoteeDialog = function () {
         var _this = this;
         var dialogRef = this.dialog.open(AddDevoteeComponent, {
@@ -729,36 +685,29 @@ var AttendanceComponent = /** @class */ (function () {
             hasBackdrop: false,
         });
         dialogRef.afterClosed().subscribe(function (result) {
-            console.log('The dialog was closed', result);
-            //result.dob = this._userService.parseDate(result.dob);
-            //console.log("date is ", result.dob);
             if (!result.name || !result.email
                 || !result.contact || !result.dob
                 || !result.counsellor || !result.course) {
-                _this.formError = "All fields are mandatory";
+                _this.formError = 'All fields are mandatory';
             }
             else {
                 _this._userService.addDevoteeGeneric(result)
                     .subscribe(function (userData) {
-                    console.log("Add record is ", userData);
-                    if (userData["result"] === "ok") {
-                        console.log("in add record", userData);
+                    if (userData['result'] === 'ok') {
                         window.location.reload();
-                        //swal("Hare Krishna, We have new devotee in IYF" , "Hari Bol!!", 'success');
                         __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                             type: 'success',
                             title: 'Hare Krishna, We have new devotee in IYF',
-                            html: "Hari Bol!!",
+                            html: 'Hari Bol!!',
                             showConfirmButton: false,
                             timer: 1500
                         });
                     }
                     else {
-                        //swal("Hare Krishna, We already have this record" , "Hari Bol!", 'warning');
                         __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                             type: 'warning',
                             title: 'Hare Krishna, We already have this record',
-                            html: "Hari Bol!!",
+                            html: 'Hari Bol!!',
                             showConfirmButton: false,
                             timer: 1500
                         });
@@ -769,43 +718,35 @@ var AttendanceComponent = /** @class */ (function () {
     };
     AttendanceComponent.prototype.editDevoteeDialog = function (dv) {
         var _this = this;
-        console.log("id devotee", dv._id);
         var dialogRef = this.dialog.open(EditDevoteeComponent, {
             width: '100vh',
             height: '60vh',
             hasBackdrop: false,
         });
         dialogRef.afterClosed().subscribe(function (result) {
-            console.log('The dialog was closed', result);
             if (result.dob) {
                 result.dob = _this._userService.parseDate(result.dob);
-                console.log("date is ", result.dob);
             }
             result._id = dv._id;
             _this._userService.editDevotee(result)
                 .subscribe(function (userData) {
-                console.log("Edit record is ", userData);
-                if (userData["result"] === "ok") {
-                    //swal("Record updated successfully" , "Hari Bol!!", 'success');
+                if (userData['result'] === 'ok') {
                     __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                         type: 'success',
                         title: 'Record updated successfully',
-                        html: "Hari Bol!!",
+                        html: 'Hari Bol!!',
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    // window.location.reload(); 
                 }
             });
         });
     };
     AttendanceComponent.prototype.delRecord = function (dv) {
-        console.log("contact", dv.contact);
         this._userService.delRecord(dv.contact)
             .subscribe(function (userData) {
-            console.log("del record is ", userData);
-            if (userData["result"] === "ok") {
-                console.log("in del record", userData);
+            if (userData['result'] === 'ok') {
+                console.log('in del record', userData);
             }
         });
     };
@@ -836,12 +777,11 @@ var MarkpresentComponent = /** @class */ (function () {
         this.dialogRef = dialogRef;
         this.data = data;
         this.status = [
-            { value: "YES" },
-            { value: "NO" }
+            { value: 'YES' },
+            { value: 'NO' }
         ];
     }
     MarkpresentComponent.prototype.updateAtt = function (form) {
-        console.log("update at", form.value);
         this.dialogRef.close(form.value);
     };
     MarkpresentComponent.prototype.onNoClick = function () {
@@ -874,24 +814,38 @@ var MainAttendanceComponent = /** @class */ (function () {
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */]([]);
         this.isLoggedIn = false;
         this.todayDate = new Date();
-        this.month = this.todayDate.getMonth() + 1;
-        console.log("in constructor");
     }
     MainAttendanceComponent.prototype.ngAfterViewInit = function () {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
     };
-    ;
     MainAttendanceComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var getLoggedIn = localStorage.getItem("token");
-        console.log("token is in atte init", getLoggedIn);
+        var course = '';
+        var todayDateNew = this._userService.parseDate(this.todayDate);
+        var getLoggedIn = localStorage.getItem('token');
+        this.route.queryParams.subscribe(function (params) {
+            console.log('param is main', params['course']);
+            if (params['course'] === '1') {
+                course = 'OTP';
+            }
+            else if (params['course'] === '2') {
+                course = 'TSSV';
+            }
+            else if (params['course'] === '3') {
+                course = 'ASHRAY';
+            }
+            else if (params['course'] === '4') {
+                course = 'UMANG';
+            }
+            else if (params['course'] === '6') {
+                course = 'BSS';
+            }
+        });
         if (getLoggedIn) {
-            console.log("checking logged in");
             this._userService.isTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
-                console.log("token res", tokenRes);
-                if (tokenRes.result == "ok") {
+                if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
                 }
                 else {
@@ -899,41 +853,34 @@ var MainAttendanceComponent = /** @class */ (function () {
                 }
             });
         }
-        console.log("im main attendance");
-        var course = "OTP";
-        var todayDate = new Date();
-        var todayDateNew = this._userService.parseDate(todayDate);
-        //console.log("date today is", todayDateNew);
         this._userService.checkIfClassSdlForCourse(course, todayDateNew)
             .subscribe(function (sdlresult) {
-            console.log("sdl result is", sdlresult);
-            if (sdlresult.result.length == 0) {
+            if (sdlresult.result.length === 0) {
                 _this.router.navigateByUrl('/classSdl');
             }
             else {
                 _this.topic = sdlresult.result[0].topic;
+                _this.devoteeData.counsellor = sdlresult.result[0].speaker;
+                _this.devoteeData.course = sdlresult.result[0].course;
             }
         });
         this._userService.getTodayAttendance(course)
             .subscribe(function (userData) {
-            if (userData.result.length != 0) {
-                // console.log(userData.result);
+            if (userData.result.length !== 0) {
                 var result_json = [];
                 for (var i = 0; i < userData.result.length; i++) {
                     var objectToShow = {};
-                    objectToShow["name"] = userData.result[i].name;
-                    objectToShow["contact"] = userData.result[i].contact;
-                    //console.log("result i ", userData.result[i].attendance, todayDateNew);
+                    objectToShow['name'] = userData.result[i].name;
+                    objectToShow['contact'] = userData.result[i].contact;
                     for (var j = 0; j < userData.result[i].attendance.length; j++) {
-                        if (userData.result[i].attendance[j].date.localeCompare(todayDateNew) == 0) {
-                            objectToShow["date"] = userData.result[i].attendance[j].date;
-                            objectToShow["attendance"] = userData.result[i].attendance[j].present;
-                            objectToShow["topic"] = userData.result[i].attendance[j].topic;
-                            objectToShow["speaker"] = userData.result[i].attendance[j].speaker;
+                        if (userData.result[i].attendance[j].date.localeCompare(todayDateNew) === 0) {
+                            objectToShow['date'] = userData.result[i].attendance[j].date;
+                            objectToShow['attendance'] = userData.result[i].attendance[j].present;
+                            objectToShow['topic'] = userData.result[i].attendance[j].topic;
+                            objectToShow['speaker'] = userData.result[i].attendance[j].speaker;
                             break;
                         }
                     }
-                    //console.log("object to show", objectToShow);
                     result_json.push(objectToShow);
                 }
                 _this.attendanceArray = result_json;
@@ -941,17 +888,15 @@ var MainAttendanceComponent = /** @class */ (function () {
             }
         });
     };
-    MainAttendanceComponent.prototype._searchedDevotee = function (contact, isContact) {
+    MainAttendanceComponent.prototype._searchedDevotee = function (contact, isContact, course) {
         var _this = this;
-        this._userService.getSearchedDevotee(contact)
+        this._userService.getSearchedDevotee(contact, course)
             .subscribe(function (userData) {
-            console.log("searched data is ", userData);
             if (userData.sdlResult) {
-                //swal('', "Hari Bol!", "error");
                 __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                     type: 'error',
                     title: 'No Data Found, Please add details',
-                    html: "Hari Bol!!",
+                    html: 'Hari Bol!!',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -969,12 +914,11 @@ var MainAttendanceComponent = /** @class */ (function () {
                         contact: '', dob: '', name: '' };
                 }
             }
-            else if (userData.result == "notok") {
-                //swal('Class not scheduled for OTP', "Hari Bol!", "error");
+            else if (userData.result === 'notok') {
                 __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                     type: 'error',
                     title: 'Class not scheduled for OTP',
-                    html: "Hari Bol!!",
+                    html: 'Hari Bol!!',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -982,83 +926,75 @@ var MainAttendanceComponent = /** @class */ (function () {
             }
             else {
                 _this.devoteeData = userData.result[0];
-                console.log("devotee data", _this.devoteeData);
                 _this.loading = false;
             }
         });
     };
     MainAttendanceComponent.prototype.getSearchedDevotee = function (contact) {
-        // console.log("contact is", parseInt(contact));
+        var course = this.devoteeData.course;
         this.loading = true;
         var isContact = false;
         if (!isNaN(parseInt(contact))) {
-            //   console.log("contact is", contact);
-            if (contact.length != 10 && contact != undefined) {
-                // swal("Invalid mobile no" , "Hari Bol", 'error'); 
+            if (contact.length !== 10 && contact !== undefined) {
                 __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                     type: 'error',
                     title: 'Invalid mobile no',
-                    html: "Hari Bol!!",
+                    html: 'Hari Bol!!',
                     showConfirmButton: false,
                     timer: 1500
                 });
                 this.loading = false;
             }
-            else if (contact.length == 10 && contact != "") {
+            else if (contact.length === 10 && contact !== '') {
                 isContact = true;
-                this._searchedDevotee(contact, isContact);
+                this._searchedDevotee(contact, isContact, course);
             }
         }
         else {
-            this._searchedDevotee(contact, isContact);
+            this._searchedDevotee(contact, isContact, course);
         }
     };
     MainAttendanceComponent.prototype.addDevotee = function (devoteeForm) {
         var _this = this;
-        console.log("devotee form is", devoteeForm.value);
         if (!devoteeForm.value.name || !devoteeForm.value.email
             || !devoteeForm.value.contact || !devoteeForm.value.dob
             || !devoteeForm.value.course) {
-            //swal("All fields are mandatory", "", "error");
             __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                 type: 'error',
                 title: 'All fields are mandatory',
-                html: "",
+                html: '',
                 showConfirmButton: false,
                 timer: 1500
             });
         }
         else {
-            //console.log("dev data",this.devoteeData) 
-            //console.log("dev data submit",this.devoteeDataSubmit); 
             var course_1 = devoteeForm.value.course;
             var contact_1 = devoteeForm.value.contact;
             var name_1 = devoteeForm.value.name;
             this.loading = true;
-            this._userService.getSearchedDevotee(this.devoteeData.contact)
+            this._userService.getSearchedDevotee(this.devoteeData.contact, course_1)
                 .subscribe(function (userData) {
-                //console.log("user data is ", userData);
                 var valuesToUpdate = {};
                 var misMatch = false;
                 if (userData.result && userData.result.length !== 0) {
                     if (userData.result[0].contact !== _this.devoteeData.contact) {
-                        valuesToUpdate["contact"] = _this.devoteeData.contact;
+                        valuesToUpdate['contact'] = _this.devoteeData.contact;
                         misMatch = true;
                     }
                     if (userData.result[0].name !== _this.devoteeData.name) {
-                        valuesToUpdate["name"] = _this.devoteeData.name;
+                        valuesToUpdate['name'] = _this.devoteeData.name;
                         misMatch = true;
                     }
                     if (userData.result[0].contact2 !== _this.devoteeData.contact2) {
-                        valuesToUpdate["contact2"] = _this.devoteeData.contact2;
+                        valuesToUpdate['contact2'] = _this.devoteeData.contact2;
                         misMatch = true;
                     }
                     if (userData.result[0].email !== _this.devoteeData.email) {
-                        valuesToUpdate["email"] = _this.devoteeData.email;
+                        valuesToUpdate['email'] = _this.devoteeData.email;
                         misMatch = true;
                     }
                     if (userData.result[0].dob !== _this.devoteeData.dob) {
-                        valuesToUpdate["dob"] = _this.devoteeData.dob;
+                        valuesToUpdate['dob'] = _this.devoteeData.dob;
                         misMatch = true;
                     }
                     /*if(userData.result[0].counsellor !== this.devoteeData.counsellor){
@@ -1066,48 +1002,43 @@ var MainAttendanceComponent = /** @class */ (function () {
                       misMatch = true;
                     }*/
                     if (userData.result[0].course !== _this.devoteeData.course) {
-                        valuesToUpdate["course"] = _this.devoteeData.course;
+                        valuesToUpdate['course'] = _this.devoteeData.course;
                         misMatch = true;
                     }
                     if (misMatch) {
-                        console.log("mismatch ", valuesToUpdate);
-                        var YES = "YES";
-                        var NO = "NO";
+                        var YES = 'YES';
+                        var NO = 'NO';
                         var dialogRef = _this.dialog.open(EditDevoteeConfirm, {
                             width: '280px',
                             data: { YES: YES, NO: NO, update: valuesToUpdate }
                         });
                         dialogRef.afterClosed().subscribe(function (result) {
-                            //console.log('The dialog was closed', result);
-                            if (result === "YES") {
-                                valuesToUpdate["_id"] = userData.result[0]._id;
+                            if (result === 'YES') {
+                                valuesToUpdate['_id'] = userData.result[0]._id;
                                 _this._userService.editDevotee(valuesToUpdate)
                                     .subscribe(function (editData) {
-                                    console.log("Edit record is ", editData);
-                                    if (editData["result"] === "ok") {
-                                        //swal("" , "Hari Bol!!", 'success');
+                                    if (editData['result'] === 'ok') {
                                         __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                             type: 'success',
                                             title: 'Record updated successfully',
-                                            html: "",
+                                            html: '',
                                             showConfirmButton: false,
                                             timer: 1500
                                         });
                                         _this.loading = false;
                                     }
                                     else {
-                                        //swal("Problem in updating record" , "Hari Bol!!", 'error'); 
                                         __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                             type: 'error',
                                             title: 'Problem in updating record',
-                                            html: "Hari Bol!!",
+                                            html: 'Hari Bol!!',
                                             showConfirmButton: false,
                                             timer: 1500
                                         });
                                         _this.loading = false;
                                     }
                                 });
-                                //devoteeForm.reset();
+                                // devoteeForm.reset();
                                 _this.markAttendance(course_1, contact_1, name_1);
                             }
                             else {
@@ -1116,21 +1047,17 @@ var MainAttendanceComponent = /** @class */ (function () {
                         });
                     }
                     else {
-                        console.log("going to mark attendance only no updates", devoteeForm.value);
                         _this.markAttendance(course_1, contact_1, name_1);
                     }
                 }
                 else {
-                    console.log("add devotee");
                     _this._userService.addDevotee(_this.devoteeData)
                         .subscribe(function (addData) {
-                        console.log("Add record is ", addData);
-                        if (addData["result"] === "ok") {
-                            //swal("Hare Krishna, We have new devotee in IYF" , "Hari Bol!!", 'success');
+                        if (addData['result'] === 'ok') {
                             __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                 type: 'success',
                                 title: 'Hare Krishna, We have new devotee in IYF',
-                                html: "Hari Bol!!",
+                                html: 'Hari Bol!!',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -1138,26 +1065,25 @@ var MainAttendanceComponent = /** @class */ (function () {
                             _this.attendanceArray.push({
                                 name: _this.devoteeData['name'],
                                 contact: _this.devoteeData['contact'],
-                                attendance: 'YES'
+                                attendance: 'YES',
                             });
                             _this.dataSource.data = _this.attendanceArray;
                         }
-                        else if (addData["result"] == "updated") {
+                        else if (addData['result'] === 'updated') {
                             __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                 type: 'success',
                                 title: 'Devotee details updated successfully',
-                                html: "Hari Bol!!",
+                                html: 'Hari Bol!!',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
                             _this.loading = false;
                         }
                         else {
-                            //swal("Hare Krishna, Something went wrong, Please try again" , "Hari Bol!", 'success');
                             __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                 type: 'success',
                                 title: 'Hare Krishna, Something went wrong, Please try again',
-                                html: "Hari Bol!!",
+                                html: 'Hari Bol!!',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -1170,32 +1096,31 @@ var MainAttendanceComponent = /** @class */ (function () {
     };
     MainAttendanceComponent.prototype.markAttendance = function (course, contact, name) {
         var _this = this;
-        console.log("mark attendance", course, this.devoteeData);
-        if (course !== "") {
+        console.log('mark attendance', course, this.devoteeData);
+        if (course !== '') {
             this.loading = true;
-            var date = this.todayDate.getDate() + "-" + this.month + "-" + this.todayDate.getFullYear();
+            var month = this.todayDate.getMonth() + 1;
+            var date = this.todayDate.getDate() + '-' + month + '-' + this.todayDate.getFullYear();
             this._userService.checkIfClassSdlForCourse(course, date)
                 .subscribe(function (userData) {
-                console.log("user data is ", userData.result);
                 if (userData.result.length > 0) {
-                    _this.dStatus["date"] = userData.result[0].date;
-                    _this.dStatus["present"] = "YES";
-                    _this.dStatus["topic"] = userData.result[0].topic;
-                    _this.dStatus["speaker"] = userData.result[0].speaker;
-                    //if(this.devoteeData.contact){
-                    _this.dStatus["contact"] = contact;
+                    _this.dStatus['date'] = userData.result[0].date;
+                    _this.dStatus['present'] = 'YES';
+                    _this.dStatus['topic'] = userData.result[0].topic;
+                    _this.dStatus['speaker'] = userData.result[0].speaker;
+                    // if(this.devoteeData.contact){
+                    _this.dStatus['contact'] = contact;
                     _this._userService.markAttendance(_this.dStatus)
-                        .subscribe(function (userData) {
-                        if (userData["result"] === "ok") {
+                        .subscribe(function (userDataNew) {
+                        if (userDataNew['result'] === 'ok') {
                             _this.loading = false;
                             __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                 type: 'success',
                                 title: 'Attendance updated successfully',
-                                html: "Hari Bol!!",
+                                html: 'Hari Bol!!',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
-                            console.log("attendance array", _this.attendanceArray);
                             _this.attendanceArray.push({
                                 name: name,
                                 contact: contact,
@@ -1207,7 +1132,7 @@ var MainAttendanceComponent = /** @class */ (function () {
                             __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                                 type: 'warning',
                                 title: 'Attendance already updated',
-                                html: "Hari Bol!!",
+                                html: 'Hari Bol!!',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -1215,16 +1140,14 @@ var MainAttendanceComponent = /** @class */ (function () {
                             _this.loading = false;
                         }
                     });
-                    //}
+                    // }
                 }
                 else {
                     _this.loading = false;
-                    console.log("No class sdl for selected date");
-                    //swal("No class sdl for selected date", "Hari Bol..", 'error')
                     __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
                         type: 'error',
                         title: 'No class sdl for selected date',
-                        html: "Hari Bol!!",
+                        html: 'Hari Bol!!',
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -1264,32 +1187,28 @@ var EditDevoteeComponent = /** @class */ (function () {
         this.data = data;
         this.startDate = new Date(1987, 0, 1);
         this.all = true;
-        this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         this.counsellors = [
-            { value: "HG Shyam Gopal Prabhuji" },
-            { value: "HG Kalpvraksha Prabhuji" },
-            { value: "HG Vaidant Chaitnya Prabhuji" },
-            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
-            { value: "HG Jagadanand Pandit Prabhuji" },
+            { value: 'HG Shyam Gopal Prabhuji' },
+            { value: 'HG Kalpvraksha Prabhuji' },
+            { value: 'HG Vaidant Chaitnya Prabhuji' },
+            { value: 'HG Pundrik Vidhyanidhi Prabhuji' },
+            { value: 'HG Jagadanand Pandit Prabhuji' },
         ];
         this.courses = [
-            { value: "OTP" },
-            { value: "TSSV" },
-            { value: "ASHRAY1" },
-            { value: "ASHRAY2" },
-            { value: "UMANG" },
+            { value: 'OTP' },
+            { value: 'TSSV-B10' },
+            { value: 'ASHRAY' },
+            { value: 'BSS' },
+            { value: 'UMANG' },
         ];
+        this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
     }
-    EditDevoteeComponent.prototype.ngOnInit = function () {
-        console.log("in edit devotee");
-    };
     EditDevoteeComponent.prototype.getErrorMessage = function () {
         return this.email.hasError('required') ? 'You must enter a value' :
             this.email.hasError('email') ? 'Not a valid email' :
                 '';
     };
     EditDevoteeComponent.prototype.updateDevotee = function (form) {
-        console.log("update at", form.value);
         this.dialogRef.close(form.value);
     };
     EditDevoteeComponent.prototype.onNoClick = function () {
@@ -1314,7 +1233,6 @@ var EditDevoteeConfirm = /** @class */ (function () {
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
     }
     EditDevoteeConfirm.prototype.ngOnInit = function () {
-        console.log("in edit devotee");
     };
     EditDevoteeConfirm.prototype.getErrorMessage = function () {
         return this.email.hasError('required') ? 'You must enter a value' :
@@ -1347,29 +1265,26 @@ var AddDevoteeComponent = /** @class */ (function () {
         this.startDate = new Date(1987, 0, 1);
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
         this.counsellors = [
-            { value: "HG Shyam Gopal Prabhuji" },
-            { value: "HG Kalpvraksha Prabhuji" },
-            { value: "HG Vaidant Chaitnya Prabhuji" },
-            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
-            { value: "HG Jagadanand Pandit Prabhuji" },
+            { value: 'HG Shyam Gopal Prabhuji' },
+            { value: 'HG Kalpvraksha Prabhuji' },
+            { value: 'HG Vaidant Chaitnya Prabhuji' },
+            { value: 'HG Pundrik Vidhyanidhi Prabhuji' },
+            { value: 'HG Jagadanand Pandit Prabhuji' },
         ];
         this.courses = [
-            { value: "OTP" },
-            { value: "TSSV" },
-            { value: "ASHRAY1" },
-            { value: "ASHRAY2" },
-            { value: "UMANG" },
+            { value: 'OTP' },
+            { value: 'TSSV-B10' },
+            { value: 'ASHRAY' },
+            { value: 'BSS' },
+            { value: 'UMANG' },
         ];
     }
     AddDevoteeComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log("in add devotee");
         this.route.queryParams.subscribe(function (params) {
-            console.log("param is ", params['course']);
-            if (params['course'] === "5") {
+            if (params['course'] === '5') {
                 _this.all = true;
             }
-            ;
         });
     };
     AddDevoteeComponent.prototype.getErrorMessage = function () {
@@ -1378,7 +1293,6 @@ var AddDevoteeComponent = /** @class */ (function () {
                 '';
     };
     AddDevoteeComponent.prototype._addDevotee = function (form) {
-        //console.log("add devotee", form.value);
         this.dialogRef.close(form.value);
     };
     AddDevoteeComponent.prototype.onNoClick = function () {
@@ -1535,7 +1449,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { window } from 'rxjs/operator/window';
 
 
 var ClassComponent = /** @class */ (function () {
@@ -1546,28 +1459,27 @@ var ClassComponent = /** @class */ (function () {
         this.ELEMENT_DATA = [];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
         this.sdlClasses = [];
-        this.isLoggedIn = false;
         this.title = 'ISKCON YOUTH FORUM';
-        this.ifNoClassScdlText = "Schedule Class for attendance";
         this.ifClassSdl = true;
         this.showForm = true;
         this.showSdlClass = false;
         this.speakers = [
-            { value: "HG Shyam Gopal Prabhuji" },
-            { value: "HG Kalpvraksha Prabhuji" },
-            { value: "HG Vaidant Chaitnya Prabhuji" },
-            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
-            { value: "HG Jagadanand Pandit Prabhuji" },
+            { value: 'HG Shyam Gopal Prabhuji' },
+            { value: 'HG Kalpvraksha Prabhuji' },
+            { value: 'HG Vaidant Chaitnya Prabhuji' },
+            { value: 'HG Pundrik Vidhyanidhi Prabhuji' },
+            { value: 'HG Jagadanand Pandit Prabhuji' },
         ];
         this.courses = [
-            { value: "OTP" },
-            { value: "TSSV" },
-            { value: "ASHRAY1" },
-            { value: "ASHRAY2" },
-            { value: "UMANG" },
+            { value: 'OTP' },
+            { value: 'TSSV-B10' },
+            { value: 'ASHRAY' },
+            { value: 'UMANG' },
+            { value: 'BSS' },
         ];
-        this.topic = "";
-        this.date = "";
+        this.topic = '';
+        this.date = '';
+        this.isLoggedIn = false;
     }
     ClassComponent.prototype.ngAfterViewInit = function () {
         this.dataSource.paginator = this.paginator;
@@ -1579,50 +1491,36 @@ var ClassComponent = /** @class */ (function () {
     };
     ClassComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log("in init");
-        var getLoggedIn = localStorage.getItem("token");
+        var getLoggedIn = localStorage.getItem('token');
         // console.log("token is in atte init",getLoggedIn);
         if (getLoggedIn) {
             this._userService.isTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
-                console.log("token res", tokenRes);
-                if (tokenRes.result == "ok") {
+                if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
                 }
             });
             this._userService.getSdlClasses()
                 .subscribe(function (classInfo) {
                 _this.dataSource.data = classInfo.result;
-                //console.log("class data is ", this.dataSource.data);
             });
         }
         else {
             this._userService.getSdlClasses()
                 .subscribe(function (classInfo) {
                 _this.dataSource.data = classInfo.result;
-                //console.log("class data is ", this.dataSource.data);
             });
         }
     };
-    ClassComponent.prototype.classSdl = function () {
-        console.log("in click");
-        this.showForm = true;
-    };
     ClassComponent.prototype.sdlClass = function (form) {
         var _this = this;
-        //  this.showSdlClass = true;
-        // this.ifClassSdl = true;
         form.value.date = this._userService.parseDate(form.value.date);
-        console.log("form is", form.value);
         if (!form.value.date || !form.value.speaker || !form.value.course
             || !form.value.time || !form.value.topic) {
-            //this.formError = "All fields are mandatory";
-            console.log("All fields are required");
-            // swal("All fields are required to Schedule a class", "Hari Bol..", 'warning');
             __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
                 type: 'warning',
                 title: 'All fields are required to Schedule a class',
-                html: "Hari Bol!!",
+                html: 'Hari Bol!!',
                 showConfirmButton: false,
                 timer: 1500
             });
@@ -1630,14 +1528,14 @@ var ClassComponent = /** @class */ (function () {
         else {
             this._userService.checkIfClassSdlForCourse(form.value.course, form.value.date)
                 .subscribe(function (sdlresult) {
-                if (sdlresult.result.length == 0) {
+                if (sdlresult.result.length === 0) {
                     _this._userService.SdlClass(form.value);
                     form.reset();
-                    _this.router.navigate(['/downloads']).then(function () { _this.router.navigate(['/classSdl']); });
+                    // this.router.navigate(['/downloads']).then(() => { this.router.navigate(['/classSdl']); });
                     __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
                         type: 'success',
                         title: 'Class Scheduled ',
-                        html: "Hari Bol!!",
+                        html: 'Hari Bol!!',
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -1646,7 +1544,7 @@ var ClassComponent = /** @class */ (function () {
                     __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
                         type: 'success',
                         title: 'Class already scheduled for given date and course. ',
-                        html: "Hari Bol!!",
+                        html: 'Hari Bol!!',
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -1699,7 +1597,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(_http) {
         this._http = _http;
-        //private _url : string = "http://localhost:3000/";
+        // private _url : string = "http://localhost:3000/";
         this._url = "/";
     }
     UserService.prototype.adminLogin = function (form) {
@@ -1719,7 +1617,7 @@ var UserService = /** @class */ (function () {
             return response.json();
         });
     };
-    UserService.prototype.getSearchedDevotee = function (contact) {
+    UserService.prototype.getSearchedDevotee = function (contact, course) {
         console.log("in searched", contact);
         var isContact = false;
         if (!isNaN(parseInt(contact))) {
@@ -1734,7 +1632,7 @@ var UserService = /** @class */ (function () {
         else {
             searchParams.append('email', contact);
         }
-        searchParams.append('course', "OTP");
+        searchParams.append('course', course);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + "getSearchedDevotee", options)
             .map(function (response) {
@@ -1924,6 +1822,18 @@ var UserService = /** @class */ (function () {
             return response.json();
         });
     };
+    UserService.prototype.downloadCourseExcel = function (dTe) {
+        // console.log("atten is ", dTe);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        searchParams.append('course', dTe.course);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'downloadCourseExcel', options)
+            .map(function (response) {
+            return response.json();
+        });
+    };
     UserService.prototype.downloadToExCounsellor = function (dTe) {
         //console.log("atten is ", dTe);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -1984,7 +1894,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/downloads/downloads.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-fluid\" style=\"margin-top:70px;\">  \n            <!-- Breadcrumbs-->\n            <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">DOWNLOADS</a>\n                </li>\n              </ol>  \n    <div class=\"card mb-3\">\n     <div class=\"card-header\" style=\"background-color:yellow;\">\n        <i class=\"fa fa-table\" ></i> Download Attendance</div>\n      <div class=\"card-body\">\n        <h6>Download Attendance for Specfic Date and Course</h6>\n        <form #download1=\"ngForm\" (ngSubmit)=\"downloadToExcel(download1)\" \n            class=\"classSc\" style=\"margin:10px;\">\n            <mat-form-field >                                                              \n              <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n              <mat-datepicker #picker></mat-datepicker>                                   \n            </mat-form-field>                                                             \n                                                                                       \n             <mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                 <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                   {{co.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field>                                                            \n                                                                                       \n             <!--mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"counsellor\" name=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                  \n                 <mat-option *ngFor=\"let c of counsellors\" [value]=\"c.value\">\n                     {{c.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field-->                                                             \n                                                                       \n            <button mat-raised-button type=\"submit\" class=\"btn btn-primary\">\n              <i class=\"fa fa-fw fa-download\"></i>Download</button>\n          </form>\n        <div *ngIf=\"isLoggedIn\">\n          \n          <h6>Download Attendance for Counsellor and Course</h6>\n          \n          <form #download2=\"ngForm\" (ngSubmit)=\"downloadExCounsellor(download2)\"\n               class=\"classSc\" style=\"margin:10px;\">\n            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>                              \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                    <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                    <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                    <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                    <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                    <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                 </mat-select>                                                              \n               </mat-form-field>                                                             \n                                                                         \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n      </div>                                      \n    </div>\n</div>"
+module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-fluid\" style=\"margin-top:70px;\">  \n            <!-- Breadcrumbs-->\n            <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">DOWNLOADS</a>\n                </li>\n              </ol>  \n    <div class=\"card mb-3\">\n     <div class=\"card-header\" style=\"background-color:yellow;\">\n        <i class=\"fa fa-table\" ></i> Download Attendance</div>\n      <div class=\"card-body\">\n        <h6>Download Attendance for Specfic Date and Course</h6>\n        <form #download1=\"ngForm\" (ngSubmit)=\"downloadToExcel(download1)\" \n            class=\"classSc\" style=\"margin:10px;\">\n            <mat-form-field >                                                              \n              <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n              <mat-datepicker #picker></mat-datepicker>                                   \n            </mat-form-field>                                                             \n                                                                                       \n             <mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                 <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                   {{co.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field>                                                            \n                                                                                       \n             <!--mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"counsellor\" name=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                  \n                 <mat-option *ngFor=\"let c of counsellors\" [value]=\"c.value\">\n                     {{c.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field-->                                                             \n                                                                       \n            <button mat-raised-button type=\"submit\" class=\"btn btn-primary\">\n              <i class=\"fa fa-fw fa-download\"></i>Download</button>\n          </form>\n        <div *ngIf=\"isLoggedIn\">\n          \n          <h6>Download Attendance for Counsellor and Course</h6>\n          \n          <form #download2=\"ngForm\" (ngSubmit)=\"downloadExCounsellor(download2)\"\n               class=\"classSc\" style=\"margin:10px;\">\n            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>                              \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                    <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                    <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                    <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                    <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                    <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                 </mat-select>                                                              \n               </mat-form-field>                                                             \n                                                                         \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n        <div>\n          \n          <h6>Download Devotees of particular course</h6>\n          \n          <form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"\n               class=\"classSc\" style=\"margin:10px;\">\n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>                              \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n      </div>                                      \n    </div>\n</div>"
 
 /***/ }),
 
@@ -2019,33 +1929,30 @@ var DownloadsComponent = /** @class */ (function () {
         this.course = '';
         this.counsellor = '';
         this.courses = [
-            { value: "OTP" },
-            { value: "TSSV" },
-            { value: "ASHRAY1" },
-            { value: "ASHRAY2" },
-            { value: "UMANG" },
+            { value: 'OTP' },
+            { value: 'TSSV-B10' },
+            { value: 'ASHRAY' },
+            { value: 'BSS' },
+            { value: 'UMANG' },
         ];
         this.counsellors = [
-            { value: "HG Shyam Gopal Prabhuji" },
-            { value: "HG Kalpvraksha Prabhuji" },
-            { value: "HG Vaidant Chaitnya Prabhuji" },
-            { value: "HG Pundrik Vidhyanidhi Prabhuji" },
-            { value: "HG Jagadanand Pandit Prabhuji" },
+            { value: 'HG Shyam Gopal Prabhuji' },
+            { value: 'HG Kalpvraksha Prabhuji' },
+            { value: 'HG Vaidant Chaitnya Prabhuji' },
+            { value: 'HG Pundrik Vidhyanidhi Prabhuji' },
+            { value: 'HG Jagadanand Pandit Prabhuji' },
         ];
     }
     DownloadsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var getLoggedIn = localStorage.getItem("token");
-        //console.log("token is in atte init",getLoggedIn);
+        var getLoggedIn = localStorage.getItem('token');
         if (getLoggedIn) {
             this._userService.isTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
-                console.log("token res", tokenRes);
-                if (tokenRes.result == "ok") {
+                if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
                 }
                 else {
-                    console.log("token res in else", tokenRes);
                     localStorage.clear();
                 }
             });
@@ -2054,20 +1961,17 @@ var DownloadsComponent = /** @class */ (function () {
     DownloadsComponent.prototype.checkIfDevoteePresntForGivenDate = function (date, myArray) {
         for (var i = 0; i < myArray.length; i++) {
             if (myArray[i].date === date) {
-                console.log("returning", myArray[i]);
                 return myArray[i];
             }
         }
     };
     DownloadsComponent.prototype.downloadExCounsellor = function (form) {
         var _this = this;
-        console.log("in counsellor", form.value, this.counsellor, this.course);
+        console.log('in counsellor', form.value, this.counsellor, this.course);
         var classList = [];
         this._userService.getSdlClasses()
             .subscribe(function (sdlClass) {
-            //console.log("sdl class", sdlClass.result);
             for (var j = 0; j < 8; j++) {
-                // console.log("sdl class", sdlClass.result[j]);
                 if (!sdlClass.result[j]) {
                     break;
                 }
@@ -2075,31 +1979,28 @@ var DownloadsComponent = /** @class */ (function () {
                     classList.push(sdlClass.result[j].date);
                 }
             }
-            //console.log("class list", classList);
         });
         this._userService.downloadToExCounsellor(form.value)
             .subscribe(function (userData) {
-            //console.log("user data is ", userData.result);
             var result_json = [];
             for (var i = 0; i < userData.result.length; i++) {
                 var objectToInsert = {};
-                objectToInsert["name"] = userData.result[i].name;
-                objectToInsert["contact"] = userData.result[i].contact;
-                objectToInsert["course"] = userData.result[i].course;
-                objectToInsert["counsellor"] = userData.result[i].counsellor;
+                objectToInsert['name'] = userData.result[i].name;
+                objectToInsert['contact'] = userData.result[i].contact;
+                objectToInsert['course'] = userData.result[i].course;
+                objectToInsert['counsellor'] = userData.result[i].counsellor;
                 var iterLen = 0;
-                //get list of last 8 eight classes
-                //check if devotee present for that day 
-                //search for date in attendance array for given counsellor/course
-                // if yes add present else absent 
+                // get list of last 8 eight classes
+                // check if devotee present for that day
+                // search for date in attendance array for given counsellor/course
+                // if yes add present else absent
                 for (var j = 0; j < 8; j++) {
                     if (classList[j] && userData.result[i].attendance !== undefined) {
-                        //console.log("in magic box", classList[j]);
                         var status_1 = {};
                         status_1 = _this.checkIfDevoteePresntForGivenDate(classList[j], userData.result[i].attendance);
                         if (status_1 !== undefined) {
-                            //console.log("status", status);
-                            objectToInsert[classList[j]] = status_1["present"];
+                            // console.log("status", status);
+                            objectToInsert[classList[j]] = status_1['present'];
                         }
                     }
                 }
@@ -2115,10 +2016,9 @@ var DownloadsComponent = /** @class */ (function () {
             function s2ab(s) {
                 var buf = new ArrayBuffer(s.length);
                 var view = new Uint8Array(buf);
-                for (var i_1 = 0; i_1 !== s.length; ++i_1) {
-                    view[i_1] = s.charCodeAt(i_1) & 0xFF;
+                for (var i = 0; i !== s.length; ++i) {
+                    view[i] = s.charCodeAt(i) & 0xFF;
                 }
-                ;
                 return buf;
             }
             Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.course + '_' + form.value.counsellor + '.xlsx');
@@ -2128,21 +2028,20 @@ var DownloadsComponent = /** @class */ (function () {
         form.value.date = this._userService.parseDate(form.value.date);
         this._userService.downloadToExcel(form.value)
             .subscribe(function (userData) {
-            //console.log("user data is ", userData.result);
             var result_json = [];
             for (var i = 0; i < userData.result.length; i++) {
                 var objectToInsert = {};
-                objectToInsert["name"] = userData.result[i].name;
-                objectToInsert["contact"] = userData.result[i].contact;
-                objectToInsert["course"] = userData.result[i].course;
-                objectToInsert["counsellor"] = userData.result[i].counsellor;
+                objectToInsert['name'] = userData.result[i].name;
+                objectToInsert['contact'] = userData.result[i].contact;
+                objectToInsert['course'] = userData.result[i].course;
+                objectToInsert['counsellor'] = userData.result[i].counsellor;
                 if (userData.result[i].attendance !== undefined) {
                     for (var j = 0; j < userData.result[i].attendance.length; j++) {
-                        if (userData.result[i].attendance[j].date.localeCompare(form.value.date) == 0) {
-                            objectToInsert["date"] = userData.result[i].attendance[j].date;
-                            objectToInsert["present"] = userData.result[i].attendance[j].present;
-                            objectToInsert["topic"] = userData.result[i].attendance[j].topic;
-                            objectToInsert["speaker"] = userData.result[i].attendance[j].speaker;
+                        if (userData.result[i].attendance[j].date.localeCompare(form.value.date) === 0) {
+                            objectToInsert['date'] = userData.result[i].attendance[j].date;
+                            objectToInsert['present'] = userData.result[i].attendance[j].present;
+                            objectToInsert['topic'] = userData.result[i].attendance[j].topic;
+                            objectToInsert['speaker'] = userData.result[i].attendance[j].speaker;
                             break;
                         }
                     }
@@ -2153,19 +2052,47 @@ var DownloadsComponent = /** @class */ (function () {
             var wb = { SheetNames: [], Sheets: {} };
             var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
             wb.SheetNames.push(ws_name);
-            wb['!autofilter'] = { ref: "C4" };
+            wb['!autofilter'] = { ref: 'C4' };
             wb.Sheets[ws_name] = ws;
             var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
             function s2ab(s) {
                 var buf = new ArrayBuffer(s.length);
                 var view = new Uint8Array(buf);
-                for (var i_2 = 0; i_2 !== s.length; ++i_2) {
-                    view[i_2] = s.charCodeAt(i_2) & 0xFF;
+                for (var i = 0; i !== s.length; ++i) {
+                    view[i] = s.charCodeAt(i) & 0xFF;
                 }
-                ;
                 return buf;
             }
             Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.date + '_' + form.value.course + '.xlsx');
+        });
+    };
+    DownloadsComponent.prototype.downloadCourseExcel = function (form) {
+        this._userService.downloadCourseExcel(form.value)
+            .subscribe(function (userData) {
+            var result_json = [];
+            for (var i = 0; i < userData.result.length; i++) {
+                var objectToInsert = {};
+                objectToInsert['name'] = userData.result[i].name;
+                objectToInsert['contact'] = userData.result[i].contact;
+                objectToInsert['course'] = userData.result[i].course;
+                objectToInsert['counsellor'] = userData.result[i].counsellor;
+                result_json.push(objectToInsert);
+            }
+            var ws_name = 'Attendance';
+            var wb = { SheetNames: [], Sheets: {} };
+            var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
+            wb.SheetNames.push(ws_name);
+            wb.Sheets[ws_name] = ws;
+            var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
+            function s2ab(s) {
+                var buf = new ArrayBuffer(s.length);
+                var view = new Uint8Array(buf);
+                for (var i = 0; i !== s.length; ++i) {
+                    view[i] = s.charCodeAt(i) & 0xFF;
+                }
+                return buf;
+            }
+            Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.course + '.xlsx');
         });
     };
     DownloadsComponent = __decorate([
@@ -2206,7 +2133,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/showdetails/showdetails.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\">\n    <div class=\"container-fluid\" style=\"margin-top:70px;\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n\n              <div class=\"card mb-3 col-md-offset-2\" style=\"margin-top:15px;\">\n                  <div class=\"card-header\" style=\"background-color:yellow;\">\n                    <i class=\"fa fa-table\"></i> Devotee Details\n                  </div>\n                  <div class=\"card-body formClass mat-elevation-z12\">\n                      <form #devoteeForm=\"ngForm\">\n                          \n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> <input matInput\n                                 name=\"contact\" [(ngModel)]=\"devoteeData.contact\"\n                                placeholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n                            <mat-form-field> <input matInput required\n                                 name=\"name\" [(ngModel)]=\"devoteeData.name\"\n                                placeholder=\"Name\" > </mat-form-field>\t\n                            \n                                \n                            <mat-form-field> <input type=\"email\" matInput\n                              required\n                                 name=\"email\" [(ngModel)]=\"devoteeData.email\"\n                                placeholder=\"Email\" > </mat-form-field>\n\n                                <mat-form-field> <input type=\"text\" matInput\n                                  required\n                                     name=\"area\" [(ngModel)]=\"devoteeData.area\"\n                                    placeholder=\"Location\" > </mat-form-field>\n\n                            \n                        <mat-form-field>                                                              \n                        <input matInput name=\"dob\" [(ngModel)]=\"devoteeData.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>                                   \n                      </mat-form-field>   \n\n                      <mat-form-field>\n                      <mat-select name=\"course\" placeholder=\"Course\" required\n                        [(ngModel)]=\"devoteeData.course\"> <mat-option\n                        value=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV\">\n                      TSSV </mat-option> <mat-option value=\"ASHRAY1\"> ASHRAY1 </mat-option> <mat-option\n                        value=\"ASHRAY2\"> ASHRAY2 </mat-option> <mat-option value=\"UMANG\">\n                          UMANG </mat-option></mat-select> </mat-form-field>\n\n                      <mat-form-field>\n                      <mat-select name=\"counsellor\" placeholder=\"Counsellor\" required\n                        [(ngModel)]=\"devoteeData.counsellor\"> <mat-option\n                        value=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\">\n                      HG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n                        value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                        <mat-option\n                        value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>\n                        </mat-select> </mat-form-field>\n\n                        <!--mat-form-field>                                                              \n                            <input matInput name=\"fp\" [(ngModel)]=\"devoteeData.fp\" \n                             [matDatepicker]=\"picker\" placeholder=\"First Program\" required>       \n                            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                            <mat-datepicker #picker></mat-datepicker>                                   \n                        </mat-form-field-->  \n                        \n                      <mat-form-field>\n                        <mat-select name=\"bace\" placeholder=\"Is BACE Devotee?\" required\n                          [(ngModel)]=\"devoteeData.bace\"> \n                          <mat-option value=\"YES\"> YES </mat-option> \n                          <mat-option value=\"NO\"> NO </mat-option> \n                        </mat-select>\n                       </mat-form-field>\n                      <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n                      (click)=\"updateDevotee(devoteeForm)\">Update Devotee</button>\n                </form>\n          \n\n          <div class=\"card mb-3 col-md-offset-2\" style=\"margin-top:25px;\">\n              <div class=\"card-header\" style=\"background-color:yellow;\">\n                  <i class=\"fa fa-table\"></i> Programs attended till date\n                </div>\n\n                        <mat-table #table [dataSource]=\"dataSource\">\n\n                            <!-- Position Column -->\n                            <ng-container matColumnDef=\"Date\">\n                              <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.date}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Name Column -->\n                            <ng-container matColumnDef=\"Speaker\">\n                              <mat-header-cell *matHeaderCellDef> Speaker </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.speaker}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Weight Column -->\n                            <ng-container matColumnDef=\"Topic\">\n                              <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.topic}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Symbol Column -->\n                            <ng-container matColumnDef=\"Attendance\">\n                              <mat-header-cell *matHeaderCellDef> Attendance </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.present}} </mat-cell>\n                            </ng-container>\n                        \n                            <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                            <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n                        \n                          </mat-table>\n                          <mat-paginator #paginator\n                           [pageSize]=\"10\"\n                           [pageSizeOptions]=\"[5, 10, 20]\"\n                           >\n                       </mat-paginator>\n                    </div>\n                  </div>\n                  <div class=\"card-footer small text-muted\">\n                  </div>\n    </div>\n</div>"
+module.exports = "<div class=\"content-wrapper\">\n    <div class=\"container-fluid\" style=\"margin-top:70px;\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" style=\"margin-top:30px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n\n              <div class=\"card mb-3 col-md-offset-2\" style=\"margin-top:15px;\">\n                  <div class=\"card-header\" style=\"background-color:yellow;\">\n                    <i class=\"fa fa-table\"></i> Devotee Details\n                  </div>\n                  <div class=\"card-body formClass mat-elevation-z12\">\n                      <form #devoteeForm=\"ngForm\">\n                          \n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> <input matInput\n                                 name=\"contact\" [(ngModel)]=\"devoteeData.contact\"\n                                placeholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n                            <mat-form-field> <input matInput required\n                                 name=\"name\" [(ngModel)]=\"devoteeData.name\"\n                                placeholder=\"Name\" > </mat-form-field>\t\n                            \n                                \n                            <mat-form-field> <input type=\"email\" matInput\n                              required\n                                 name=\"email\" [(ngModel)]=\"devoteeData.email\"\n                                placeholder=\"Email\" > </mat-form-field>\n\n                                <mat-form-field> <input type=\"text\" matInput\n                                  required\n                                     name=\"area\" [(ngModel)]=\"devoteeData.area\"\n                                    placeholder=\"Location\" > </mat-form-field>\n\n                            \n                        <mat-form-field>                                                              \n                        <input matInput name=\"dob\" [(ngModel)]=\"devoteeData.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>                                   \n                      </mat-form-field>   \n\n                      <mat-form-field>\n                      <mat-select name=\"course\" placeholder=\"Course\" required\n                        [(ngModel)]=\"devoteeData.course\"> <mat-option\n                        value=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV-B10\">\n                      TSSV-B10 </mat-option> <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> <mat-option\n                        value=\"BSS\"> BSS </mat-option> <mat-option value=\"UMANG\">\n                          UMANG </mat-option></mat-select> </mat-form-field>\n\n                      <mat-form-field>\n                      <mat-select name=\"counsellor\" placeholder=\"Counsellor\" required\n                        [(ngModel)]=\"devoteeData.counsellor\"> <mat-option\n                        value=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\">\n                      HG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n                        value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                        <mat-option\n                        value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>\n                        </mat-select> </mat-form-field>\n\n                        <!--mat-form-field>                                                              \n                            <input matInput name=\"fp\" [(ngModel)]=\"devoteeData.fp\" \n                             [matDatepicker]=\"picker\" placeholder=\"First Program\" required>       \n                            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                            <mat-datepicker #picker></mat-datepicker>                                   \n                        </mat-form-field-->  \n                        \n                      <mat-form-field>\n                        <mat-select name=\"bace\" placeholder=\"Is BACE Devotee?\" required\n                          [(ngModel)]=\"devoteeData.bace\"> \n                          <mat-option value=\"YES\"> YES </mat-option> \n                          <mat-option value=\"NO\"> NO </mat-option> \n                        </mat-select>\n                       </mat-form-field>\n                      <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n                      (click)=\"updateDevotee(devoteeForm)\">Update Devotee</button>\n                </form>\n          \n\n          <div class=\"card mb-3 col-md-offset-2\" style=\"margin-top:25px;\">\n              <div class=\"card-header\" style=\"background-color:yellow;\">\n                  <i class=\"fa fa-table\"></i> Programs attended till date\n                </div>\n\n                        <mat-table #table [dataSource]=\"dataSource\">\n\n                            <!-- Position Column -->\n                            <ng-container matColumnDef=\"Date\">\n                              <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.date}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Name Column -->\n                            <ng-container matColumnDef=\"Speaker\">\n                              <mat-header-cell *matHeaderCellDef> Speaker </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.speaker}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Weight Column -->\n                            <ng-container matColumnDef=\"Topic\">\n                              <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.topic}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Symbol Column -->\n                            <ng-container matColumnDef=\"Attendance\">\n                              <mat-header-cell *matHeaderCellDef> Attendance </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.present}} </mat-cell>\n                            </ng-container>\n                        \n                            <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                            <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n                        \n                          </mat-table>\n                          <mat-paginator #paginator\n                           [pageSize]=\"10\"\n                           [pageSizeOptions]=\"[5, 10, 20]\"\n                           >\n                       </mat-paginator>\n                    </div>\n                  </div>\n                  <div class=\"card-footer small text-muted\">\n                  </div>\n    </div>\n</div>"
 
 /***/ }),
 
