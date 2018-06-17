@@ -150,7 +150,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation-->\n<nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\"\n       id=\"mainNav\" style=\"background-color:#343a40;\" >\n        <!--a class=\"navbar-brand\" href=\"#\">ISKCON YOUTH FORUM</a-->\n        \n        \n        <a href=\"#\" class=\"navbar-brand pull-left\">\n          <img src=\"./assets/img/logo.jpeg\" style=\"\">\n        </a> \n       \n        <a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n            routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n\n            <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:blue;\" class=\"pull-right\"\n            (click)=\"adminLogout();\" >\n                <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>\n  \n            <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:blue;\" class=\"pull-right\">\n            <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Hare Krishna, Admin</a>\n\n            \n\n        <a href=\"#\" class=\"pull-right\">\n            <img src=\"./assets/img/lokanathswami.jpg\" style=\"margin:15px;border-radius:50%;\"\n             width=\"44\" height=\"46\">\n          </a> \n          <a href=\"#\" class=\"pull-right\">\n              <img src=\"./assets/img/spp.jpg\" style=\"margin:15px;border-radius:50%;\" \n              width=\"44\" height=\"46\" >\n            </a> \n\n         <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\"  >\n          <ul class=\"navbar-nav navbar-sidenav \" id=\"sidebar\" style=\"background-color:#343a40\" >\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a style=\"color:#FFF;\" class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:#000;\" routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                      routerActive=\"/otpattendance\">OTP</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/tssvattendance\">TSSV-B10</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/ashrayattendance\">ASHRAY</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/umangattendance\">UMANG</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n                  routerActive=\"/bssattendance\">BSS</a>\n                </li>\n                <li >\n                    <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\" id=\"sidebar\">\n              <li class=\"nav-item\">\n                <a (click)=\"toggleClicked();\" class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\"id=\"homefooter\" >\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <!-- Scroll to Top Button-->\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a>\n    \n     \n    \n<router-outlet></router-outlet>"
+module.exports = "<!-- Navigation-->\n<nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\"\n       id=\"mainNav\" style=\"background-color:#343a40;\" >\n        <!--a class=\"navbar-brand\" href=\"#\">ISKCON YOUTH FORUM</a-->\n        \n        \n        <a href=\"#\" class=\"navbar-brand pull-left\">\n          <img src=\"./assets/img/logo.jpeg\" style=\"\">\n        </a> \n       \n        <a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n            routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n\n            <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:blue;\" class=\"pull-right\"\n            (click)=\"adminLogout();\" >\n                <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>\n  \n            <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:blue;\" class=\"pull-right\">\n            <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Hare Krishna, Admin</a>\n\n            \n\n        <a href=\"#\" class=\"pull-right\">\n            <img src=\"./assets/img/lokanathswami.jpg\" style=\"margin:15px;border-radius:50%;\"\n             width=\"44\" height=\"46\">\n          </a> \n          <a href=\"#\" class=\"pull-right\">\n              <img src=\"./assets/img/spp.jpg\" style=\"margin:15px;border-radius:50%;\" \n              width=\"44\" height=\"46\" >\n            </a> \n\n         <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\"  >\n          <ul class=\"navbar-nav navbar-sidenav \" id=\"sidebar\" style=\"background-color:#343a40\" >\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a style=\"color:#FFF;\" class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:#000;\" routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                      routerActive=\"/otpattendance\">OTP</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/tssvattendance\">TSSV-B10</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/ashrayattendance\">ASHRAY</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/umangattendance\">UMANG</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n                  routerActive=\"/bssattendance\">BSS</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"dysattendance\" [queryParams]=\"{ course: 7 }\" \n                  routerActive=\"/dysattendance\">DYS</a>\n                </li>\n                <li >\n                    <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\" id=\"sidebar\">\n              <li class=\"nav-item\">\n                <a (click)=\"toggleClicked();\" class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\"id=\"homefooter\" >\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <!-- Scroll to Top Button-->\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a>\n    \n     \n    \n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -299,6 +299,7 @@ var appRoutes = [
     { path: 'tssvattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
     { path: 'bssattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
     { path: 'umangattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'dysattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
     { path: 'ashrayattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
     { path: 'downloads', component: __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__["a" /* DownloadsComponent */] },
     { path: 'adminLogin', component: __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */] },
@@ -550,6 +551,7 @@ var AttendanceComponent = /** @class */ (function () {
             { value: 'ASHRAY' },
             { value: 'BSS' },
             { value: 'UMANG' },
+            { value: 'DYS' },
         ];
     }
     /* getPageDetails(e) {
@@ -613,71 +615,6 @@ var AttendanceComponent = /** @class */ (function () {
     AttendanceComponent.prototype.showDetails = function (dv) {
         this.router.navigate(['/showDetails', dv['_id']]);
     };
-    /* markPresent(dv){
-      //console.log("in  update", dv);
-      this.contact = dv.contact;
-      let dialogRef : any;
-      dialogRef = this.dialog.open(MarkpresentComponent, {
-          width: '300px',
-          hasBackdrop: false,
-          //data: {all:true}
-       });
-  
-       dialogRef.afterClosed().subscribe(result => {
-           // console.log('The dialog was closed', result.date);
-            result.date = this._userService.parseDate(result.date);
-            this._userService.checkIfClassSdlForCourse(dv.course, result.date)
-            .subscribe(userData => {
-              console.log("user data is ", userData.result);
-              if (userData.result.length > 0){
-  
-                  this.dStatus["date"] = userData.result[0].date;
-                  this.dStatus["present"] = "YES";
-                  this.dStatus["topic"] = userData.result[0].topic;
-                  this.dStatus["speaker"] = userData.result[0].speaker;
-                  if(dv.contact){
-                    this.dStatus["contact"] =  dv.contact
-                    this._userService.markAttendance(this.dStatus)
-                      .subscribe(userData => {
-                        if(userData["result"] === "ok"){
-                            swal({
-  
-                                type: 'success',
-                                title: 'Attendance updated successfully',
-                                html: "Hari Bol!!",
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                          //swal("" , "Hari Bol!!", 'success');
-                        }else{
-                            swal({
-  
-                                type: 'warning',
-                                title: 'Attendance already updated',
-                                html: "Hari Bol!!",
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                          //swal("", "Hari Bol :)", 'warning');
-                        }
-                      });
-                  }
-              }else{
-                console.log("No class sdl for selected date");
-               // swal("", "Hari Bol..", 'error')
-                swal({
-  
-                    type: 'error',
-                    title: 'No class sdl for selected date',
-                    html: "Hari Bol!!",
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-              }
-            });
-  
-      });
-    }*/
     AttendanceComponent.prototype.handleDevoteeDialog = function () {
         var _this = this;
         var dialogRef = this.dialog.open(AddDevoteeComponent, {
@@ -831,7 +768,7 @@ var MainAttendanceComponent = /** @class */ (function () {
                 course = 'OTP';
             }
             else if (params['course'] === '2') {
-                course = 'TSSV';
+                course = 'TSSV-B10';
             }
             else if (params['course'] === '3') {
                 course = 'ASHRAY';
@@ -841,6 +778,9 @@ var MainAttendanceComponent = /** @class */ (function () {
             }
             else if (params['course'] === '6') {
                 course = 'BSS';
+            }
+            else if (params['course'] === '7') {
+                course = 'DYS';
             }
         });
         if (getLoggedIn) {
@@ -1209,6 +1149,7 @@ var EditDevoteeComponent = /** @class */ (function () {
             { value: 'ASHRAY' },
             { value: 'BSS' },
             { value: 'UMANG' },
+            { value: 'DYS' },
         ];
         this.email = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].email]);
     }
@@ -1287,6 +1228,7 @@ var AddDevoteeComponent = /** @class */ (function () {
             { value: 'ASHRAY' },
             { value: 'BSS' },
             { value: 'UMANG' },
+            { value: 'DYS' },
         ];
     }
     AddDevoteeComponent.prototype.ngOnInit = function () {
@@ -1487,6 +1429,7 @@ var ClassComponent = /** @class */ (function () {
             { value: 'ASHRAY' },
             { value: 'UMANG' },
             { value: 'BSS' },
+            { value: 'DYS' },
         ];
         this.topic = '';
         this.date = '';
@@ -1606,25 +1549,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = /** @class */ (function () {
+    // _url : string = "/";
     function UserService(_http) {
         this._http = _http;
-        // private _url : string = "http://localhost:3000/";
-        this._url = "/";
+        this._url = 'http://localhost:3000/';
     }
     UserService.prototype.adminLogin = function (form) {
-        return this._http.post(this._url + "adminLogin", {
+        return this._http.post(this._url + 'adminLogin', {
             body: form
-        })
-            .map(function (res) {
+        }).map(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
         });
     };
     UserService.prototype.getOTPDevotees = function () {
-        return this._http.get(this._url + "getOTPDevotees") //, options)
-            .map(function (response) {
-            //console.log("mock data 1 " , response.json());
+        return this._http.get(this._url + 'getOTPDevotees').map(function (response) {
             return response.json();
         });
     };
@@ -1650,18 +1590,29 @@ var UserService = /** @class */ (function () {
         });
     };
     UserService.prototype.getDevotees = function (course, token) {
-        var courseName = "";
-        if (course == "1") {
-            courseName = "OTP";
-        }
-        else if (course == "2") {
-            courseName = "TSSV";
-        }
-        else if (course == "3") {
-            courseName = "ASHRAY1";
-        }
-        else if (course == "4") {
-            courseName = "ASHRAY2";
+        var courseName = '';
+        switch (course) {
+            case '1':
+                courseName = 'OTP';
+                break;
+            case '2':
+                courseName = 'TSSV';
+                break;
+            case '3':
+                courseName = 'ASHRAY';
+                break;
+            case '4':
+                courseName = 'UMANG';
+                break;
+            case '5':
+                courseName = '';
+                break;
+            case '6':
+                courseName = 'BSS';
+                break;
+            case '7':
+                courseName = 'DYS';
+                break;
         }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
@@ -1669,14 +1620,12 @@ var UserService = /** @class */ (function () {
         searchParams.append('course', courseName);
         searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + "getDevotees", options)
+        return this._http.get(this._url + 'getDevotees', options)
             .map(function (response) {
-            //console.log("mock data 1 " , response.json());
             return response.json();
         });
     };
     UserService.prototype.getDetails = function (id) {
-        //  console.log("options", id);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
@@ -1684,15 +1633,14 @@ var UserService = /** @class */ (function () {
         searchParams.append('id', id);
         searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + "getDetails", options)
+        return this._http.get(this._url + 'getDetails', options)
             .map(function (response) {
             return response.json();
         });
     };
     UserService.prototype.getSdlClasses = function () {
-        return this._http.get(this._url + "getSdlClasses")
+        return this._http.get(this._url + 'getSdlClasses')
             .map(function (response) {
-            //  console.log("mock data 1 " , response.json());
             return response.json();
         });
     };
@@ -1704,13 +1652,13 @@ var UserService = /** @class */ (function () {
         searchParams.append('date', date);
         searchParams.append('counsellor', counsellor);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + "checkDevoteeStatusForGivenDate")
+        return this._http.get(this._url + 'checkDevoteeStatusForGivenDate')
             .map(function (response) {
             return response.json();
         });
     };
     UserService.prototype.checkIfClassSdlForCourse = function (course, date) {
-        console.log('check sdl class', course, date);
+        // console.log('check sdl class', course, date);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
@@ -1723,13 +1671,13 @@ var UserService = /** @class */ (function () {
         });
     };
     UserService.prototype.isTokenVerified = function (token) {
-        console.log("token in devotee", token);
+        // console.log("token in devotee", token);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + "isTokenVerified", options)
+        return this._http.get(this._url + 'isTokenVerified', options)
             .map(function (response) {
             return response.json();
         });
@@ -1740,39 +1688,32 @@ var UserService = /** @class */ (function () {
         var delParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         delParams.append('contact', contact);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: delParams });
-        return this._http.delete(this._url + "delRecord", options)
+        return this._http.delete(this._url + 'delRecord', options)
             .map(function (res) {
-            console.log("res is", res);
             return res.json();
         }, function (err) {
-            console.log("Error occured", err);
             return err.json();
         });
     };
     UserService.prototype.addDevotee = function (body) {
-        return this._http.post(this._url + "addDevotee", {
+        return this._http.post(this._url + 'addDevotee', {
             body: body
-        })
-            .map(function (res) {
+        }).map(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
         });
     };
     UserService.prototype.addDevoteeGeneric = function (body) {
-        return this._http.post(this._url + "addDevoteeGeneric", {
+        return this._http.post(this._url + 'addDevoteeGeneric', {
             body: body
-        })
-            .map(function (res) {
-            console.log("res is", res);
+        }).map(function (res) {
             return res.json();
         }, function (err) {
-            console.log("Error occured");
             return err.json();
         });
     };
     UserService.prototype.editDevotee = function (body) {
-        console.log('edit devotee', body);
         return this._http.put(this._url + 'updateDevotee', {
             body: body
         })
@@ -1786,18 +1727,15 @@ var UserService = /** @class */ (function () {
         var temp_datetime_obj = new Date(date);
         var month = temp_datetime_obj.getMonth() + 1;
         date = temp_datetime_obj.getDate() + '-' + month + '-' + temp_datetime_obj.getFullYear();
-        //console.log("final date ", date); 
         return date;
     };
     UserService.prototype.SdlClass = function (body) {
-        console.log("body is", body);
-        this._http.post(this._url + "sdlClass", {
+        this._http.post(this._url + 'sdlClass', {
             body: body
-        })
-            .subscribe(function (res) {
-            console.log("res is", res);
+        }).subscribe(function (res) {
+            // console.log('res is', res);
         }, function (err) {
-            console.log("Error occured");
+            // console.log('err is', err);
         });
     };
     UserService.prototype.markAttendance = function (attendance) {
@@ -1839,7 +1777,6 @@ var UserService = /** @class */ (function () {
         });
     };
     UserService.prototype.downloadToExCounsellor = function (dTe) {
-        //console.log("atten is ", dTe);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
@@ -1847,20 +1784,18 @@ var UserService = /** @class */ (function () {
         searchParams.append('course', dTe.course);
         searchParams.append('counsellor', dTe.counsellor);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + "downloadToExCounsellor", options)
+        return this._http.get(this._url + 'downloadToExCounsellor', options)
             .map(function (response) {
-            //console.log("mock data 1 " , response.json());
             return response.json();
         });
     };
     UserService.prototype.getTodayAttendance = function (course) {
-        //console.log("atten is ", dTe);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', course);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + "getTodayAttendance", options)
+        return this._http.get(this._url + 'getTodayAttendance', options)
             .map(function (response) {
             return response.json();
         });
