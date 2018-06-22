@@ -1549,10 +1549,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = /** @class */ (function () {
-    // _url : string = "/";
     function UserService(_http) {
         this._http = _http;
-        this._url = 'http://localhost:3000/';
+        // private _url: string = 'http://localhost:3000/;
+        this._url = '/';
     }
     UserService.prototype.adminLogin = function (form) {
         return this._http.post(this._url + 'adminLogin', {
@@ -1596,7 +1596,7 @@ var UserService = /** @class */ (function () {
                 courseName = 'OTP';
                 break;
             case '2':
-                courseName = 'TSSV';
+                courseName = 'TSSV-B10';
                 break;
             case '3':
                 courseName = 'ASHRAY';
