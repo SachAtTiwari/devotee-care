@@ -20,13 +20,12 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /***/ "../../../../../src/app/admin-login/admin-login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".adminForm{\n    position: relative;\n    top:100px;\n    border: 2px solid brown;\n    padding: 35px;\n    border-radius: 20px;\n    height: auto;\n    z-index: 1;\n    background-color: azure;\n    overflow: hidden;\n}\n\n\n\nmat-form-field {\n\tmargin: 15px;\n\twidth: 198px;\n}\n\n.content-wrapper{\n\tbackground:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n    background-size: cover;\n    height: 100vh;\n}\n\n.container-fluid{\n    padding-left: 255px;\n    padding-right: 300px;\n    opacity: 0.8;\n    position: relative;\n    top: 100px;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\tmat-form-field {\n\t\tmargin: 10px;\n\t\twidth: 400px;\n    }\n    .adminForm{\n        width: 500px;\n        margin: auto;\n\n    }\n}", ""]);
+exports.push([module.i, ".adminForm{\n    position: relative;\n    top:100px;\n    border: 2px solid brown;\n    padding: 35px;\n    border-radius: 20px;\n    height: auto;\n    z-index: 1;\n    background-color: azure;\n    overflow: hidden;\n}\n\n.card-header {\n    background-color: yellow;\n}\n\n\nmat-form-field {\n\tmargin: 15px;\n\twidth: 198px;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n    padding-left: 255px;\n    padding-right: 300px;\n    opacity: 0.8;\n    position: relative;\n    top: 100px;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\tmat-form-field {\n\t\tmargin: 10px;\n\t\twidth: 400px;\n    }\n    .adminForm{\n        width: 500px;\n        margin: auto;\n\n    }\n}", ""]);
 
 // exports
 
@@ -54,6 +53,7 @@ module.exports = "<div class=\"content-wrapper\">\n    <div class=\"container\" 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -67,36 +67,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { window } from 'rxjs/operator/window';
+
 
 var AdminLoginComponent = /** @class */ (function () {
-    function AdminLoginComponent(route, dialog, _userService, router) {
+    function AdminLoginComponent(route, dialog, _userService, router, appComp) {
         this.route = route;
         this.dialog = dialog;
         this._userService = _userService;
         this.router = router;
-        this.isLoggedIn = false;
+        this.appComp = appComp;
     }
+    // isLoggedIn = false;
     AdminLoginComponent.prototype.ngOnInit = function () {
-        //console.log("in login init");
         if ($(window).width() < 600) {
-            $('.left-pane')[0].style.display = "none";
+            $('.left-pane')[0].style.display = 'none';
         }
     };
     AdminLoginComponent.prototype.getErrorMessage = function () {
     };
     AdminLoginComponent.prototype.adminLogin = function (form) {
         var _this = this;
-        console.log("in login", form.value);
         this._userService.adminLogin(form.value)
             .subscribe(function (data) {
-            console.log("result is ", data);
-            if (data.result == "ok") {
-                _this.isLoggedIn = true;
-                //localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("userId", data.userId);
-                window.location.reload();
+            if (data.result === 'ok') {
+                // this.isLoggedIn = true;
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('userId', data.userId);
+                //   window.location.reload();
+                _this.appComp.userName = form.value.username;
+                _this.appComp.isLoggedIn = true;
                 _this.router.navigate(['/attendance'], { queryParams: { course: '5' },
                 });
             }
@@ -104,7 +103,7 @@ var AdminLoginComponent = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
                     type: 'error',
                     title: 'Invalid Login Crdentials',
-                    html: "Hari Bol!!",
+                    html: 'Hari Bol:(',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -123,7 +122,7 @@ var AdminLoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]])
     ], AdminLoginComponent);
     return AdminLoginComponent;
 }());
@@ -135,12 +134,13 @@ var AdminLoginComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/app.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "#sidebar {\n\ttransition:0.5s;\n}\n\n.nav-link-text {\n\tpadding-left: 20px;\n}\n\n.main-wrapper{\n    background:rgba(255, 255, 255, 0.8) !important; \n}\n.mid-pane{\n    height: calc(100vh - 105px);\n    float: left;\n    width: 100%;\n    transition: 0.5s ease-in-out;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.left-pane {\n    max-width: 250px;\n    padding: 0;\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1;\n    float: left;\n    overflow: auto;\n    display: block;\n    background: #272634;\n    /*height: calc(100vh - 105px);*/\n    height: calc(100vh);\n\ttransition: 0.5s ease-in-out;\n\tz-index: 10;\n}\n.right-pane {\n    padding: 0px;\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1; \n    /*height: calc(100vh - 105px);*/\n        height: calc(100vh);\n\toverflow:auto;\n\t\n}\n.cmp-logo img {\n    width: 70%;\n    margin: 10px;\n}\n.header-logo {\n    float: left;\n    width: 100%;\n    padding: 15px 15px 10px 15px;\n}\n.cmp-heading{\n    float: left;\n}\n.header-logo h1 {\n    color: #858598;\n    margin: 0 !important;\n    font-size: 20px;\n    margin: 15px;\n}\n.header-logo span {\n    color: #858598;\n    font-size: 13px;\n}\n.left-pane ul{\n    list-style-type: none;\n    padding: 0px;\n    float: left;\n    width: 100%;\n    display: block;\n}\n.left-pane li {\n    width: 100%;\n    display: inline-block;\n}\n.left-pane ul li a {\n    width: 100%;\n    display: block;;\n    line-height: 20px;\n    font-size: 14px;\n    color: #858598;\n    padding: 8px 15px ;\n}\n.left-pane ul li li a{\n\tpadding-left: 40px;\n}\n.left-pane ul li li ul a{\n    padding-left: 75px;\n}\n.left-pane ul li [data-toggle=\"collapse\"]{\n\tposition: relative;\n}\n\n.left-pane ul li a i{\n\tmargin-right: 10px;\n    font-size: 16px;\n}\n.left-pane ul li a.collapsed i.fas.fa-angle-right{ \n    -webkit-transform:  rotate(0deg); \n            transform:  rotate(0deg);\n}\n.left-pane ul li a i.fas.fa-angle-right{   \n\t float: right;\n    font-size: 16px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n}\n\n.left-pane ul li a:hover,\n.left-pane ul li a:focus {\n\tcolor: #C9C7EF;\n\ttext-decoration: none;\n}\n@-webkit-keyframes swing {\n    0% { -webkit-transform: rotate(20deg); transform: rotate(20deg); }\n    100% { -webkit-transform: rotate(-20deg); transform: rotate(-20deg); }\n}\n@keyframes swing {\n    0% { -webkit-transform: rotate(20deg); transform: rotate(20deg); }\n    100% { -webkit-transform: rotate(-20deg); transform: rotate(-20deg); }\n}\n.left-pane ul li a:hover i:nth-child(1) {\n    -webkit-animation: swing ease-in-out .7s infinite alternate;\n            animation: swing ease-in-out .7s infinite alternate;\n}\n.hide{\n    display: none;\n}\n/*=======collapsible code==========*/\n.sidebar-icon{\n    float: right;\n}\n.sidebar-icon i {\n    float: right;\n    color: rgba(255,255,255,.7);\n    font-size: 20px;\n    cursor: pointer;\n}\n.left-pane.collapseSideBar{\n    max-width: 67px;\n    overflow-x: hidden;\n    padding: 0 10px;\n}\n.left-pane .fa-indent{\n    display: none\n}\n.left-pane .fa-outdent{\n    display: block\n}\n.left-pane.collapseSideBar .fa-outdent{\n    display: none\n}\n.left-pane.collapseSideBar .fa-indent{\n    display: block\n}\n.left-pane.collapseSideBar .cmp-heading,\n.left-pane.collapseSideBar li span,\n.left-pane.collapseSideBar li span,\n.left-pane.collapseSideBar li .fa-angle-right{\n    display: none;\n}\n.left-pane.collapseSideBar li i{\n    font-size: 18px;\n}\n.left-pane.collapseSideBar ul li li a{\n\tpadding-left: 15px;\n}\n\n.topBar {\n\tposition: absolute;\n    width: 100%;\n    background: #272734;\n    right: 0px;\n    z-index:9;\n    height: 70px;\n}\n.ach{\n    margin:15px;border-radius:50%;\n    visibility: hidden;\n}\n/* Responive */\n\n@media only screen and (max-width: 600px) {\n    .left-pane {\n        display:none;\n        -webkit-box-flex: initial;\n            -ms-flex: initial;\n                flex: initial;\n        max-width:320px !important;\n        width:100%;\n    }\n    .sidebar-icon {\n    \tdisplay:none;\n    }\n    .nav-link-text {\n    \tdisplay:block;\n    }\n    .CloseIcon{\n    \tdisplay:block !important;\n    \tcolor: #E91E63 !important;\n    \tfloat:right;\n    }\n}\n\n@media only screen and (min-width: 601px) { \n\t.left-pane {\n\t\tdisplay:block !important;\n\t}\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.ach{\n        visibility: visible;\n    }\n}\n\n.mobileToggle {\n\tbackground: #272734;\n    border: none;\n    color: white;\n    padding: 20px;\n    font-size: 20px;\n}", ""]);
+exports.push([module.i, "#sidebar {\n\ttransition:0.5s;\n}\n\n.nav-link-text {\n\tpadding-left: 20px;\n}\n\n.main-wrapper{\n    background:rgba(255, 255, 255, 0.8) !important; \n}\n.mid-pane{\n    /* height: calc(100vh - 105px); */\n    float: left;\n    width: 100%;\n    transition: 0.5s ease-in-out;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.left-pane {\n    max-width: 250px;\n    padding: 0;\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1;\n    float: left;\n    overflow: auto;\n    display: block;\n    background: #272634;\n    /*height: calc(100vh - 105px);*/\n    height: calc(100vh);\n\ttransition: 0.5s ease-in-out;\n\tz-index: 10;\n}\n.right-pane {\n    padding: 0px;\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1; \n    /*height: calc(100vh - 105px);*/\n        height: calc(100vh);\n\toverflow:auto;\n\t background:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n\t background-size: cover;\n}\n.cmp-logo img {\n    width: 70%;\n    margin: 10px;\n}\n.header-logo {\n    float: left;\n    width: 100%;\n    padding: 15px 15px 10px 15px;\n}\n.cmp-heading{\n    float: left;\n}\n.header-logo h1 {\n    color: #858598;\n    margin: 0 !important;\n    font-size: 20px;\n    margin: 15px;\n}\n.header-logo span {\n    color: #858598;\n    font-size: 13px;\n}\n.left-pane ul{\n    list-style-type: none;\n    padding: 0px;\n    float: left;\n    width: 100%;\n    display: block;\n}\n.left-pane li {\n    width: 100%;\n    display: inline-block;\n}\n.left-pane ul li a {\n    width: 100%;\n    display: block;;\n    line-height: 20px;\n    font-size: 14px;\n    color: #858598;\n    padding: 8px 15px ;\n}\n.left-pane ul li li a{\n\tpadding-left: 40px;\n}\n.left-pane ul li li ul a{\n    padding-left: 75px;\n}\n.left-pane ul li [data-toggle=\"collapse\"]{\n\tposition: relative;\n}\n\n.left-pane ul li a i{\n\tmargin-right: 10px;\n    font-size: 16px;\n}\n.left-pane ul li a.collapsed i.fas.fa-angle-right{ \n    -webkit-transform:  rotate(0deg); \n            transform:  rotate(0deg);\n}\n.left-pane ul li a i.fas.fa-angle-right{   \n\t float: right;\n    font-size: 16px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n}\n\n.left-pane ul li a:hover,\n.left-pane ul li a:focus {\n\tcolor: #C9C7EF;\n\ttext-decoration: none;\n}\n@-webkit-keyframes swing {\n    0% { -webkit-transform: rotate(20deg); transform: rotate(20deg); }\n    100% { -webkit-transform: rotate(-20deg); transform: rotate(-20deg); }\n}\n@keyframes swing {\n    0% { -webkit-transform: rotate(20deg); transform: rotate(20deg); }\n    100% { -webkit-transform: rotate(-20deg); transform: rotate(-20deg); }\n}\n.left-pane ul li a:hover i:nth-child(1) {\n    -webkit-animation: swing ease-in-out .7s infinite alternate;\n            animation: swing ease-in-out .7s infinite alternate;\n}\n.hide{\n    display: none;\n}\n/*=======collapsible code==========*/\n.sidebar-icon{\n    float: right;\n}\n.sidebar-icon i {\n    float: right;\n    color: rgba(255,255,255,.7);\n    font-size: 20px;\n    cursor: pointer;\n}\n.left-pane.collapseSideBar{\n    max-width: 67px;\n    overflow-x: hidden;\n    padding: 0 10px;\n}\n.left-pane .fa-indent{\n    display: none\n}\n.left-pane .fa-outdent{\n    display: block\n}\n.left-pane.collapseSideBar .fa-outdent{\n    display: none\n}\n.left-pane.collapseSideBar .fa-indent{\n    display: block\n}\n.left-pane.collapseSideBar .cmp-heading,\n.left-pane.collapseSideBar li span,\n.left-pane.collapseSideBar li span,\n.left-pane.collapseSideBar li .fa-angle-right{\n    display: none;\n}\n.left-pane.collapseSideBar li i{\n    font-size: 18px;\n}\n.left-pane.collapseSideBar ul li li a{\n\tpadding-left: 15px;\n}\n\n.topBar {\n\tposition: absolute;\n    width: 100%;\n    background: #272734;\n    right: 0px;\n    z-index:9;\n    height: 70px;\n}\n.ach{\n    margin:15px;border-radius:50%;\n    visibility: hidden;\n}\n/* Responive */\n\n@media only screen and (max-width: 600px) {\n    .left-pane {\n        display:none;\n        -webkit-box-flex: initial;\n            -ms-flex: initial;\n                flex: initial;\n        max-width:320px !important;\n        width:100%;\n    }\n    .sidebar-icon {\n    \tdisplay:none;\n    }\n    .nav-link-text {\n    \tdisplay:block;\n    }\n    .CloseIcon{\n    \tdisplay:block !important;\n    \tcolor: #E91E63 !important;\n    \tfloat:right;\n    }\n}\n\n.logindropdown{\n    font-size: 30px;\n    margin-top: 16px;\n    margin-right: 13px;\n}\n\n@media only screen and (min-width: 601px) { \n\t.left-pane {\n\t\tdisplay:block !important;\n\t}\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.ach{\n        visibility: visible;\n    }\n}\n\n.mobileToggle {\n\tbackground: #272734;\n    border: none;\n    color: white;\n    padding: 20px;\n    font-size: 20px;\n}", ""]);
 
 // exports
 
@@ -153,7 +153,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation-->\n<!--nav class=\"navbar-header navbar-expand-lg navbar-dark fixed-top\"\n       id=\"mainNav\" style=\"background-color:#343a40;\" >\n        \n        \n        <a href=\"#\" class=\"navbar-brand pull-left\">\n          <img src=\"./assets/img/logo.jpeg\" style=\"\">\n        </a> \n       \n        <a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n            routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n\n            <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:blue;\" class=\"pull-right\"\n            (click)=\"adminLogout();\" >\n                <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>\n  \n            <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:blue;\" class=\"pull-right\">\n            <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Hare Krishna, Admin</a>\n\n            \n\n        <a href=\"#\" class=\"pull-right\">\n            <img src=\"./assets/img/lokanathswami.jpg\" style=\"margin:15px;border-radius:50%;\"\n             width=\"44\" height=\"46\">\n          </a> \n          <a href=\"#\" class=\"pull-right\">\n              <img src=\"./assets/img/spp.jpg\" style=\"margin:15px;border-radius:50%;\" \n              width=\"44\" height=\"46\" >\n            </a> \n\n         <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\"  >\n          <ul class=\"navbar-nav navbar-sidenav \" id=\"sidebar\" style=\"background-color:#343a40\" >\n            <li class=\"nav-item\" style=\"color:black;\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"courses\">\n              <a style=\"color:#FFF;\" class=\"nav-link nav-link-collapse collapsed\" data-toggle=\"collapse\" href=\"#courses\" data-parent=\"#menu\">\n                <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n              </a>\n              <ul class=\"sidenav-second-level collapse\" id=\"courses\">\n                <li>\n                  <a style=\"color:#000;\" routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                      routerActive=\"/otpattendance\">OTP</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n                  routerActive=\"/tssvattendance\">TSSV-B10</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n                  routerActive=\"/ashrayattendance\">ASHRAY</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n                  routerActive=\"/umangattendance\">UMANG</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n                  routerActive=\"/bssattendance\">BSS</a>\n                </li>\n                <li >\n                  <a style=\"color:#000;\" routerLink=\"dysattendance\" [queryParams]=\"{ course: 7 }\" \n                  routerActive=\"/dysattendance\">DYS</a>\n                </li>\n                <li >\n                    <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                    routerActive=\"/attendance\">ALL DEVOTEES</a>\n                </li>\n              </ul>\n            </li>\n\n            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                    <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n                      <i class=\"fa fa-fw fa-download\"></i>\n                      <span class=\"nav-link-text\">Downloads</span>\n                    </a>\n             </li>\n\n             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n                <a style=\"color:#FFF;\" class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n                  <i class=\"fa fa-calendar\"></i>\n                  <span class=\"nav-link-text\"> Scheduled Classes</span>\n                </a>\n             </li>\n             \n     \n          </ul>\n          <ul class=\"navbar-nav sidenav-toggler\" id=\"sidebar\">\n              <li class=\"nav-item\">\n                <a (click)=\"toggleClicked();\" class=\"nav-link text-center\" id=\"sidenavToggler\">\n                  <i class=\"fa fa-fw fa-angle-left\"></i>\n                </a>\n              </li>\n            </ul>\n        </div>\n      </nav>\n    \n    \n        <footer class=\"sticky-footer\"id=\"homefooter\" >\n            <div class=\"container\">\n              <div class=\"text-center\">\n                <small>Copyright © IYF 2018</small>\n              </div>\n            </div>\n          </footer>\n          <a class=\"scroll-to-top rounded\" href=\"#page-top\">\n            <i class=\"fa fa-angle-up\"></i>\n          </a-->\n    \n     \n    \n<!--router-outlet></router-outlet-->\n<div class=\"mid-pane\">\n  <div class=\"left-pane\">\n <div class=\"header-logo\">\n <a class=\"cmp-heading\">\n  \n   <img src=\"./assets/img/logo.jpeg\" style=\"width:90%\">\n </a>\n <a id=\"sidebar-collaps\" class=\"sidebar-icon\">\n   <i class=\"fa fa-indent\"></i>\n   <i class=\"fa fa-outdent\"></i>\n </a>\n <a class=\"fa fa-close CloseIcon\" style=\"display:none;\"></a>\n </div>\n <ul>\n   \n   <li>\n     <a class=\"collpased\" data-toggle=\"collapse\" href=\"#collapse1\" class=\"collapsed\">\n       \n      <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n       <i class=\"fas fa fa-angle-right\"></i>\n     </a>\n     <div class=\"collapse\" id=\"collapse1\">\n          <ul class=\"nav\" style=\"background: #f8f9fa\">\n            <li>\n              <a style=\"color:#000;\"  routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                  routerActive=\"/otpattendance\"><i class=\"fas fa fa-book\"></i><span>OTP</span> </a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n              routerActive=\"/tssvattendance\"><i class=\"fas fa fa-book\"></i>TSSV-B10</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n              routerActive=\"/ashrayattendance\"><i class=\"fas fa fa-book\"></i>ASHRAY</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n              routerActive=\"/umangattendance\"><i class=\"fas fa fa-book\"></i>UMANG</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n              routerActive=\"/bssattendance\"><i class=\"fas fa fa-book\"></i>BSS</a>\n            </li>\n            <li >\n                <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                routerActive=\"/attendance\"><i class=\"fas fa fa-book\"></i>ALL DEVOTEES</a>\n            </li>\n          </ul>\n     </div>\n   </li>\n   \n   <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n    <a class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n      <i class=\"fa fa-fw fa-download\"></i>\n      <span class=\"nav-link-text\">Downloads</span>\n    </a>\n</li>\n\n<li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n<a  class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n  <i class=\"fa fa-calendar\"></i>\n  <span class=\"nav-link-text\"> Scheduled Classes</span>\n</a>\n</li> \n </ul>\n  </div>\n  \n  <div class=\"right-pane\">\n   <div class=\"topBar\">\n     <button class=\"mobileToggle\" id=\"sidebar-collapsM\" ><i class=\"fa fa-bars\"></i></button>\n      <a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:blue;\" class=\"pull-right\"\n      (click)=\"adminLogout();\" >\n          <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:blue;\" class=\"pull-right\">\n      <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Hare Krishna, Admin</a>\n\n      \n\n  <a href=\"#\" class=\"pull-right \">\n      <img src=\"./assets/img/lokanathswami.jpg\" class=\"ach\"\n       width=\"44\" height=\"46\">\n    </a> \n    <a href=\"#\" class=\"pull-right \">\n        <img src=\"./assets/img/spp.jpg\" class=\"ach\"\n        width=\"44\" height=\"46\" >\n    </a> \n\n  </div>   \n    \n   <router-outlet></router-outlet>\n  </div>\n</div>\n"
+module.exports = "<!--router-outlet></router-outlet-->\n<div class=\"mid-pane\">\n  <div class=\"left-pane\">\n <div class=\"header-logo\">\n <a class=\"cmp-heading\">\n  \n   <img src=\"./assets/img/logo.jpeg\" style=\"width:90%\">\n </a>\n <a id=\"sidebar-collaps\" class=\"sidebar-icon\">\n   <i class=\"fa fa-indent\"></i>\n   <i class=\"fa fa-outdent\"></i>\n </a>\n <a class=\"fa fa-close CloseIcon\" style=\"display:none;\"></a>\n </div>\n <ul>\n   \n   <li>\n     <a class=\"collpased\" data-toggle=\"collapse\" href=\"#collapse1\" class=\"collapsed\">\n       \n      <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n       <i class=\"fas fa fa-angle-right\"></i>\n     </a>\n     <div class=\"collapse\" id=\"collapse1\">\n          <ul class=\"nav\" style=\"background: #f8f9fa\">\n            <li>\n              <a style=\"color:#000;\"  routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                  routerActive=\"/otpattendance\"><i class=\"fas fa fa-book\"></i><span>OTP</span> </a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n              routerActive=\"/tssvattendance\"><i class=\"fas fa fa-book\"></i>TSSV-B10</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n              routerActive=\"/ashrayattendance\"><i class=\"fas fa fa-book\"></i>ASHRAY</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n              routerActive=\"/umangattendance\"><i class=\"fas fa fa-book\"></i>UMANG</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n              routerActive=\"/bssattendance\"><i class=\"fas fa fa-book\"></i>BSS</a>\n            </li>\n            <li >\n                <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                routerActive=\"/attendance\"><i class=\"fas fa fa-book\"></i>ALL DEVOTEES</a>\n            </li>\n          </ul>\n     </div>\n   </li>\n   \n   <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n    <a class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n      <i class=\"fa fa-fw fa-download\"></i>\n      <span class=\"nav-link-text\">Downloads</span>\n    </a>\n</li>\n\n<li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n<a  class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n  <i class=\"fa fa-calendar\"></i>\n  <span class=\"nav-link-text\"> Scheduled Classes</span>\n</a>\n</li> \n </ul>\n  </div>\n  \n  <div class=\"right-pane\">\n   <div class=\"topBar\">\n     <button class=\"mobileToggle\" id=\"sidebar-collapsM\" ><i class=\"fa fa-bars\"></i></button>\n\n     <div *ngIf=\"!isLoggedIn\" class=\"dropdown pull-right logindropdown\" >\n        <i style=\"color:yellow;\" class=\"dropdown-toggle fa fa-user\" data-toggle=\"dropdown\">\n        </i>\n        <div class=\"dropdown-menu\">\n          <a class=\"dropdown-item\" *ngIf=\"!isLoggedIn\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n      <a class=\"dropdown-item\" *ngIf=\"!isLoggedIn\" \n      routerLink=\"/counLogin\" routerActive=\"/counLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Counsellor Login</a>\n        </div>\n      </div>\n      <!--a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a-->\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:yellow;\" class=\"pull-right\"\n      (click)=\"adminLogout();\" >\n          <i class=\"fa fa-sign-out\" style=\"cursor: pointer;\" aria-hidden=\"true\"></i></a>\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:yellow\" class=\"pull-right\">\n      <i class=\"fa fa-user\" style=\"color:yellow;\" aria-hidden=\"true\"></i> Hare Krishna, {{userName}}</a>\n\n      \n\n  <a href=\"#\" class=\"pull-right \">\n      <img src=\"./assets/img/lokanathswami.jpg\" class=\"ach\"\n       width=\"44\" height=\"46\">\n    </a> \n    <a href=\"#\" class=\"pull-right \">\n        <img src=\"./assets/img/spp.jpg\" class=\"ach\"\n        width=\"44\" height=\"46\" >\n    </a> \n\n  </div>   \n    \n   <router-outlet></router-outlet>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -164,6 +164,7 @@ module.exports = "<!-- Navigation-->\n<!--nav class=\"navbar-header navbar-expan
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -175,10 +176,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AppComponent = /** @class */ (function () {
     function AppComponent(_userService) {
         this._userService = _userService;
         this.isLoggedIn = false;
+        this.userName = '';
     }
     AppComponent.prototype.adminLogout = function () {
         localStorage.clear();
@@ -186,50 +189,60 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.toggleClicked = function () {
         console.log('toggle clicked');
-        if (document.getElementById('sidebar').style.width == "250px" || document.getElementById('sidebar').style.width == "") {
-            document.getElementById('sidebar').style.width = "52px";
-            document.getElementsByClassName('content-wrapper')[0]['style'].marginLeft = "52px";
-            document.getElementById('homefooter').style.width = "calc(100% - 0px)";
-            document.getElementById('sidenavToggler').childNodes[1]['className'] = "fa fa-fw fa-angle-right";
+        if (document.getElementById('sidebar').style.width === '250px' || document.getElementById('sidebar').style.width == "") {
+            document.getElementById('sidebar').style.width = '52px';
+            document.getElementsByClassName('content-wrapper')[0]['style'].marginLeft = '52px';
+            document.getElementById('homefooter').style.width = 'calc(100% - 0px)';
+            document.getElementById('sidenavToggler').childNodes[1]['className'] = 'fa fa-fw fa-angle-right';
         }
         else {
-            document.getElementById('sidebar').style.width = "250px";
-            document.getElementsByClassName('content-wrapper')[0]['style'].marginLeft = "250px";
-            document.getElementById('homefooter').style.width = "calc(100% - 250px)";
-            document.getElementById('sidenavToggler').childNodes[1]['className'] = "fa fa-fw fa-angle-left";
+            document.getElementById('sidebar').style.width = '250px';
+            document.getElementsByClassName('content-wrapper')[0]['style'].marginLeft = '250px';
+            document.getElementById('homefooter').style.width = 'calc(100% - 250px)';
+            document.getElementById('sidenavToggler').childNodes[1]['className'] = 'fa fa-fw fa-angle-left';
         }
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //console.log("in login init");
-        var getLoggedIn = localStorage.getItem("token");
+        // Check if counsellor logged in
+        var cLogIn = localStorage.getItem('ctoken');
+        if (cLogIn) {
+            this._userService.iscTokenVerified(cLogIn)
+                .subscribe(function (ctokenRes) {
+                if (ctokenRes.result === 'ok') {
+                    _this.isLoggedIn = true;
+                    _this.userName = localStorage.getItem('cname');
+                    console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
+                }
+            });
+        }
+        // check if admin is login
+        var getLoggedIn = localStorage.getItem('token');
         if (getLoggedIn) {
             this._userService.isTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
-                //S  console.log(tokenRes);
-                if (tokenRes.result == "ok") {
+                if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
                 }
             });
         }
         $(document).ready(function () {
             $('#sidebar-collaps i').on('click', function () {
-                if ($('.left-pane').hasClass("collapseSideBar")) {
-                    $('.left-pane').removeClass("collapseSideBar");
+                if ($('.left-pane').hasClass('collapseSideBar')) {
+                    $('.left-pane').removeClass('collapseSideBar');
                 }
                 else {
-                    $('.left-pane').addClass("collapseSideBar");
+                    $('.left-pane').addClass('collapseSideBar');
                 }
             });
             $('#sidebar-collapsM').on('click', function () {
-                $('.left-pane')[0].style.display = "block";
+                $('.left-pane')[0].style.display = 'block';
             });
             $('.CloseIcon').on('click', function () {
-                $('.left-pane')[0].style.display = "none";
+                $('.left-pane')[0].style.display = 'none';
             });
             //      if ($(window).width() < 600) {
             //          $('.left-pane').addClass('collapseSideBar');
-            //          
             //      } else {
             //          $('.left-pane').removeClass('collapseSideBar');
             //      }
@@ -242,6 +255,7 @@ var AppComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/app.component.css")],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_2__data_service__["a" /* DataService */]
             ]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]])
@@ -281,12 +295,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng2_smart_table__ = __webpack_require__("../../../../ng2-smart-table/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__ = __webpack_require__("../../../../../src/app/admin-login/admin-login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__ = __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__ = __webpack_require__("../../../../../src/app/calling-details/calling-details.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -327,6 +345,8 @@ var appRoutes = [
     { path: 'ashrayattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
     { path: 'downloads', component: __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__["a" /* DownloadsComponent */] },
     { path: 'adminLogin', component: __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */] },
+    { path: 'counLogin', component: __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */] },
+    { path: 'callingdetails/:username', component: __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__["a" /* CallingDetailsComponent */] },
     { path: '', redirectTo: 'classSdl', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -346,6 +366,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
                 __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__["a" /* CallingDetailsComponent */],
             ],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["f" /* MarkpresentComponent */],
@@ -479,13 +501,12 @@ module.exports = "<div class=\"form-container\">\n       \n      <!--mat-toolbar
 /***/ "../../../../../src/app/attendance/attendance.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin: 30px;\n\twidth: 900px;\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 25%;\n\t        flex: 0 0 25%;\n}\n\n.content-wrapper{\n\tbackground:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n\tbackground-size: cover;\n\t/* height: 100vh;*/\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n}", ""]);
+exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin: 30px;\n\twidth: 900px;\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 35%;\n\t        flex: 0 0 35%;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n}", ""]);
 
 // exports
 
@@ -498,7 +519,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/attendance.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\" matTooltip=\"Click here to mark present\" >\n                       <i class=\"fa fa-fw fa-user\"></i>\n                     </button>  \n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                     <button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\" \n                     matTooltip=\"Edit Details\">\n                     <i class=\"fa fa-edit\"></i>\n                     \n                  \n                    </button>\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" (page)=\"pageEvent = getPageDetails($event)\"\n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
+module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"course\">\n                      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.course}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\" matTooltip=\"Click here to mark present\" >\n                       <i class=\"fa fa-fw fa-user\"></i>\n                     </button>  \n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                     <!--button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\" \n                     matTooltip=\"Edit Details\">\n                     <i class=\"fa fa-edit\"></i>\n                     \n                  \n                    </button-->\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" (page)=\"pageEvent = getPageDetails($event)\"\n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -520,6 +541,7 @@ module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"containe
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_sweetalert2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -549,14 +571,16 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 
+
 var AttendanceComponent = /** @class */ (function () {
-    function AttendanceComponent(route, dialog, _userService, router, snackBar) {
+    function AttendanceComponent(route, dialog, _userService, router, snackBar, appComp) {
         this.route = route;
         this.dialog = dialog;
         this._userService = _userService;
         this.router = router;
         this.snackBar = snackBar;
-        this.displayedColumns = ['name', 'contact', 'counsellor', 'actions'];
+        this.appComp = appComp;
+        this.displayedColumns = ['name', 'contact', 'counsellor', 'course', 'actions'];
         this.ELEMENT_DATA = [];
         this.DETAILS_DATA = [];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
@@ -625,11 +649,29 @@ var AttendanceComponent = /** @class */ (function () {
     };
     AttendanceComponent.prototype._getDevotees = function (params) {
         var _this = this;
+        // Check if counsellor logged in
+        var cLogIn = localStorage.getItem('ctoken');
+        if (cLogIn) {
+            this._userService.iscTokenVerified(cLogIn)
+                .subscribe(function (ctokenRes) {
+                if (ctokenRes.result === 'ok') {
+                    _this.isLoggedIn = true;
+                    _this.appComp.userName = localStorage.getItem('cname');
+                    console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
+                }
+            });
+        }
+        // check if admin logged in
         var getLoggedIn = localStorage.getItem('token');
+        if (getLoggedIn) {
+            this.isLoggedIn = true;
+            this.appComp.userName = 'admin';
+            console.log('get logged in ', getLoggedIn);
+        }
+        // get all devotees
         this._userService.getDevotees(params['course'], getLoggedIn)
             .subscribe(function (userData) {
             console.log('in get devotees', userData);
-            _this.isLoggedIn = userData.isLoggedIn;
             if (userData.result) {
                 userData.result = userData.result.filter(function (el) {
                     return el.username !== 'admin';
@@ -648,8 +690,9 @@ var AttendanceComponent = /** @class */ (function () {
         });
     };
     AttendanceComponent.prototype.showDetails = function (dv) {
-        // this.router.navigate(['/showDetails', dv['_id']]);
         var _this = this;
+        // this.router.navigate(['/showDetails', dv['_id']]);
+        console.log('show deve', dv);
         this._userService.getDetails(dv['_id'])
             .subscribe(function (userData) {
             console.log(' user data is ', userData.result[0]);
@@ -760,7 +803,7 @@ var AttendanceComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]])
     ], AttendanceComponent);
     return AttendanceComponent;
 }());
@@ -1381,13 +1424,12 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/main-attendance.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.formClass {\n\toverflow: hidden;\n\tborder-radius: 20px;\n\tpadding: 10px; \n\tborder: 2px solid brown;\n}\n\nmat-form-field {\n\tmargin: 10px;\n\twidth: 198px;\n}\n\nmat-progress-spinner{\n  margin: auto;\n}\n\n.content-wrapper{\n\tbackground:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n\tbackground-size: cover;\n\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\tmat-form-field {\n\t\tmargin: 10px;\n\t\twidth: 400px;\n\t}\n}\n\t", ""]);
+exports.push([module.i, "\n.formClass {\n\toverflow: hidden;\n\tborder-radius: 20px;\n\tpadding: 10px; \n\tborder: 2px solid brown;\n}\n\nmat-form-field {\n\tmargin: 10px;\n\twidth: 198px;\n}\n\nmat-progress-spinner{\n  margin: auto;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\tmat-form-field {\n\t\tmargin: 10px;\n\t\twidth: 400px;\n\t}\n}\n\t", ""]);
 
 // exports
 
@@ -1411,16 +1453,279 @@ module.exports = "<form #atForm=\"ngForm\" >\n\n        <mat-form-field>        
 
 /***/ }),
 
-/***/ "../../../../../src/app/class/class.component.css":
+/***/ "../../../../../src/app/calling-details/calling-details.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".search{\n    width: 900px;\n}\n\n.content-wrapper{\n    background:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n    background-size: cover;\n}\n\n.container-fluid{\n    z-index: 1;\n    opacity: 0.8;\n    position: relative;\n   /* top: 100px;*/\n    \n}\nmat-cell{\n    font-weight: bold;\n}", ""]);
+exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin-left: 19px;\n    margin-top: 13px;\n}\n\n.filters{\n\tmargin: 17px;\n}\n\n.fhead{\n\tmargin-left: 18px;\n    margin-top: 17px;\n}\n\n.comment{\n\twidth: 127px;\n}\n\n.locked {\n\tpointer-events:none;\n\topacity: 0.5 !important; /* Fade effect */\n    cursor: not-allowed; /* Cursor change to disabled state*/\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 16%;\n\t        flex: 0 0 16%;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n\t.comment {\n\t\twidth:127px;\n\t}\n\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/calling-details/calling-details.component.html":
+/***/ (function(module, exports) {
+
+module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n        <!--div class=\"filters\" >\n          <h5>Select checkbox to filter out devotees</h5>\n          <br/>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'OTP')\" \n            value=\"OTP\" >\n            OTP\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'TSSV-B10')\"\n             value=\"TSSV-B10\">\n             TSSV-B10\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'ASHRAY')\"\n             value=\"ASHRAY\">\n             ASHRAY\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'BSS')\"\n             value=\"BSS\">\n             BSS\n          </mat-checkbox>\n          <mat-checkbox [ngClass]=\"isCourseSelected ? '':'locked'\"\n            (change)=\"changeBox($event, 'Active')\"\n             value=\"Active\">\n             Active\n          </mat-checkbox>\n        </div-->\n         <h5 class=\"fhead\">Select course to filter out devotees</h5>\n         \n         <div class=\"cfilters\">\n            <mat-form-field style=\"width: 500px;\">\n               <mat-select [(ngModel)]=\"selectedCourse\"\n                (ngModelChange)=\"OnSelectCourse($event)\"\n                name=\"coursefilter\"  \n                placeholder=\"Course Filter\">                                      \n                  <mat-option value=\"OTP\"> OTP </mat-option>\n                  <mat-option value=\"TSSV-B10\">TSSV-B10 </mat-option>\n                  <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> \n                  <mat-option value=\"BSS\"> BSS </mat-option>\n               </mat-select> \n             </mat-form-field> \n             <mat-checkbox [(ngModel)]=\"selectedBox\" [ngClass]=\"isCourseSelected ? '':'locked'\"\n             (change)=\"changeBox($event, 'Active')\"\n              value=\"Active\">\n              Active\n           </mat-checkbox>\n\n          \n          </div>\n        \n          \n\t\t\t\t\t<mat-form-field>\n              <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"course\">\n                      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.course}} </mat-cell>\n                    </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      \n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n                     <div [ngClass]=\"element.locked ? 'locked':''\" >\n                     <mat-form-field [ngClass]=\"element.lockedDate === getDate() ? 'locked':''\"\n                        class=\"comment\">                                                             \n                        <mat-select name=\"comment\" value={{element.selected}} \n                        [(ngModel)]=\"element.selected\"\n                         placeholder=\"Comment\" required>                                      \n                           <mat-option value=\"CA\"> CA </mat-option>\n                           <mat-option value=\"NC\"> NC </mat-option>\n                           <mat-option value=\"Coming\"> Coming </mat-option> \n                           <mat-option value=\"Not Reachable\"> Not Reachable </mat-option>\n                           <mat-option value=\"Switch Off\"> Switch Off </mat-option>          \n                        </mat-select>                                                              \n                      </mat-form-field> \n\n                      <i (click)=\"lockIt(element, $event)\" style=\"cursor:pointer\"\n                      matTooltip=\"Click to lock it for the day\" class=\"fa fa-lock\"></i>\n                     </div>\n                      \n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" \n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/calling-details/calling-details.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CallingDetailsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_sweetalert2__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var CallingDetailsComponent = /** @class */ (function () {
+    function CallingDetailsComponent(route, dialog, _userService, _dataService, router, appComp, snackBar) {
+        this.route = route;
+        this.dialog = dialog;
+        this._userService = _userService;
+        this._dataService = _dataService;
+        this.router = router;
+        this.appComp = appComp;
+        this.snackBar = snackBar;
+        this.todayDate = new Date();
+        this.checked = false;
+        this.comment = '';
+        this.selected = 'CA';
+        this.isCourseSelected = false;
+        this.selectedCourse = '';
+        this.selectedBox = false;
+        this.copyDataSource = [];
+        this.originalCopy = [];
+        this.displayedColumns = ['name', 'contact', 'counsellor', 'course', 'actions'];
+        this.ELEMENT_DATA = [];
+        this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
+    }
+    CallingDetailsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        /* this._dataService.currentMessage.subscribe(message => {
+           console.log('mesage ', message);
+           this.dataSource.data = message;
+         });*/
+        var getLoggedIn = localStorage.getItem('ctoken');
+        console.log('getLogged in ', getLoggedIn);
+        if (getLoggedIn) {
+            this._userService.iscTokenVerified(getLoggedIn)
+                .subscribe(function (tokenRes) {
+                console.log('data is ', tokenRes);
+                if (tokenRes.result === 'ok') {
+                    _this.route.params.subscribe(function (params) {
+                        _this._userService.getCounsellorData(params['username'])
+                            .subscribe(function (data) {
+                            _this.dataSource.data = data.resources;
+                            _this.originalCopy = _this.dataSource.data;
+                        });
+                    });
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = localStorage.getItem('cname');
+                }
+                else {
+                    _this.router.navigateByUrl('/counLogin');
+                }
+            });
+        }
+        else {
+            this.router.navigateByUrl('/counLogin');
+        }
+    };
+    CallingDetailsComponent.prototype.ngAfterViewInit = function () {
+        this.dataSource.paginator = this.paginator;
+    };
+    CallingDetailsComponent.prototype.getDate = function () {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var datenew = date.getDate() + '-' + month + '-' + date.getFullYear();
+        return datenew;
+    };
+    // [ngClass]="isLocked(element) ? '':'locked'"
+    /*isLocked(element) {
+        console.log('element ', element.contact);
+        if ( element.calling && element.calling.length > 0 ) {
+          element.calling.forEach(data => {
+            if (data.date === this.getDate()) {
+              console.log('data is ', data);
+              return true;
+            }
+          });
+        }
+    }*/
+    CallingDetailsComponent.prototype.lockIt = function (element, event) {
+        //  console.log('element ', element.calling);
+        element['locked'] = true;
+        this._userService.updateComment(element)
+            .subscribe(function (result) {
+            console.log('result is ', result);
+            if (result.result === 'ok') {
+                __WEBPACK_IMPORTED_MODULE_6_sweetalert2___default()({
+                    type: 'success',
+                    title: 'Hare Krishna, Status locked for the day',
+                    html: 'Hari Bol!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_6_sweetalert2___default()({
+                    type: 'success',
+                    title: 'Hare Krishna, Status already locked for the day',
+                    html: 'Hari Bol!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    };
+    CallingDetailsComponent.prototype.checkIfDevoteePresntForGivenDate = function (date, myArray) {
+        for (var i = 0; i < myArray.length; i++) {
+            if (myArray[i].date === date) {
+                return myArray[i];
+            }
+        }
+    };
+    CallingDetailsComponent.prototype.findActive = function () {
+        var _this = this;
+        var classList = [];
+        console.log('class list is ', this.selectedCourse);
+        this.copyDataSource = this.dataSource.data;
+        this._userService.getSdlClassesCourse(this.selectedCourse)
+            .subscribe(function (sdlClass) {
+            console.log('in active ', _this.dataSource.data, sdlClass);
+            _this.dataSource.data.forEach(function (element) {
+                if (element['attendance'] && element['attendance'].length > 0) {
+                    for (var j = 0; j < 8; j++) {
+                        var status_1 = {};
+                        // console.log('class  is ', sdlClass.result[j].date);
+                        if (sdlClass.result[j] === undefined) {
+                            break;
+                        }
+                        status_1 = _this.checkIfDevoteePresntForGivenDate(sdlClass.result[j].date, element['attendance']);
+                        // console.log('status is ', status);
+                        if (status_1 !== undefined) {
+                            //  console.log('status', element['contact'], element['name']);
+                            classList.push(element);
+                            break;
+                        }
+                    }
+                }
+            });
+            _this.dataSource.data = classList;
+        });
+    };
+    CallingDetailsComponent.prototype.OnSelectCourse = function (e) {
+        console.log('event is ', e, this.selectedBox);
+        if (this.selectedBox) {
+            this.dataSource.data = this.originalCopy;
+            this.dataSource.filter = e;
+            this.findActive();
+        }
+        else {
+            this.isCourseSelected = true;
+            this.dataSource.filter = e;
+        }
+    };
+    CallingDetailsComponent.prototype.changeBox = function (e, type) {
+        console.log(e.checked, this.selectedCourse, type === 'Active', this.dataSource.data);
+        if (e.checked === false) {
+            if (this.selectedCourse) {
+                // this.dataSource.filter = this.selectedCourse;
+                this.dataSource.data = this.copyDataSource;
+            }
+            else {
+                this.dataSource.filter = '';
+                this.isCourseSelected = false;
+            }
+        }
+        else {
+            type = type.trim(); // Remove whitespace
+            type = type.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+            if (type === 'active') {
+                console.log(type);
+                this.findActive();
+            }
+            else {
+                this.isCourseSelected = true;
+                this.dataSource.filter = type;
+            }
+        }
+    };
+    CallingDetailsComponent.prototype.applyFilter = function (filterValue) {
+        filterValue = filterValue.trim(); // Remove whitespace
+        filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+        this.dataSource.filter = filterValue;
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatPaginator */])
+    ], CallingDetailsComponent.prototype, "paginator", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["F" /* MatSort */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["F" /* MatSort */])
+    ], CallingDetailsComponent.prototype, "sort", void 0);
+    CallingDetailsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-calling-details',
+            template: __webpack_require__("../../../../../src/app/calling-details/calling-details.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/calling-details/calling-details.component.css")],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["D" /* MatSnackBar */]])
+    ], CallingDetailsComponent);
+    return CallingDetailsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/class/class.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".search{\n    width: 900px;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n    z-index: 1;\n    opacity: 0.8;\n    position: relative;\n   /* top: 100px;*/\n    \n}\nmat-cell{\n    font-weight: bold;\n}\n\n@media only screen and (min-width: 1200px){\n  mat-form-field {\n    width: 387px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -1457,6 +1762,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1577,11 +1883,165 @@ var ClassComponent = /** @class */ (function () {
             selector: 'app-class',
             template: __webpack_require__("../../../../../src/app/class/class.component.html"),
             styles: [__webpack_require__("../../../../../src/app/class/class.component.css")],
-            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], ClassComponent);
     return ClassComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/counsellor-login/counsellor-login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".adminForm{\n    position: relative;\n    top:100px;\n    border: 2px solid brown;\n    padding: 35px;\n    border-radius: 20px;\n    height: auto;\n    z-index: 1;\n    background-color: azure;\n    overflow: hidden;\n}\n\n.card-header {\n    background-color: yellow;\n}\n\n\nmat-form-field {\n\tmargin: 15px;\n\twidth: 198px;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n    padding-left: 255px;\n    padding-right: 300px;\n    opacity: 0.8;\n    position: relative;\n    top: 100px;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.counLogin mat-form-field {\n\t\tmargin: 10px !important;\n\t\twidth: 400px !important;\n    }\n    .adminForm{\n        width: 500px;\n        margin: auto;\n\n    }\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/counsellor-login/counsellor-login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"content-wrapper\">\n    <div class=\"container\" >  \n      <div class=\"adminForm mat-elevation-z12\">\n        <div class=\"card-header\" >\n        <h3>Counsellor Details</h3>\n        </div>\n\n        <form #cForm=\"ngForm\" (ngSubmit)=\"counLogin(cForm)\" class=\"counLogin\" style=\"margin:auto;\">\n     \n            <mat-form-field>                                  \n                <input matInput name=\"username\" [(ngModel)]=\"name\"  placeholder=\"Name\" required>  \n             </mat-form-field>  \n    \n    \n             <mat-form-field>                                  \n                <input matInput name=\"password\" [(ngModel)]=\"pass\" type=\"password\" placeholder=\"Password\" required>  \n             </mat-form-field>  \n\n             <!--mat-form-field>                                                             \n                <mat-select name=\"course\" [(ngModel)]=\"course\" placeholder=\"Course\" required>                                      \n                   <mat-option\tvalue=\"OTP\"> OTP</mat-option>\n                   <mat-option value=\"TSSV-B10\"> TSSV-B10 </mat-option>\n                   <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> \n                   <mat-option value=\"BSS\"> BSS </mat-option>\n                   <mat-option value=\"UMANG\"> UMANG </mat-option>          \n                </mat-select>                                                              \n              </mat-form-field-->  \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\">Login</button>\n            \n        </form>\n      </div>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/counsellor-login/counsellor-login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CounsellorLoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var CounsellorLoginComponent = /** @class */ (function () {
+    function CounsellorLoginComponent(route, _userService, _dataService, router, appComp) {
+        this.route = route;
+        this._userService = _userService;
+        this._dataService = _dataService;
+        this.router = router;
+        this.appComp = appComp;
+        this.course = '';
+        this.isLoggedIn = false;
+    }
+    CounsellorLoginComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if ($(window).width() < 600) {
+            $('.left-pane')[0].style.display = 'none';
+        }
+        var getLoggedIn = localStorage.getItem('ctoken');
+        console.log('getLogged in ', getLoggedIn);
+        if (getLoggedIn) {
+            this._userService.iscTokenVerified(getLoggedIn)
+                .subscribe(function (tokenRes) {
+                console.log('data is ', tokenRes);
+                if (tokenRes.result === 'ok') {
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = localStorage.getItem('cname');
+                }
+                else {
+                    _this.router.navigateByUrl('/counLogin');
+                }
+            });
+        }
+    };
+    CounsellorLoginComponent.prototype.counLogin = function (form) {
+        var _this = this;
+        this._userService.counLogin(form.value)
+            .subscribe(function (data) {
+            if (data.result === 'ok') {
+                console.log('data is ', data);
+                localStorage.setItem('ctoken', data.token);
+                localStorage.setItem('cname', form.value.username);
+                // this._dataService.changeMessage(data.resources);
+                _this.router.navigateByUrl('/callingdetails/' + form.value.username);
+                _this.appComp.isLoggedIn = true;
+                _this.appComp.userName = form.value.username;
+            }
+        });
+    };
+    CounsellorLoginComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-counsellor-login',
+            template: __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.css")],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+            ]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]])
+    ], CounsellorLoginComponent);
+    return CounsellorLoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/data.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DataService = /** @class */ (function () {
+    function DataService() {
+        this.messageSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["a" /* BehaviorSubject */]([]);
+        this.currentMessage = this.messageSource.asObservable();
+    }
+    DataService.prototype.changeMessage = function (message) {
+        this.messageSource.next(message);
+    };
+    DataService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], DataService);
+    return DataService;
 }());
 
 
@@ -1625,9 +2085,27 @@ var UserService = /** @class */ (function () {
             return err.json();
         });
     };
+    UserService.prototype.counLogin = function (form) {
+        return this._http.post(this._url + 'counLogin', {
+            body: form
+        }).map(function (res) {
+            return res.json();
+        }, function (err) {
+            return err.json();
+        });
+    };
     UserService.prototype.getOTPDevotees = function () {
         return this._http.get(this._url + 'getOTPDevotees').map(function (response) {
             return response.json();
+        });
+    };
+    UserService.prototype.updateComment = function (element) {
+        return this._http.post(this._url + 'updateComment', {
+            body: element
+        }).map(function (res) {
+            return res.json();
+        }, function (err) {
+            return err.json();
         });
     };
     UserService.prototype.getSearchedDevotee = function (contact, course) {
@@ -1647,6 +2125,17 @@ var UserService = /** @class */ (function () {
         searchParams.append('course', course);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'getSearchedDevotee', options)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.getCounsellorData = function (name) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        searchParams.append('username', name);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getCounsellorData', options)
             .map(function (response) {
             return response.json();
         });
@@ -1692,8 +2181,14 @@ var UserService = /** @class */ (function () {
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         var token = localStorage.getItem('token');
+        var ctoken = localStorage.getItem('ctoken');
+        if (token) {
+            searchParams.append('token', token);
+        }
+        if (ctoken) {
+            searchParams.append('ctoken', ctoken);
+        }
         searchParams.append('id', id);
-        searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'getDetails', options)
             .map(function (response) {
@@ -1751,6 +2246,17 @@ var UserService = /** @class */ (function () {
         searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'isTokenVerified', options)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.iscTokenVerified = function (token) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        searchParams.append('token', token);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'iscTokenVerified', options)
             .map(function (response) {
             return response.json();
         });
@@ -1822,6 +2328,19 @@ var UserService = /** @class */ (function () {
             err.json();
         });
     };
+    UserService.prototype.downloadCallReportCounsellor = function (dTe) {
+        console.log('downlods call report', dTe);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        searchParams.append('date', dTe.date);
+        searchParams.append('counsellor', dTe.counsellor);
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'downloadCallReportCounsellor', options)
+            .map(function (response) {
+            return response.json();
+        });
+    };
     UserService.prototype.downloadToExcel = function (dTe) {
         console.log('downlods', dTe);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -1887,13 +2406,12 @@ var UserService = /** @class */ (function () {
 /***/ "../../../../../src/app/downloads/downloads.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.content-wrapper{\n    background:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n    background-size: cover;\n}\n\n\n.container-fluid{\n    z-index: 1;\n    opacity: 0.8;\n    position: relative;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n    /* Styles */\n    .content-wrapper{\n        height: 100vh;\n    }\n\t\n}", ""]);
+exports.push([module.i, "\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n\n.container-fluid{\n    z-index: 1;\n    opacity: 0.8;\n    position: relative;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n    /* Styles */\n    /*.content-wrapper{\n        height: 100vh;\n    }*/\n\n   .classSc mat-form-field {\n        width: 287px !important;\n    }\n\t\n}", ""]);
 
 // exports
 
@@ -1906,7 +2424,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/downloads/downloads.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-fluid\" >  \n            <!-- Breadcrumbs-->\n            <ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">DOWNLOADS</a>\n                </li>\n              </ol>  \n    <div class=\"card mb-3\">\n     <div class=\"card-header\" style=\"background-color:yellow;\">\n        <i class=\"fa fa-table\" ></i> Download Attendance</div>\n      <div class=\"card-body\">\n        <h6>Download Attendance for Specfic Date and Course</h6>\n        <form #download1=\"ngForm\" (ngSubmit)=\"downloadToExcel(download1)\" \n            class=\"classSc\" style=\"margin:10px;\">\n            <mat-form-field >                                                              \n              <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n              <mat-datepicker #picker></mat-datepicker>                                   \n            </mat-form-field>                                                             \n                                                                                       \n             <mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                 <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                   {{co.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field>                                                            \n                                                                                       \n             <!--mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"counsellor\" name=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                  \n                 <mat-option *ngFor=\"let c of counsellors\" [value]=\"c.value\">\n                     {{c.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field-->                                                             \n                                                                       \n            <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n              <i class=\"fa fa-fw fa-download\"></i>Download</button>\n          </form>\n        <div *ngIf=\"isLoggedIn\">\n          \n          <h6>Download Attendance for Counsellor and Course</h6>\n          \n          <form #download2=\"ngForm\" (ngSubmit)=\"downloadExCounsellor(download2)\"\n               class=\"classSc\" style=\"margin:10px;\">\n            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>                              \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                    <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                    <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                    <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                    <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                    <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                    <mat-option value=\"NA\"> NA </mat-option>          \n                 </mat-select>                                                              \n               </mat-form-field>                                                             \n                                                                         \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n        <div>\n          \n          <h6>Download Devotees of particular course</h6>\n          \n          <form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"\n               class=\"classSc\" style=\"margin:10px;\">\n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>      \n                 </mat-select>\n                </mat-form-field>                                                          \n                    \n                 <mat-form-field>                                                             \n                  <mat-select name=\"isAlumni\" [(ngModel)]=\"isAlumni\" \n                     placeholder=\"Including alumni\" required>                                      \n                     <mat-option value=\"YES\"> YES </mat-option>          \n                     <mat-option value=\"NO\"> NO </mat-option>          \n                  </mat-select>                                                              \n               </mat-form-field>       \n\n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n      </div>                                      \n    </div>\n</div>"
+module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-fluid\" >  \n            <!-- Breadcrumbs-->\n            <ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">DOWNLOADS</a>\n                </li>\n              </ol>  \n    <div class=\"card mb-3\">\n     <div class=\"card-header\" style=\"background-color:yellow;\">\n        <i class=\"fa fa-table\" ></i> Download Attendance</div>\n      <div class=\"card-body\">\n        <h6>Download Attendance for Specfic Date and Course</h6>\n        <form #download1=\"ngForm\" (ngSubmit)=\"downloadToExcel(download1)\" \n            class=\"classSc\" style=\"margin:10px;\">\n            <mat-form-field >                                                              \n              <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n              <mat-datepicker #picker></mat-datepicker>                                   \n            </mat-form-field>                                                             \n                                                                                       \n             <mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                 <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                   {{co.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field>                                                            \n                                                                                       \n             <!--mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"counsellor\" name=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                  \n                 <mat-option *ngFor=\"let c of counsellors\" [value]=\"c.value\">\n                     {{c.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field-->                                                             \n                                                                       \n            <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n              <i class=\"fa fa-fw fa-download\"></i>Download</button>\n          </form>\n        <div *ngIf=\"isLoggedIn\">\n          \n          <h6>Download Attendance for Counsellor and Course</h6>\n          \n          <form #download2=\"ngForm\" (ngSubmit)=\"downloadExCounsellor(download2)\"\n               class=\"classSc\" style=\"margin:10px;\">\n            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>                              \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                    <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                    <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                    <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                    <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                    <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                    <mat-option value=\"NA\"> NA </mat-option>          \n                 </mat-select>                                                              \n               </mat-form-field>                                                             \n                                                                         \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n        <div *ngIf=\"isLoggedIn\">\n          \n            <h6>Download Calling Report of specific Counsellor</h6>\n            \n            <form #download3=\"ngForm\" (ngSubmit)=\"downloadCallReportCounsellor(download3)\"\n                 class=\"classSc\" style=\"margin:10px;\">\n              \n                 <mat-form-field >                                                              \n                    <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                    <mat-datepicker #picker></mat-datepicker>                                   \n                  </mat-form-field>                                                                        \n                                                                          \n                                                                                           \n                 <mat-form-field>                                                             \n                   <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                      <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                      <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                      <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                      <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                      <mat-option value=\"NA\"> NA </mat-option>          \n                   </mat-select>                                                              \n                 </mat-form-field>                                                             \n                                                                           \n                <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                  <i class=\"fa fa-fw fa-download\"></i>Download</button>\n              </form>\n          </div>\n\n\n\n\n\n        <div>\n          \n          <h6>Download Devotees of particular course</h6>\n          \n          <form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"\n               class=\"classSc\" style=\"margin:10px;\">\n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>      \n                 </mat-select>\n                </mat-form-field>                                                          \n                    \n                 <mat-form-field>                                                             \n                  <mat-select name=\"isAlumni\" [(ngModel)]=\"isAlumni\" \n                     placeholder=\"Including alumni\" required>                                      \n                     <mat-option value=\"YES\"> YES </mat-option>          \n                     <mat-option value=\"NO\"> NO </mat-option>          \n                  </mat-select>                                                              \n               </mat-form-field>       \n\n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n      </div>                                      \n    </div>\n</div>"
 
 /***/ }),
 
@@ -1921,6 +2439,7 @@ module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-f
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_xlsx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_xlsx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_file_saver__ = __webpack_require__("../../../../file-saver/FileSaver.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_file_saver__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1934,9 +2453,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var DownloadsComponent = /** @class */ (function () {
-    function DownloadsComponent(_userService) {
+    function DownloadsComponent(_userService, appComp) {
         this._userService = _userService;
+        this.appComp = appComp;
         this.isLoggedIn = false;
         this.course = '';
         this.counsellor = '';
@@ -1958,6 +2480,21 @@ var DownloadsComponent = /** @class */ (function () {
     }
     DownloadsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        // Check if counsellor logged in
+        var cLogIn = localStorage.getItem('ctoken');
+        if (cLogIn) {
+            this._userService.iscTokenVerified(cLogIn)
+                .subscribe(function (ctokenRes) {
+                if (ctokenRes.result === 'ok') {
+                    _this.isLoggedIn = true;
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = localStorage.getItem('cname');
+                    // this.userName = localStorage.getItem('cname');
+                    console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
+                }
+            });
+        }
+        // check if cousellor is login
         var getLoggedIn = localStorage.getItem('token');
         if (getLoggedIn) {
             this._userService.isTokenVerified(getLoggedIn)
@@ -1971,7 +2508,7 @@ var DownloadsComponent = /** @class */ (function () {
             });
         }
         if ($(window).width() < 600) {
-            $('.left-pane')[0].style.display = "none";
+            $('.left-pane')[0].style.display = 'none';
         }
     };
     DownloadsComponent.prototype.checkIfDevoteePresntForGivenDate = function (date, myArray) {
@@ -1980,6 +2517,44 @@ var DownloadsComponent = /** @class */ (function () {
                 return myArray[i];
             }
         }
+    };
+    DownloadsComponent.prototype.downloadCallReportCounsellor = function (form) {
+        console.log('in call report ', form.value);
+        this._userService.downloadCallReportCounsellor(form.value)
+            .subscribe(function (userData) {
+            console.log(userData);
+            var result_json = [];
+            for (var i = 0; i < userData.result.length; i++) {
+                var objectToInsert = {};
+                objectToInsert['name'] = userData.result[i].name;
+                objectToInsert['contact'] = userData.result[i].contact;
+                objectToInsert['course'] = userData.result[i].course;
+                objectToInsert['counsellor'] = userData.result[i].counsellor;
+                if (userData.result[i].calling !== undefined) {
+                    for (var j = 0; j < userData.result[i].calling.length; j++) {
+                        objectToInsert[userData.result[i].calling[j].date] =
+                            userData.result[i].calling[j].comment;
+                    }
+                }
+                result_json.push(objectToInsert);
+            }
+            console.log('result json ', result_json);
+            var ws_name = 'Attendance';
+            var wb = { SheetNames: [], Sheets: {} };
+            var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
+            wb.SheetNames.push(ws_name);
+            wb.Sheets[ws_name] = ws;
+            var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
+            function s2ab(s) {
+                var buf = new ArrayBuffer(s.length);
+                var view = new Uint8Array(buf);
+                for (var i = 0; i !== s.length; ++i) {
+                    view[i] = s.charCodeAt(i) & 0xFF;
+                }
+                return buf;
+            }
+            Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.date + '_' + form.value.counsellor + '.xlsx');
+        });
     };
     DownloadsComponent.prototype.downloadExCounsellor = function (form) {
         var _this = this;
@@ -2098,6 +2673,7 @@ var DownloadsComponent = /** @class */ (function () {
                 objectToInsert['contact'] = userData.result[i].contact;
                 objectToInsert['course'] = userData.result[i].course;
                 objectToInsert['counsellor'] = userData.result[i].counsellor;
+                objectToInsert['email'] = userData.result[i].email;
                 result_json.push(objectToInsert);
             }
             var ws_name = 'Attendance';
@@ -2122,9 +2698,10 @@ var DownloadsComponent = /** @class */ (function () {
             selector: 'app-downloads',
             template: __webpack_require__("../../../../../src/app/downloads/downloads.component.html"),
             styles: [__webpack_require__("../../../../../src/app/downloads/downloads.component.css")],
-            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]])
     ], DownloadsComponent);
     return DownloadsComponent;
 }());
@@ -2136,13 +2713,12 @@ var DownloadsComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/showdetails/showdetails.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".formClass {\n\toverflow: hidden;\n}\n\nmat-form-field {\n\twidth: 198px;\n}\n\nmat-progress-spinner{\n  \n  margin: auto;\n}\n\n\n.content-wrapper{\n\tbackground:url(" + escape(__webpack_require__("../../../../../src/assets/img/bg.jpg")) + ") repeat;\n\tbackground-size: cover;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n\t\n}\nmat-cell{\n\tfont-weight: bold;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\tmat-form-field {\n\t\tmargin: 10px;\n\t\twidth: 250px;\n\t}\n\t.mat-dialog-container {\n        height: 55vh;\n    }\n\t\n}\n\n.mat-dialog-container {\n    height: 85vh;\n}\n\n", ""]);
+exports.push([module.i, ".formClass {\n\toverflow: hidden;\n}\n\nmat-form-field {\n\twidth: 198px;\n}\n\nmat-progress-spinner{\n  \n  margin: auto;\n}\n\n\n .content-wrapper{\n\tmargin-top: 80px;\n} \n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n\t\n}\nmat-cell{\n\tfont-weight: bold;\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\tmat-form-field {\n\t\tmargin: 10px;\n\t\twidth: 250px;\n\t}\n\t.mat-dialog-container {\n        height: 55vh;\n    }\n\t\n}\n\n.mat-dialog-container {\n    height: 85vh;\n}\n\n", ""]);
 
 // exports
 
