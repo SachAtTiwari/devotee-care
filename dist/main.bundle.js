@@ -153,7 +153,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--router-outlet></router-outlet-->\n<div class=\"mid-pane\">\n  <div class=\"left-pane\">\n <div class=\"header-logo\">\n <a class=\"cmp-heading\">\n  \n   <img src=\"./assets/img/logo.jpeg\" style=\"width:90%\">\n </a>\n <a id=\"sidebar-collaps\" class=\"sidebar-icon\">\n   <i class=\"fa fa-indent\"></i>\n   <i class=\"fa fa-outdent\"></i>\n </a>\n <a class=\"fa fa-close CloseIcon\" style=\"display:none;\"></a>\n </div>\n <ul>\n   \n   <li>\n     <a class=\"collpased\" data-toggle=\"collapse\" href=\"#collapse1\" class=\"collapsed\">\n       \n      <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n       <i class=\"fas fa fa-angle-right\"></i>\n     </a>\n     <div class=\"collapse\" id=\"collapse1\">\n          <ul class=\"nav\" style=\"background: #f8f9fa\">\n            <li>\n              <a style=\"color:#000;\"  routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                  routerActive=\"/otpattendance\"><i class=\"fas fa fa-book\"></i><span>OTP</span> </a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n              routerActive=\"/tssvattendance\"><i class=\"fas fa fa-book\"></i>TSSV-B10</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n              routerActive=\"/ashrayattendance\"><i class=\"fas fa fa-book\"></i>ASHRAY</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n              routerActive=\"/umangattendance\"><i class=\"fas fa fa-book\"></i>UMANG</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n              routerActive=\"/bssattendance\"><i class=\"fas fa fa-book\"></i>BSS</a>\n            </li>\n            <li >\n                <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                routerActive=\"/attendance\"><i class=\"fas fa fa-book\"></i>ALL DEVOTEES</a>\n            </li>\n          </ul>\n     </div>\n   </li>\n   \n   <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n    <a class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n      <i class=\"fa fa-fw fa-download\"></i>\n      <span class=\"nav-link-text\">Downloads</span>\n    </a>\n</li>\n\n<li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n<a  class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n  <i class=\"fa fa-calendar\"></i>\n  <span class=\"nav-link-text\"> Scheduled Classes</span>\n</a>\n</li> \n </ul>\n  </div>\n  \n  <div class=\"right-pane\">\n   <div class=\"topBar\">\n     <button class=\"mobileToggle\" id=\"sidebar-collapsM\" ><i class=\"fa fa-bars\"></i></button>\n\n     <div *ngIf=\"!isLoggedIn\" class=\"dropdown pull-right logindropdown\" >\n        <i style=\"color:yellow;\" class=\"dropdown-toggle fa fa-user\" data-toggle=\"dropdown\">\n        </i>\n        <div class=\"dropdown-menu\">\n          <a class=\"dropdown-item\" *ngIf=\"!isLoggedIn\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n      <a class=\"dropdown-item\" *ngIf=\"!isLoggedIn\" \n      routerLink=\"/counLogin\" routerActive=\"/counLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Counsellor Login</a>\n        </div>\n      </div>\n      <!--a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a-->\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:yellow;\" class=\"pull-right\"\n      (click)=\"adminLogout();\" >\n          <i class=\"fa fa-sign-out\" style=\"cursor: pointer;\" aria-hidden=\"true\"></i></a>\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:yellow\" class=\"pull-right\">\n      <i class=\"fa fa-user\" style=\"color:yellow;\" aria-hidden=\"true\"></i> Hare Krishna, {{userName}}</a>\n\n      \n\n  <a href=\"#\" class=\"pull-right \">\n      <img src=\"./assets/img/lokanathswami.jpg\" class=\"ach\"\n       width=\"44\" height=\"46\">\n    </a> \n    <a href=\"#\" class=\"pull-right \">\n        <img src=\"./assets/img/spp.jpg\" class=\"ach\"\n        width=\"44\" height=\"46\" >\n    </a> \n\n  </div>   \n    \n   <router-outlet></router-outlet>\n  </div>\n</div>\n"
+module.exports = "<!--router-outlet></router-outlet-->\n<div class=\"mid-pane\">\n  <div class=\"left-pane\">\n <div class=\"header-logo\">\n <a class=\"cmp-heading\">\n  \n   <img src=\"./assets/img/logo.jpeg\" style=\"width:90%\">\n </a>\n <a id=\"sidebar-collaps\" class=\"sidebar-icon\">\n   <i class=\"fa fa-indent\"></i>\n   <i class=\"fa fa-outdent\"></i>\n </a>\n <a class=\"fa fa-close CloseIcon\" style=\"display:none;\"></a>\n </div>\n <ul>\n   \n   <li>\n     <a class=\"collpased\" data-toggle=\"collapse\" href=\"#collapse1\" class=\"collapsed\">\n       \n      <i class=\"fa fa-fw fa-dashboard\"></i>\n                <span   class=\"nav-link-text\">COURSES</span>\n       <i class=\"fas fa fa-angle-right\"></i>\n     </a>\n     <div class=\"collapse\" id=\"collapse1\">\n          <ul class=\"nav\" style=\"background: #f8f9fa\">\n            <li>\n              <a style=\"color:#000;\"  routerLink=\"/otpattendance\" [queryParams]=\"{ course: 1 }\"\n                  routerActive=\"/otpattendance\"><i class=\"fas fa fa-book\"></i><span>OTP</span> </a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/tssvattendance\" [queryParams]=\"{ course: 2 }\" \n              routerActive=\"/tssvattendance\"><i class=\"fas fa fa-book\"></i>TSSV-B10</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/ashrayattendance\" [queryParams]=\"{ course: 3 }\" \n              routerActive=\"/ashrayattendance\"><i class=\"fas fa fa-book\"></i>ASHRAY</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/umangattendance\" [queryParams]=\"{ course: 4 }\" \n              routerActive=\"/umangattendance\"><i class=\"fas fa fa-book\"></i>UMANG</a>\n            </li>\n            <li >\n              <a style=\"color:#000;\" routerLink=\"/bssattendance\" [queryParams]=\"{ course: 6 }\" \n              routerActive=\"/bssattendance\"><i class=\"fas fa fa-book\"></i>BSS</a>\n            </li>\n            <li >\n                <a style=\"color:#000;\" routerLink=\"/dysattendance\" [queryParams]=\"{ course: 7 }\" \n                routerActive=\"/dysattendance\"><i class=\"fas fa fa-book\"></i>DYS</a>\n              </li>\n            <li >\n                <a style=\"color:#000\" routerLink=\"/attendance\" [queryParams]=\"{ course: 5 }\" \n                routerActive=\"/attendance\"><i class=\"fas fa fa-book\"></i>ALL DEVOTEES</a>\n            </li>\n          </ul>\n     </div>\n   </li>\n   \n   <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n    <a class=\"nav-link\" routerLink=\"/downloads\" routerActive=\"/downloads\">\n      <i class=\"fa fa-fw fa-download\"></i>\n      <span class=\"nav-link-text\">Downloads</span>\n    </a>\n</li>\n\n<li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">\n<a  class=\"nav-link\" routerLink=\"/classSdl\" routerActive=\"/classSdl\">\n  <i class=\"fa fa-calendar\"></i>\n  <span class=\"nav-link-text\"> Scheduled Classes</span>\n</a>\n</li> \n </ul>\n  </div>\n  \n  <div class=\"right-pane\">\n   <div class=\"topBar\">\n     <button class=\"mobileToggle\" id=\"sidebar-collapsM\" ><i class=\"fa fa-bars\"></i></button>\n\n     <div *ngIf=\"!isLoggedIn\" class=\"dropdown pull-right logindropdown\" >\n        <i style=\"color:yellow;\" class=\"dropdown-toggle fa fa-user\" data-toggle=\"dropdown\">\n        </i>\n        <div class=\"dropdown-menu\">\n          <a class=\"dropdown-item\" *ngIf=\"!isLoggedIn\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a>\n      <a class=\"dropdown-item\" *ngIf=\"!isLoggedIn\" \n      routerLink=\"/counLogin\" routerActive=\"/counLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Counsellor Login</a>\n        </div>\n      </div>\n      <!--a *ngIf=\"!isLoggedIn\" style=\"margin-top:25px;\" class=\"pull-right\"\n      routerLink=\"/adminLogin\" routerActive=\"/adminLogin\">\n      <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Admin Login</a-->\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin:25px;color:yellow;\" class=\"pull-right\"\n      (click)=\"adminLogout();\" >\n          <i class=\"fa fa-sign-out\" style=\"cursor: pointer;\" aria-hidden=\"true\"></i></a>\n\n      <a *ngIf=\"isLoggedIn\" style=\"margin-top:25px;color:yellow\" class=\"pull-right\">\n      <i class=\"fa fa-user\" style=\"color:yellow;\" aria-hidden=\"true\"></i> Hare Krishna, {{userName}}</a>\n\n      \n\n  <a href=\"#\" class=\"pull-right \">\n      <img src=\"./assets/img/lokanathswami.jpg\" class=\"ach\"\n       width=\"44\" height=\"46\">\n    </a> \n    <a href=\"#\" class=\"pull-right \">\n        <img src=\"./assets/img/spp.jpg\" class=\"ach\"\n        width=\"44\" height=\"46\" >\n    </a> \n\n  </div>   \n    \n   <router-outlet></router-outlet>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -164,7 +164,9 @@ module.exports = "<!--router-outlet></router-outlet-->\n<div class=\"mid-pane\">
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -177,15 +179,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(_userService) {
+    function AppComponent(route, dialog, _userService, router) {
+        this.route = route;
+        this.dialog = dialog;
         this._userService = _userService;
+        this.router = router;
         this.isLoggedIn = false;
         this.userName = '';
     }
     AppComponent.prototype.adminLogout = function () {
         localStorage.clear();
-        window.location.reload();
+        this.isLoggedIn = false;
+        this.router.navigateByUrl('/classSdl');
+        // window.location.reload();
     };
     AppComponent.prototype.toggleClicked = function () {
         console.log('toggle clicked');
@@ -255,10 +264,13 @@ var AppComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/app.component.css")],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
-                __WEBPACK_IMPORTED_MODULE_2__data_service__["a" /* DataService */]
+                __WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */]
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -297,12 +309,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__ = __webpack_require__("../../../../../src/app/admin-login/admin-login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__ = __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__ = __webpack_require__("../../../../../src/app/calling-details/calling-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__dyshandler_dyshandler_component__ = __webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -368,6 +382,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__["a" /* CallingDetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */],
             ],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["f" /* MarkpresentComponent */],
@@ -375,7 +390,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["c" /* EditDevoteeComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */]
+                __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5_angular_datatables__["a" /* DataTablesModule */],
@@ -541,7 +557,8 @@ module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"containe
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_sweetalert2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dyshandler_dyshandler_component__ = __webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -562,6 +579,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+
 
 
 
@@ -656,22 +674,26 @@ var AttendanceComponent = /** @class */ (function () {
                 .subscribe(function (ctokenRes) {
                 if (ctokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
+                    _this.appComp.isLoggedIn = true;
                     _this.appComp.userName = localStorage.getItem('cname');
-                    console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
                 }
             });
         }
-        // check if admin logged in
+        // check if cousellor is login
         var getLoggedIn = localStorage.getItem('token');
         if (getLoggedIn) {
-            this.isLoggedIn = true;
-            this.appComp.userName = 'admin';
-            console.log('get logged in ', getLoggedIn);
+            this._userService.isTokenVerified(getLoggedIn)
+                .subscribe(function (tokenRes) {
+                if (tokenRes.result === 'ok') {
+                    _this.isLoggedIn = true;
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = 'admin';
+                }
+            });
         }
         // get all devotees
-        this._userService.getDevotees(params['course'], getLoggedIn)
+        this._userService.getDevotees(params['course'])
             .subscribe(function (userData) {
-            console.log('in get devotees', userData);
             if (userData.result) {
                 userData.result = userData.result.filter(function (el) {
                     return el.username !== 'admin';
@@ -691,11 +713,8 @@ var AttendanceComponent = /** @class */ (function () {
     };
     AttendanceComponent.prototype.showDetails = function (dv) {
         var _this = this;
-        // this.router.navigate(['/showDetails', dv['_id']]);
-        console.log('show deve', dv);
         this._userService.getDetails(dv['_id'])
             .subscribe(function (userData) {
-            console.log(' user data is ', userData.result[0]);
             if (userData.result[0].attendance) {
                 _this.dataSourceDetails.data = userData.result[0].attendance;
                 userData.result[0].dataSourceDetails = _this.dataSourceDetails;
@@ -705,9 +724,9 @@ var AttendanceComponent = /** @class */ (function () {
                 hasBackdrop: false,
                 data: __assign({}, userData.result[0])
             });
-            dialogRef.afterClosed().subscribe(function (result) {
-                console.log('result is', result);
-            });
+            /*dialogRef.afterClosed().subscribe(result => {
+              console.log('result is', result);
+            });*/
         });
     };
     AttendanceComponent.prototype.handleDevoteeDialog = function () {
@@ -803,7 +822,7 @@ var AttendanceComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]])
     ], AttendanceComponent);
     return AttendanceComponent;
 }());
@@ -835,12 +854,14 @@ var MarkpresentComponent = /** @class */ (function () {
 }());
 
 var MainAttendanceComponent = /** @class */ (function () {
-    function MainAttendanceComponent(route, dialog, _userService, router, snackBar) {
+    function MainAttendanceComponent(route, dialog, _userService, router, snackBar, appComp) {
+        var _this = this;
         this.route = route;
         this.dialog = dialog;
         this._userService = _userService;
         this.router = router;
         this.snackBar = snackBar;
+        this.appComp = appComp;
         this.startDate = new Date(1987, 0, 1);
         this.devoteeData = { contact: '', contact2: '', counsellor: '', course: '', email: '', dob: '', name: '' };
         this.loading = false;
@@ -850,6 +871,52 @@ var MainAttendanceComponent = /** @class */ (function () {
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */]([]);
         this.isLoggedIn = false;
         this.todayDate = new Date();
+        this.handleDysAttendance = function (course, contact, name) {
+            // console.log('in dys attendance', this.devoteeData, this.topic);
+            var month = _this.todayDate.getMonth() + 1;
+            var date = _this.todayDate.getDate() + '-' + month + '-' + _this.todayDate.getFullYear();
+            _this._userService.checkIfClassSdlForCourse(course, date)
+                .subscribe(function (dysClassData) {
+                //    console.log('dys data is ', dysClassData);
+                _this.dStatus['date'] = date;
+                _this.dStatus['present'] = 'YES';
+                _this.dStatus['topic'] = _this.topic;
+                _this.dStatus['speaker'] = _this.getSpeakerOfThisTopic(dysClassData, _this.topic);
+                _this.dStatus['contact'] = contact;
+                console.log('d status is  ', _this.dStatus);
+                _this._userService.markAttendance(_this.dStatus)
+                    .subscribe(function (userDataNew) {
+                    if (userDataNew['result'] === 'ok') {
+                        _this.loading = false;
+                        __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
+                            type: 'success',
+                            title: 'Attendance updated successfully',
+                            html: 'Hari Bol!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        _this.attendanceArray.push({
+                            name: name,
+                            contact: contact,
+                            attendance: 'YES',
+                            topic: _this.topic
+                        });
+                        _this.dataSource.data = _this.attendanceArray;
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
+                            type: 'warning',
+                            title: 'Attendance already updated',
+                            html: 'Hari Bol!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        _this.dataSource.data = _this.attendanceArray;
+                        _this.loading = false;
+                    }
+                });
+            });
+        };
     }
     MainAttendanceComponent.prototype.ngAfterViewInit = function () {
         this.dataSource.paginator = this.paginator;
@@ -862,7 +929,6 @@ var MainAttendanceComponent = /** @class */ (function () {
         }
         var course = '';
         var todayDateNew = this._userService.parseDate(this.todayDate);
-        var getLoggedIn = localStorage.getItem('token');
         this.route.queryParams.subscribe(function (params) {
             // console.log('param is main', params['course']);
             if (params['course'] === '1') {
@@ -884,14 +950,27 @@ var MainAttendanceComponent = /** @class */ (function () {
                 course = 'DYS';
             }
         });
+        // Check if counsellor logged in
+        var cLogIn = localStorage.getItem('ctoken');
+        if (cLogIn) {
+            this._userService.iscTokenVerified(cLogIn)
+                .subscribe(function (ctokenRes) {
+                if (ctokenRes.result === 'ok') {
+                    _this.isLoggedIn = true;
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = localStorage.getItem('cname');
+                }
+            });
+        }
+        // check if cousellor is login
+        var getLoggedIn = localStorage.getItem('token');
         if (getLoggedIn) {
             this._userService.isTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
                 if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
-                }
-                else {
-                    localStorage.clear();
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = 'admin';
                 }
             });
         }
@@ -899,6 +978,25 @@ var MainAttendanceComponent = /** @class */ (function () {
             .subscribe(function (sdlresult) {
             if (sdlresult.result.length === 0) {
                 _this.router.navigateByUrl('/classSdl');
+            }
+            else if (sdlresult.result.length !== 0 && course === 'DYS') {
+                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */], {
+                    width: '280px',
+                    disableClose: true,
+                    hasBackdrop: false,
+                    data: { res: sdlresult.result }
+                });
+                dialogRef.afterClosed().subscribe(function (result) {
+                    if (result.dystopic !== '') {
+                        _this.topic = sdlresult.result[0].topic;
+                        _this.devoteeData.counsellor = _this.getSpeakerOfThisTopic(sdlresult, sdlresult.result[0].topic);
+                    }
+                    else {
+                        _this.topic = result.dystopic;
+                        _this.devoteeData.counsellor = _this.getSpeakerOfThisTopic(sdlresult, result.dystopic);
+                    }
+                    _this.devoteeData.course = 'DYS';
+                });
             }
             else {
                 _this.topic = sdlresult.result[0].topic;
@@ -908,7 +1006,6 @@ var MainAttendanceComponent = /** @class */ (function () {
         });
         this._userService.getTodayAttendance(course)
             .subscribe(function (userData) {
-            console.log('userdata is', userData);
             if (userData.result.length !== 0) {
                 var result_json = [];
                 for (var i = 0; i < userData.result.length; i++) {
@@ -930,6 +1027,13 @@ var MainAttendanceComponent = /** @class */ (function () {
                 _this.dataSource.data = _this.attendanceArray;
             }
         });
+    };
+    MainAttendanceComponent.prototype.getSpeakerOfThisTopic = function (sdlresult, topic) {
+        for (var i = 0; i < sdlresult.result.length; i++) {
+            if (sdlresult.result[i].topic === topic) {
+                return sdlresult.result[i].speaker;
+            }
+        }
     };
     MainAttendanceComponent.prototype._searchedDevotee = function (contact, isContact, course) {
         var _this = this;
@@ -1140,68 +1244,73 @@ var MainAttendanceComponent = /** @class */ (function () {
     MainAttendanceComponent.prototype.markAttendance = function (course, contact, name) {
         var _this = this;
         console.log('mark attendance', course, this.devoteeData);
-        var specialCourse = false;
-        this.route.queryParams.subscribe(function (params) {
-            if (params['course'] === '4') {
-                specialCourse = true;
-            }
-        });
-        if (course !== '') {
-            this.loading = true;
-            var month = this.todayDate.getMonth() + 1;
-            var date = this.todayDate.getDate() + '-' + month + '-' + this.todayDate.getFullYear();
-            this._userService.checkIfClassSdlForCourse(specialCourse ? 'UMANG' : course, date)
-                .subscribe(function (userData) {
-                if (userData.result.length > 0) {
-                    _this.dStatus['date'] = userData.result[0].date;
-                    _this.dStatus['present'] = 'YES';
-                    _this.dStatus['topic'] = userData.result[0].topic;
-                    _this.dStatus['speaker'] = userData.result[0].speaker;
-                    // if(this.devoteeData.contact){
-                    _this.dStatus['contact'] = contact;
-                    _this._userService.markAttendance(_this.dStatus)
-                        .subscribe(function (userDataNew) {
-                        if (userDataNew['result'] === 'ok') {
-                            _this.loading = false;
-                            __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
-                                type: 'success',
-                                title: 'Attendance updated successfully',
-                                html: 'Hari Bol!!',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                            _this.attendanceArray.push({
-                                name: name,
-                                contact: contact,
-                                attendance: 'YES'
-                            });
-                            _this.dataSource.data = _this.attendanceArray;
-                        }
-                        else {
-                            __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
-                                type: 'warning',
-                                title: 'Attendance already updated',
-                                html: 'Hari Bol!!',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                            _this.dataSource.data = _this.attendanceArray;
-                            _this.loading = false;
-                        }
-                    });
-                    // }
-                }
-                else {
-                    _this.loading = false;
-                    __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
-                        type: 'error',
-                        title: 'No class sdl for selected date',
-                        html: 'Hari Bol!!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
+        if (course === 'DYS') {
+            this.handleDysAttendance(course, contact, name);
+        }
+        else {
+            var specialCourse_1 = false;
+            this.route.queryParams.subscribe(function (params) {
+                if (params['course'] === '4') {
+                    specialCourse_1 = true;
                 }
             });
+            if (course !== '') {
+                this.loading = true;
+                var month = this.todayDate.getMonth() + 1;
+                var date = this.todayDate.getDate() + '-' + month + '-' + this.todayDate.getFullYear();
+                this._userService.checkIfClassSdlForCourse(specialCourse_1 ? 'UMANG' : course, date)
+                    .subscribe(function (userData) {
+                    if (userData.result.length > 0) {
+                        _this.dStatus['date'] = userData.result[0].date;
+                        _this.dStatus['present'] = 'YES';
+                        _this.dStatus['topic'] = userData.result[0].topic;
+                        _this.dStatus['speaker'] = userData.result[0].speaker;
+                        // if(this.devoteeData.contact){
+                        _this.dStatus['contact'] = contact;
+                        _this._userService.markAttendance(_this.dStatus)
+                            .subscribe(function (userDataNew) {
+                            if (userDataNew['result'] === 'ok') {
+                                _this.loading = false;
+                                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
+                                    type: 'success',
+                                    title: 'Attendance updated successfully',
+                                    html: 'Hari Bol!!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                _this.attendanceArray.push({
+                                    name: name,
+                                    contact: contact,
+                                    attendance: 'YES'
+                                });
+                                _this.dataSource.data = _this.attendanceArray;
+                            }
+                            else {
+                                __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
+                                    type: 'warning',
+                                    title: 'Attendance already updated',
+                                    html: 'Hari Bol!!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                _this.dataSource.data = _this.attendanceArray;
+                                _this.loading = false;
+                            }
+                        });
+                        // }
+                    }
+                    else {
+                        _this.loading = false;
+                        __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
+                            type: 'error',
+                            title: 'No class sdl for selected date',
+                            html: 'Hari Bol!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                });
+            }
         }
     };
     __decorate([
@@ -1225,7 +1334,7 @@ var MainAttendanceComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]])
     ], MainAttendanceComponent);
     return MainAttendanceComponent;
 }());
@@ -1442,7 +1551,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/main-attendance.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\">\n        <div class=\"container-fluid\">  \n                 <!-- Breadcrumbs-->\n                 <ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                    <li class=\"breadcrumb-item\">\n                      <a href=\"#\">COURSES</a>\n                    </li>\n                    <li class=\"breadcrumb-item active\">Attendance</li>\n                  </ol>  \n          <!-- Add New Devotee-->\n         \n            \n            <!-- Add new devotee End-->\n          <!-- Example DataTables Card-->\n        <div class=\"card mb-2 col-md-offset-2\" style=\"margin-top:15px;\">\n            <div class=\"card-header\" style=\"background-color:yellow;\">\n              <i class=\"fa fa-table\"></i> Devotee Search\n            </div>\n    \n            <div class=\"card-body\" >\n              <div class=\"table-responsive col-md-offset-6 formClass mat-elevation-z12\" >\n    \n                        <form #devoteeForm=\"ngForm\">\n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> \n                              <input matInput required \n                              (blur)=\"getSearchedDevotee(devoteeData.contact)\"\n                              name=\"contact\" [(ngModel)]=\"devoteeData.contact\"\n                              placeholder=\"Contact\"\n                              maxlength=\"10\"\n                              minlength=\"10\">\n                              \n                             </mat-form-field>\n\n                             <mat-form-field> \n                                <input matInput\n                                name=\"contact2\" [(ngModel)]=\"devoteeData.contact2\"\n                                placeholder=\"Alternative Contact\"\n                                maxlength=\"10\"\n                                minlength=\"10\">\n                                \n                              </mat-form-field>\n\n                            <mat-form-field> \n                              \n                              <input matInput required\n                                 name=\"name\" [(ngModel)]=\"devoteeData.name\"\n                                (ngModel)=\"devoteeDataSubmit.name\"\n                                placeholder=\"Name\" > \n                              \n                              </mat-form-field>\t\n                            \n                            <mat-form-field> \n                              \n                              <input type=\"email\" matInput\n                              required\n                                 name=\"email\" [(ngModel)]=\"devoteeData.email\"\n                                placeholder=\"Email\" > \n                              \n                              </mat-form-field>\n\n                            \n                        <mat-form-field>       \n\n                        <input matInput name=\"dob\" [(ngModel)]=\"devoteeData.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>                                   \n                        \n                      </mat-form-field>   \n\n\t\t\t\t\t\t<mat-form-field>\n              \n\t\t\t\t\t\t<mat-select name=\"course\" placeholder=\"Course\" required\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.course\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV-B10\">\n\t\t\t\t\t\tTSSV-B10 </mat-option> <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> <mat-option\n              value=\"BSS\"> BSS </mat-option> <mat-option\n              value=\"UMANG\"> UMANG </mat-option></mat-select> \n            </mat-form-field>\n\n\t\t\t\t\t\t<mat-form-field>\n              \n\t\t\t\t\t\t<mat-select name=\"counsellor\" placeholder=\"Counsellor\" required disabled\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.counsellor\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n\t\t\t\t\t\t<mat-option value=\"HG Kalpvraksha Prabhuji\">\n\t\t\t\t\t\tHG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n\t\t\t\t\t\t\t<mat-option\n              value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji\n             </mat-option>\n             <mat-option\n              value=\"NA\"> NA\n             </mat-option>\n               </mat-select>\n               </mat-form-field>\n\n\n               <mat-form-field> \n                              \n                <input type=\"text\" matInput\n                required disabled\n                   name=\"topic\" [(ngModel)]=\"topic\"\n                  placeholder=\"Topic\" > \n                \n                </mat-form-field>\n\t\t\t\t\t\t\t \n            <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n             (click)=\"addDevotee(devoteeForm)\">Add or Update Devotee</button>\n            <!--button mat-raised-button color=\"accent\"\n             (click)=\"markAttendance(devoteeForm)\">Mark Attendance</button-->\n\t\t\t\t\t</form>\n\n                    </div>\n                </div>\n\n\n      <div class=\"example-container mat-elevation-z12\" \n      style=\"margin:10px;\">\n            <div class=\"card-header\" style=\"background-color:yellow;\">\n                    <i class=\"fa fa-table\"></i> Today's Attendace\n            </div>\n\n  <mat-table [dataSource]=\"dataSource\" matSort>\n\n    <!-- ID Column -->\n    <ng-container matColumnDef=\"Name\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.name}} </mat-cell>\n    </ng-container>\n\n    <!-- Progress Column -->\n    <ng-container matColumnDef=\"Contact\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Contact </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.contact}}</mat-cell>\n    </ng-container>\n\n    <!-- Name Column -->\n   \n\n    <!-- Color Column -->\n    <ng-container matColumnDef=\"Attendance\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Attendance </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\" > {{row.attendance}} </mat-cell>\n    </ng-container>\n    \n     \n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\">\n    </mat-row>\n  </mat-table>\n\n  <mat-paginator [pageSize]=\"50\" [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n                <div class=\"card-footer small text-muted\">\n                </div>\n        \n              </div>\n <!-- /.container-fluid-->\n <!-- /.content-wrapper-->"
+module.exports = "<div class=\"content-wrapper\">\n        <div class=\"container-fluid\">  \n                 <!-- Breadcrumbs-->\n                 <ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                    <li class=\"breadcrumb-item\">\n                      <a href=\"#\">COURSES</a>\n                    </li>\n                    <li class=\"breadcrumb-item active\">Attendance</li>\n                  </ol>  \n          <!-- Add New Devotee-->\n         \n            \n            <!-- Add new devotee End-->\n          <!-- Example DataTables Card-->\n        <div class=\"card mb-2 col-md-offset-2\" style=\"margin-top:15px;\">\n            <div class=\"card-header\" style=\"background-color:yellow;\">\n              <i class=\"fa fa-table\"></i> Devotee Search\n            </div>\n    \n            <div class=\"card-body\" >\n              <div class=\"table-responsive col-md-offset-6 formClass mat-elevation-z12\" >\n    \n                        <form #devoteeForm=\"ngForm\">\n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> \n                              <input matInput required \n                              (blur)=\"getSearchedDevotee(devoteeData.contact)\"\n                              name=\"contact\" [(ngModel)]=\"devoteeData.contact\"\n                              placeholder=\"Contact\"\n                              maxlength=\"10\"\n                              minlength=\"10\">\n                              \n                             </mat-form-field>\n\n                             <mat-form-field> \n                                <input matInput\n                                name=\"contact2\" [(ngModel)]=\"devoteeData.contact2\"\n                                placeholder=\"Alternative Contact\"\n                                maxlength=\"10\"\n                                minlength=\"10\">\n                                \n                              </mat-form-field>\n\n                            <mat-form-field> \n                              \n                              <input matInput required\n                                 name=\"name\" [(ngModel)]=\"devoteeData.name\"\n                                (ngModel)=\"devoteeDataSubmit.name\"\n                                placeholder=\"Name\" > \n                              \n                              </mat-form-field>\t\n                            \n                            <mat-form-field> \n                              \n                              <input type=\"email\" matInput\n                              required\n                                 name=\"email\" [(ngModel)]=\"devoteeData.email\"\n                                placeholder=\"Email\" > \n                              \n                              </mat-form-field>\n\n                            \n                        <mat-form-field>       \n\n                        <input matInput name=\"dob\" [(ngModel)]=\"devoteeData.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>                                   \n                        \n                      </mat-form-field>   \n\n\t\t\t\t\t\t<mat-form-field>\n              \n\t\t\t\t\t\t<mat-select name=\"course\" placeholder=\"Course\" required\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.course\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV-B10\">\n\t\t\t\t\t\tTSSV-B10 </mat-option> <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> <mat-option\n              value=\"BSS\"> BSS </mat-option> <mat-option\n              value=\"UMANG\"> UMANG </mat-option>\n              <mat-option\n              value=\"DYS\"> DYS </mat-option>\n            </mat-select> \n            </mat-form-field>\n\n\t\t\t\t\t\t<mat-form-field>\n              \n\t\t\t\t\t\t<mat-select name=\"counsellor\" placeholder=\"Counsellor\" required disabled\n\t\t\t\t\t\t\t[(ngModel)]=\"devoteeData.counsellor\"> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n\t\t\t\t\t\t<mat-option value=\"HG Kalpvraksha Prabhuji\">\n\t\t\t\t\t\tHG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n\t\t\t\t\t\t\tvalue=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n\t\t\t\t\t\t\t<mat-option\n              value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji\n             </mat-option>\n             <mat-option\n              value=\"NA\"> NA\n             </mat-option>\n               </mat-select>\n               </mat-form-field>\n\n\n               <mat-form-field> \n                              \n                <input type=\"text\" matInput\n                required disabled\n                   name=\"topic\" [(ngModel)]=\"topic\"\n                  placeholder=\"Topic\" > \n                \n                </mat-form-field>\n\t\t\t\t\t\t\t \n            <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n             (click)=\"addDevotee(devoteeForm)\">Add or Update Devotee</button>\n            <!--button mat-raised-button color=\"accent\"\n             (click)=\"markAttendance(devoteeForm)\">Mark Attendance</button-->\n\t\t\t\t\t</form>\n\n                    </div>\n                </div>\n\n\n      <div class=\"example-container mat-elevation-z12\" \n      style=\"margin:10px;\">\n            <div class=\"card-header\" style=\"background-color:yellow;\">\n                    <i class=\"fa fa-table\"></i> Today's Attendace\n            </div>\n\n  <mat-table [dataSource]=\"dataSource\" matSort>\n\n    <!-- ID Column -->\n    <ng-container matColumnDef=\"Name\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.name}} </mat-cell>\n    </ng-container>\n\n    <!-- Progress Column -->\n    <ng-container matColumnDef=\"Contact\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Contact </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\"> {{row.contact}}</mat-cell>\n    </ng-container>\n\n    <!-- Name Column -->\n   \n\n    <!-- Color Column -->\n    <ng-container matColumnDef=\"Attendance\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Attendance </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\" > {{row.attendance}} </mat-cell>\n    </ng-container>\n    \n     \n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\">\n    </mat-row>\n  </mat-table>\n\n  <mat-paginator [pageSize]=\"50\" [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n                <div class=\"card-footer small text-muted\">\n                </div>\n        \n              </div>\n <!-- /.container-fluid-->\n <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -1500,7 +1609,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1701,7 +1809,6 @@ var CallingDetailsComponent = /** @class */ (function () {
             selector: 'app-calling-details',
             template: __webpack_require__("../../../../../src/app/calling-details/calling-details.component.html"),
             styles: [__webpack_require__("../../../../../src/app/calling-details/calling-details.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
@@ -1753,6 +1860,7 @@ module.exports = "\n<div class=\"content-wrapper\" style=\"\">\n  <div class=\"c
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1769,9 +1877,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ClassComponent = /** @class */ (function () {
-    function ClassComponent(_userService, router) {
+    function ClassComponent(_userService, router, appComp) {
         this._userService = _userService;
         this.router = router;
+        this.appComp = appComp;
         this.displayedColumns = ['Date', 'Speaker', 'Course', 'Topic'];
         this.ELEMENT_DATA = [];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
@@ -1810,28 +1919,36 @@ var ClassComponent = /** @class */ (function () {
     };
     ClassComponent.prototype.ngOnInit = function () {
         var _this = this;
+        // Check if counsellor logged in
+        var cLogIn = localStorage.getItem('ctoken');
+        if (cLogIn) {
+            this._userService.iscTokenVerified(cLogIn)
+                .subscribe(function (ctokenRes) {
+                if (ctokenRes.result === 'ok') {
+                    _this.isLoggedIn = true;
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = localStorage.getItem('cname');
+                }
+            });
+        }
+        // check if cousellor is login
         var getLoggedIn = localStorage.getItem('token');
-        // console.log("token is in atte init",getLoggedIn);
         if (getLoggedIn) {
             this._userService.isTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
                 if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = 'admin';
                 }
             });
-            this._userService.getSdlClasses()
-                .subscribe(function (classInfo) {
-                _this.dataSource.data = classInfo.result;
-            });
         }
-        else {
-            this._userService.getSdlClasses()
-                .subscribe(function (classInfo) {
-                _this.dataSource.data = classInfo.result;
-            });
-        }
+        this._userService.getSdlClasses()
+            .subscribe(function (classInfo) {
+            _this.dataSource.data = classInfo.result;
+        });
         if ($(window).width() < 600) {
-            $('.left-pane')[0].style.display = "none";
+            $('.left-pane')[0].style.display = 'none';
         }
     };
     ClassComponent.prototype.sdlClass = function (form) {
@@ -1848,30 +1965,43 @@ var ClassComponent = /** @class */ (function () {
             });
         }
         else {
-            this._userService.checkIfClassSdlForCourse(form.value.course, form.value.date)
-                .subscribe(function (sdlresult) {
-                if (sdlresult.result.length === 0) {
-                    _this._userService.SdlClass(form.value);
-                    form.reset();
-                    // this.router.navigate(['/downloads']).then(() => { this.router.navigate(['/classSdl']); });
-                    __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
-                        type: 'success',
-                        title: 'Class Scheduled ',
-                        html: 'Hari Bol!!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-                else {
-                    __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
-                        type: 'success',
-                        title: 'Class already scheduled for given date and course. ',
-                        html: 'Hari Bol!!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-            });
+            if (form.value.course === 'DYS') {
+                this._userService.SdlClass(form.value);
+                form.reset();
+                __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
+                    type: 'success',
+                    title: 'Class Scheduled ',
+                    html: 'Hari Bol!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            else {
+                this._userService.checkIfClassSdlForCourse(form.value.course, form.value.date)
+                    .subscribe(function (sdlresult) {
+                    if (sdlresult.result.length === 0) {
+                        _this._userService.SdlClass(form.value);
+                        form.reset();
+                        // this.router.navigate(['/downloads']).then(() => { this.router.navigate(['/classSdl']); });
+                        __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
+                            type: 'success',
+                            title: 'Class Scheduled ',
+                            html: 'Hari Bol!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
+                            type: 'success',
+                            title: 'Class already scheduled for given date and course. ',
+                            html: 'Hari Bol!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                });
+            }
         }
     };
     __decorate([
@@ -1884,9 +2014,8 @@ var ClassComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/class/class.component.html"),
             styles: [__webpack_require__("../../../../../src/app/class/class.component.css")],
             providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]])
     ], ClassComponent);
     return ClassComponent;
 }());
@@ -1959,20 +2088,22 @@ var CounsellorLoginComponent = /** @class */ (function () {
         if ($(window).width() < 600) {
             $('.left-pane')[0].style.display = 'none';
         }
-        var getLoggedIn = localStorage.getItem('ctoken');
-        console.log('getLogged in ', getLoggedIn);
-        if (getLoggedIn) {
-            this._userService.iscTokenVerified(getLoggedIn)
-                .subscribe(function (tokenRes) {
-                console.log('data is ', tokenRes);
-                if (tokenRes.result === 'ok') {
-                    _this.appComp.isLoggedIn = true;
-                    _this.appComp.userName = localStorage.getItem('cname');
-                }
-                else {
-                    _this.router.navigateByUrl('/counLogin');
-                }
-            });
+        if (this.appComp.isLoggedIn === true) {
+            var getLoggedIn = localStorage.getItem('ctoken');
+            console.log('getLogged in ', getLoggedIn);
+            if (getLoggedIn) {
+                this._userService.iscTokenVerified(getLoggedIn)
+                    .subscribe(function (tokenRes) {
+                    console.log('data is 1', tokenRes);
+                    if (tokenRes.result === 'ok') {
+                        _this.appComp.isLoggedIn = true;
+                        _this.appComp.userName = localStorage.getItem('cname');
+                    }
+                    else {
+                        _this.router.navigateByUrl('/counLogin');
+                    }
+                });
+            }
         }
     };
     CounsellorLoginComponent.prototype.counLogin = function (form) {
@@ -1980,7 +2111,7 @@ var CounsellorLoginComponent = /** @class */ (function () {
         this._userService.counLogin(form.value)
             .subscribe(function (data) {
             if (data.result === 'ok') {
-                console.log('data is ', data);
+                console.log('data is 2', data);
                 localStorage.setItem('ctoken', data.token);
                 localStorage.setItem('cname', form.value.username);
                 // this._dataService.changeMessage(data.resources);
@@ -2072,9 +2203,123 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var UserService = /** @class */ (function () {
     function UserService(_http) {
+        var _this = this;
         this._http = _http;
         // private _url: string = 'http://localhost:3000/';
         this._url = '/';
+        this.addDevotee = function (body) {
+            return _this._http.post(_this._url + 'addDevotee', {
+                body: body
+            }).map(function (res) {
+                return res.json();
+            }, function (err) {
+                return err.json();
+            });
+        };
+        this.addDevoteeGeneric = function (body) {
+            return _this._http.post(_this._url + 'addDevoteeGeneric', {
+                body: body
+            }).map(function (res) {
+                return res.json();
+            }, function (err) {
+                return err.json();
+            });
+        };
+        this.editDevotee = function (body) {
+            return _this._http.put(_this._url + 'updateDevotee', {
+                body: body
+            })
+                .map(function (res) {
+                return res.json();
+            }, function (err) {
+                return err.json();
+            });
+        };
+        this.SdlClass = function (body) {
+            _this._http.post(_this._url + 'sdlClass', {
+                body: body
+            }).subscribe(function (res) {
+                // console.log('res is', res);
+            }, function (err) {
+                // console.log('err is', err);
+            });
+        };
+        this.markAttendance = function (attendance) {
+            console.log('atten is ', attendance);
+            return _this._http.post(_this._url + 'markAttendance', {
+                attendance: attendance
+            })
+                .map(function (res) {
+                return res.json();
+            }, function (err) {
+                err.json();
+            });
+        };
+        this.downloadCallReportCounsellor = function (dTe) {
+            console.log('downlods call report', dTe);
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            headers.append('Content-Type', 'application/json');
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            searchParams.append('date', dTe.date);
+            searchParams.append('counsellor', dTe.counsellor);
+            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'downloadCallReportCounsellor', options)
+                .map(function (response) {
+                return response.json();
+            });
+        };
+        this.downloadToExcel = function (dTe) {
+            console.log('downlods', dTe);
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            headers.append('Content-Type', 'application/json');
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            searchParams.append('date', dTe.date);
+            searchParams.append('course', dTe.course);
+            searchParams.append('counsellor', dTe.counsellor);
+            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'downloadToExcel', options)
+                .map(function (response) {
+                return response.json();
+            });
+        };
+        this.downloadCourseExcel = function (dTe) {
+            // console.log("atten is ", dTe);
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            headers.append('Content-Type', 'application/json');
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            searchParams.append('course', dTe.course);
+            searchParams.append('isAlumni', dTe.isAlumni);
+            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'downloadCourseExcel', options)
+                .map(function (response) {
+                return response.json();
+            });
+        };
+        this.downloadToExCounsellor = function (dTe) {
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            headers.append('Content-Type', 'application/json');
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            searchParams.append('date', dTe.date);
+            searchParams.append('course', dTe.course);
+            searchParams.append('counsellor', dTe.counsellor);
+            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            console.log('options ', options);
+            return _this._http.get(_this._url + 'downloadToExCounsellor', options)
+                .map(function (response) {
+                return response.json();
+            });
+        };
+        this.getTodayAttendance = function (course) {
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            headers.append('Content-Type', 'application/json');
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            searchParams.append('course', course);
+            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'getTodayAttendance', options)
+                .map(function (response) {
+                return response.json();
+            });
+        };
     }
     UserService.prototype.adminLogin = function (form) {
         return this._http.post(this._url + 'adminLogin', {
@@ -2140,7 +2385,7 @@ var UserService = /** @class */ (function () {
             return response.json();
         });
     };
-    UserService.prototype.getDevotees = function (course, token) {
+    UserService.prototype.getDevotees = function (course) {
         var courseName = '';
         switch (course) {
             case '1':
@@ -2167,9 +2412,10 @@ var UserService = /** @class */ (function () {
         }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
+        // headers.append('token', 'token');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', courseName);
-        searchParams.append('token', token);
+        // searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'getDevotees', options)
             .map(function (response) {
@@ -2183,10 +2429,12 @@ var UserService = /** @class */ (function () {
         var token = localStorage.getItem('token');
         var ctoken = localStorage.getItem('ctoken');
         if (token) {
-            searchParams.append('token', token);
+            //  searchParams.append('token', token);
+            headers.append('token', token);
         }
         if (ctoken) {
-            searchParams.append('ctoken', ctoken);
+            //  searchParams.append('ctoken', ctoken);
+            headers.append('ctoken', ctoken);
         }
         searchParams.append('id', id);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
@@ -2243,7 +2491,8 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('token', token);
+        // searchParams.append('token', token);
+        headers.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'isTokenVerified', options)
             .map(function (response) {
@@ -2254,7 +2503,8 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('token', token);
+        //  searchParams.append('token', token);
+        headers.append('ctoken', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'iscTokenVerified', options)
             .map(function (response) {
@@ -2274,123 +2524,11 @@ var UserService = /** @class */ (function () {
             return err.json();
         });
     };
-    UserService.prototype.addDevotee = function (body) {
-        return this._http.post(this._url + 'addDevotee', {
-            body: body
-        }).map(function (res) {
-            return res.json();
-        }, function (err) {
-            return err.json();
-        });
-    };
-    UserService.prototype.addDevoteeGeneric = function (body) {
-        return this._http.post(this._url + 'addDevoteeGeneric', {
-            body: body
-        }).map(function (res) {
-            return res.json();
-        }, function (err) {
-            return err.json();
-        });
-    };
-    UserService.prototype.editDevotee = function (body) {
-        return this._http.put(this._url + 'updateDevotee', {
-            body: body
-        })
-            .map(function (res) {
-            return res.json();
-        }, function (err) {
-            return err.json();
-        });
-    };
     UserService.prototype.parseDate = function (date) {
         var temp_datetime_obj = new Date(date);
         var month = temp_datetime_obj.getMonth() + 1;
         date = temp_datetime_obj.getDate() + '-' + month + '-' + temp_datetime_obj.getFullYear();
         return date;
-    };
-    UserService.prototype.SdlClass = function (body) {
-        this._http.post(this._url + 'sdlClass', {
-            body: body
-        }).subscribe(function (res) {
-            // console.log('res is', res);
-        }, function (err) {
-            // console.log('err is', err);
-        });
-    };
-    UserService.prototype.markAttendance = function (attendance) {
-        console.log('atten is ', attendance);
-        return this._http.post(this._url + 'markAttendance', {
-            attendance: attendance
-        })
-            .map(function (res) {
-            return res.json();
-        }, function (err) {
-            err.json();
-        });
-    };
-    UserService.prototype.downloadCallReportCounsellor = function (dTe) {
-        console.log('downlods call report', dTe);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('date', dTe.date);
-        searchParams.append('counsellor', dTe.counsellor);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'downloadCallReportCounsellor', options)
-            .map(function (response) {
-            return response.json();
-        });
-    };
-    UserService.prototype.downloadToExcel = function (dTe) {
-        console.log('downlods', dTe);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('date', dTe.date);
-        searchParams.append('course', dTe.course);
-        searchParams.append('counsellor', dTe.counsellor);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'downloadToExcel', options)
-            .map(function (response) {
-            return response.json();
-        });
-    };
-    UserService.prototype.downloadCourseExcel = function (dTe) {
-        // console.log("atten is ", dTe);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('course', dTe.course);
-        searchParams.append('isAlumni', dTe.isAlumni);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'downloadCourseExcel', options)
-            .map(function (response) {
-            return response.json();
-        });
-    };
-    UserService.prototype.downloadToExCounsellor = function (dTe) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('date', dTe.date);
-        searchParams.append('course', dTe.course);
-        searchParams.append('counsellor', dTe.counsellor);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'downloadToExCounsellor', options)
-            .map(function (response) {
-            return response.json();
-        });
-    };
-    UserService.prototype.getTodayAttendance = function (course) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        searchParams.append('course', course);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'getTodayAttendance', options)
-            .map(function (response) {
-            return response.json();
-        });
     };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
@@ -2424,7 +2562,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/downloads/downloads.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-fluid\" >  \n            <!-- Breadcrumbs-->\n            <ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">DOWNLOADS</a>\n                </li>\n              </ol>  \n    <div class=\"card mb-3\">\n     <div class=\"card-header\" style=\"background-color:yellow;\">\n        <i class=\"fa fa-table\" ></i> Download Attendance</div>\n      <div class=\"card-body\">\n        <h6>Download Attendance for Specfic Date and Course</h6>\n        <form #download1=\"ngForm\" (ngSubmit)=\"downloadToExcel(download1)\" \n            class=\"classSc\" style=\"margin:10px;\">\n            <mat-form-field >                                                              \n              <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n              <mat-datepicker #picker></mat-datepicker>                                   \n            </mat-form-field>                                                             \n                                                                                       \n             <mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                 <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                   {{co.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field>                                                            \n                                                                                       \n             <!--mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"counsellor\" name=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                  \n                 <mat-option *ngFor=\"let c of counsellors\" [value]=\"c.value\">\n                     {{c.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field-->                                                             \n                                                                       \n            <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n              <i class=\"fa fa-fw fa-download\"></i>Download</button>\n          </form>\n        <div *ngIf=\"isLoggedIn\">\n          \n          <h6>Download Attendance for Counsellor and Course</h6>\n          \n          <form #download2=\"ngForm\" (ngSubmit)=\"downloadExCounsellor(download2)\"\n               class=\"classSc\" style=\"margin:10px;\">\n            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>                              \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                    <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                    <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                    <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                    <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                    <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                    <mat-option value=\"NA\"> NA </mat-option>          \n                 </mat-select>                                                              \n               </mat-form-field>                                                             \n                                                                         \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n        <div *ngIf=\"isLoggedIn\">\n          \n            <h6>Download Calling Report of specific Counsellor</h6>\n            \n            <form #download3=\"ngForm\" (ngSubmit)=\"downloadCallReportCounsellor(download3)\"\n                 class=\"classSc\" style=\"margin:10px;\">\n              \n                 <mat-form-field >                                                              \n                    <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                    <mat-datepicker #picker></mat-datepicker>                                   \n                  </mat-form-field>                                                                        \n                                                                          \n                                                                                           \n                 <mat-form-field>                                                             \n                   <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                      <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                      <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                      <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                      <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                      <mat-option value=\"NA\"> NA </mat-option>          \n                   </mat-select>                                                              \n                 </mat-form-field>                                                             \n                                                                           \n                <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                  <i class=\"fa fa-fw fa-download\"></i>Download</button>\n              </form>\n          </div>\n\n\n\n\n\n        <div>\n          \n          <h6>Download Devotees of particular course</h6>\n          \n          <form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"\n               class=\"classSc\" style=\"margin:10px;\">\n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>      \n                 </mat-select>\n                </mat-form-field>                                                          \n                    \n                 <mat-form-field>                                                             \n                  <mat-select name=\"isAlumni\" [(ngModel)]=\"isAlumni\" \n                     placeholder=\"Including alumni\" required>                                      \n                     <mat-option value=\"YES\"> YES </mat-option>          \n                     <mat-option value=\"NO\"> NO </mat-option>          \n                  </mat-select>                                                              \n               </mat-form-field>       \n\n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n      </div>                                      \n    </div>\n</div>"
+module.exports = "<div class=\"content-wrapper\" >\n    <div class=\"container-fluid\" >  \n            <!-- Breadcrumbs-->\n            <ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">DOWNLOADS</a>\n                </li>\n              </ol>  \n    <div class=\"card mb-3\">\n     <div class=\"card-header\" style=\"background-color:yellow;\">\n        <i class=\"fa fa-table\" ></i> Download Attendance</div>\n      <div class=\"card-body\">\n        <h6>Download Attendance for Specfic Date and Course</h6>\n        <form #download1=\"ngForm\" (ngSubmit)=\"downloadToExcel(download1)\" \n            class=\"classSc\" style=\"margin:10px;\">\n            <mat-form-field >                                                              \n              <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n              <mat-datepicker #picker></mat-datepicker>                                   \n            </mat-form-field>                                                             \n                                                                                       \n             <mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                 <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                   {{co.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field>                                                            \n                                                                                       \n             <!--mat-form-field>                                                             \n               <mat-select [(ngModel)]=\"counsellor\" name=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                  \n                 <mat-option *ngFor=\"let c of counsellors\" [value]=\"c.value\">\n                     {{c.value}}  \n                 </mat-option>                              \n                                             \n               </mat-select>                                                              \n             </mat-form-field-->                                                             \n                                                                       \n            <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n              <i class=\"fa fa-fw fa-download\"></i>Download</button>\n          </form>\n        <div *ngIf=\"isLoggedIn\">\n          \n          <h6>Download Attendance for Counsellor and Course</h6>\n          \n          <form #download2=\"ngForm\" (ngSubmit)=\"downloadExCounsellor(download2)\"\n               class=\"classSc\" style=\"margin:10px;\">\n            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   \n                   <mat-option\tvalue=\"OTP\"> OTP </mat-option>\n                   <mat-option value=\"TSSV-B10\"> TSSV-B10 </mat-option>\n                   <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> \n                   <mat-option value=\"BSS\"> BSS </mat-option>\n                   <mat-option value=\"DYS\"> DYS </mat-option>          \n                   <mat-option value=\"ALL\"> ALL </mat-option>                    \n                                               \n                 </mat-select>                                                              \n               </mat-form-field>                                                            \n                                                                                         \n               <mat-form-field>                                                             \n                 <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                    <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                    <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                    <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                    <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                    <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                    <mat-option value=\"ALL\"> ALL </mat-option>          \n                 </mat-select>                                                              \n               </mat-form-field>                                                             \n                                                                         \n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n        <div *ngIf=\"isLoggedIn\">\n          \n            <h6>Download Calling Report of specific Counsellor</h6>\n            \n            <form #download3=\"ngForm\" (ngSubmit)=\"downloadCallReportCounsellor(download3)\"\n                 class=\"classSc\" style=\"margin:10px;\">\n              \n                 <mat-form-field >                                                              \n                    <input matInput name=\"date\" [(ngModel)]=\"date\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\" required>       \n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                    <mat-datepicker #picker></mat-datepicker>                                   \n                  </mat-form-field>                                                                        \n                                                                          \n                                                                                           \n                 <mat-form-field>                                                             \n                   <mat-select name=\"counsellor\" [(ngModel)]=\"counsellor\" placeholder=\"Counsellor\" required>                                      \n                      <mat-option\tvalue=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\"> HG Kalpvraksha Prabhuji </mat-option>\n                      <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> \n                      <mat-option value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                      <mat-option value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji </mat-option>          \n                      <mat-option value=\"NA\"> NA </mat-option>          \n                   </mat-select>                                                              \n                 </mat-form-field>                                                             \n                                                                           \n                <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                  <i class=\"fa fa-fw fa-download\"></i>Download</button>\n              </form>\n          </div>\n\n\n\n\n\n        <div>\n          \n          <h6>Download Devotees of particular course</h6>\n          \n          <form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"\n               class=\"classSc\" style=\"margin:10px;\">\n               <mat-form-field>                                                             \n                 <mat-select [(ngModel)]=\"course\" name=\"course\" placeholder=\"Course\" required>                                         \n                   <mat-option *ngFor=\"let co of courses\" [value]=\"co.value\">\n                     {{co.value}}  \n                   </mat-option>      \n                 </mat-select>\n                </mat-form-field>                                                          \n                    \n                 <mat-form-field>                                                             \n                  <mat-select name=\"isAlumni\" [(ngModel)]=\"isAlumni\" \n                     placeholder=\" Alumni\" required>                                      \n                     <mat-option value=\"YES\"> YES </mat-option>          \n                     <mat-option value=\"NO\"> NO </mat-option>          \n                  </mat-select>                                                              \n               </mat-form-field>       \n\n              <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Download\">\n                <i class=\"fa fa-fw fa-download\"></i>Download</button>\n            </form>\n        </div>\n\n\n      </div>                                      \n    </div>\n</div>"
 
 /***/ }),
 
@@ -2454,9 +2592,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var DownloadsComponent = /** @class */ (function () {
     function DownloadsComponent(_userService, appComp) {
+        var _this = this;
         this._userService = _userService;
         this.appComp = appComp;
         this.isLoggedIn = false;
@@ -2468,6 +2606,7 @@ var DownloadsComponent = /** @class */ (function () {
             { value: 'ASHRAY' },
             { value: 'BSS' },
             { value: 'UMANG' },
+            { value: 'DYS' },
         ];
         this.counsellors = [
             { value: 'HG Shyam Gopal Prabhuji' },
@@ -2477,6 +2616,144 @@ var DownloadsComponent = /** @class */ (function () {
             { value: 'HG Jagadanand Pandit Prabhuji' },
             { value: 'NA' },
         ];
+        this.excelGenerator = function (d1, d2, result_json) {
+            var ws_name = 'Attendance';
+            var wb = { SheetNames: [], Sheets: {} };
+            var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
+            wb.SheetNames.push(ws_name);
+            wb['!autofilter'] = { ref: 'C4' };
+            wb.Sheets[ws_name] = ws;
+            var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
+            function s2ab(s) {
+                var buf = new ArrayBuffer(s.length);
+                var view = new Uint8Array(buf);
+                for (var i = 0; i !== s.length; ++i) {
+                    view[i] = s.charCodeAt(i) & 0xFF;
+                }
+                return buf;
+            }
+            Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), d1 + '_' + d2 + '.xlsx');
+        };
+        this.checkIfDevoteePresntForGivenDate = function (date, myArray) {
+            for (var i = 0; i < myArray.length; i++) {
+                if (myArray[i].date === date) {
+                    return myArray[i];
+                }
+            }
+        };
+        this.downloadCallReportCounsellor = function (form) {
+            _this._userService.downloadCallReportCounsellor(form.value)
+                .subscribe(function (userData) {
+                console.log(userData);
+                var result_json = [];
+                for (var i = 0; i < userData.result.length; i++) {
+                    var objectToInsert = {};
+                    objectToInsert['name'] = userData.result[i].name;
+                    objectToInsert['contact'] = userData.result[i].contact;
+                    objectToInsert['course'] = userData.result[i].course;
+                    objectToInsert['counsellor'] = userData.result[i].counsellor;
+                    if (userData.result[i].calling !== undefined) {
+                        for (var j = 0; j < userData.result[i].calling.length; j++) {
+                            objectToInsert[userData.result[i].calling[j].date] =
+                                userData.result[i].calling[j].comment;
+                        }
+                    }
+                    result_json.push(objectToInsert);
+                }
+                _this.excelGenerator(form.value.date, form.value.counsellor, result_json);
+            });
+        };
+        this.downloadExCounsellor = function (form) {
+            var classList = [];
+            _this._userService.getSdlClassesCourse(_this.course)
+                .subscribe(function (sdlClass) {
+                for (var j = 0; j < 8; j++) {
+                    if (!sdlClass.result[j]) {
+                        break;
+                    }
+                    else {
+                        classList.push(sdlClass.result[j].date);
+                    }
+                }
+                // console.log('in class list', classList, classList.length);
+                if (classList.length > 0) {
+                    _this._userService.downloadToExCounsellor(form.value)
+                        .subscribe(function (userData) {
+                        var result_json = [];
+                        for (var i = 0; i < userData.result.length; i++) {
+                            var objectToInsert = {};
+                            objectToInsert['name'] = userData.result[i].name;
+                            objectToInsert['contact'] = userData.result[i].contact;
+                            objectToInsert['course'] = userData.result[i].course;
+                            objectToInsert['counsellor'] = userData.result[i].counsellor;
+                            var iterLen = 0;
+                            // get list of last 8 eight classes
+                            // check if devotee present for that day
+                            // search for date in attendance array for given counsellor/course
+                            // if yes add present else absent
+                            for (var j = 0; j < 8; j++) {
+                                if (classList[j] && userData.result[i].attendance !== undefined) {
+                                    var status_1 = {};
+                                    status_1 = _this.checkIfDevoteePresntForGivenDate(classList[j], userData.result[i].attendance);
+                                    if (status_1 !== undefined) {
+                                        // console.log("status", status);
+                                        if (objectToInsert['status'] !== 'active') {
+                                            objectToInsert['status'] = 'active';
+                                        }
+                                        objectToInsert[classList[j]] = status_1['present'];
+                                    }
+                                }
+                            }
+                            result_json.push(objectToInsert);
+                        }
+                        _this.excelGenerator(form.value.course, form.value.counsellor, result_json);
+                    });
+                }
+            });
+        };
+        this.downloadToExcel = function (form) {
+            form.value.date = _this._userService.parseDate(form.value.date);
+            _this._userService.downloadToExcel(form.value)
+                .subscribe(function (userData) {
+                var result_json = [];
+                for (var i = 0; i < userData.result.length; i++) {
+                    var objectToInsert = {};
+                    objectToInsert['name'] = userData.result[i].name;
+                    objectToInsert['contact'] = userData.result[i].contact;
+                    objectToInsert['course'] = userData.result[i].course;
+                    objectToInsert['counsellor'] = userData.result[i].counsellor;
+                    if (userData.result[i].attendance !== undefined) {
+                        for (var j = 0; j < userData.result[i].attendance.length; j++) {
+                            if (userData.result[i].attendance[j].date.localeCompare(form.value.date) === 0) {
+                                objectToInsert['date'] = userData.result[i].attendance[j].date;
+                                objectToInsert['present'] = userData.result[i].attendance[j].present;
+                                objectToInsert['topic'] = userData.result[i].attendance[j].topic;
+                                objectToInsert['speaker'] = userData.result[i].attendance[j].speaker;
+                                break;
+                            }
+                        }
+                    }
+                    result_json.push(objectToInsert);
+                }
+                _this.excelGenerator(form.value.date, form.value.course, result_json);
+            });
+        };
+        this.downloadCourseExcel = function (form) {
+            _this._userService.downloadCourseExcel(form.value)
+                .subscribe(function (userData) {
+                var result_json = [];
+                for (var i = 0; i < userData.result.length; i++) {
+                    var objectToInsert = {};
+                    objectToInsert['name'] = userData.result[i].name;
+                    objectToInsert['contact'] = userData.result[i].contact;
+                    objectToInsert['course'] = userData.result[i].course;
+                    objectToInsert['counsellor'] = userData.result[i].counsellor;
+                    objectToInsert['email'] = userData.result[i].email;
+                    result_json.push(objectToInsert);
+                }
+                _this.excelGenerator(form.value.course, form.value.course, result_json);
+            });
+        };
     }
     DownloadsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2501,9 +2778,8 @@ var DownloadsComponent = /** @class */ (function () {
                 .subscribe(function (tokenRes) {
                 if (tokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
-                }
-                else {
-                    localStorage.clear();
+                    _this.appComp.isLoggedIn = true;
+                    _this.appComp.userName = 'admin';
                 }
             });
         }
@@ -2511,199 +2787,105 @@ var DownloadsComponent = /** @class */ (function () {
             $('.left-pane')[0].style.display = 'none';
         }
     };
-    DownloadsComponent.prototype.checkIfDevoteePresntForGivenDate = function (date, myArray) {
-        for (var i = 0; i < myArray.length; i++) {
-            if (myArray[i].date === date) {
-                return myArray[i];
-            }
-        }
-    };
-    DownloadsComponent.prototype.downloadCallReportCounsellor = function (form) {
-        console.log('in call report ', form.value);
-        this._userService.downloadCallReportCounsellor(form.value)
-            .subscribe(function (userData) {
-            console.log(userData);
-            var result_json = [];
-            for (var i = 0; i < userData.result.length; i++) {
-                var objectToInsert = {};
-                objectToInsert['name'] = userData.result[i].name;
-                objectToInsert['contact'] = userData.result[i].contact;
-                objectToInsert['course'] = userData.result[i].course;
-                objectToInsert['counsellor'] = userData.result[i].counsellor;
-                if (userData.result[i].calling !== undefined) {
-                    for (var j = 0; j < userData.result[i].calling.length; j++) {
-                        objectToInsert[userData.result[i].calling[j].date] =
-                            userData.result[i].calling[j].comment;
-                    }
-                }
-                result_json.push(objectToInsert);
-            }
-            console.log('result json ', result_json);
-            var ws_name = 'Attendance';
-            var wb = { SheetNames: [], Sheets: {} };
-            var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
-            wb.SheetNames.push(ws_name);
-            wb.Sheets[ws_name] = ws;
-            var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
-            function s2ab(s) {
-                var buf = new ArrayBuffer(s.length);
-                var view = new Uint8Array(buf);
-                for (var i = 0; i !== s.length; ++i) {
-                    view[i] = s.charCodeAt(i) & 0xFF;
-                }
-                return buf;
-            }
-            Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.date + '_' + form.value.counsellor + '.xlsx');
-        });
-    };
-    DownloadsComponent.prototype.downloadExCounsellor = function (form) {
-        var _this = this;
-        console.log('in counsellor', form.value);
-        var classList = [];
-        this._userService.getSdlClassesCourse(this.course)
-            .subscribe(function (sdlClass) {
-            for (var j = 0; j < 8; j++) {
-                if (!sdlClass.result[j]) {
-                    break;
-                }
-                else {
-                    classList.push(sdlClass.result[j].date);
-                }
-            }
-            // console.log('in class list', classList, classList.length);
-            if (classList.length > 0) {
-                _this._userService.downloadToExCounsellor(form.value)
-                    .subscribe(function (userData) {
-                    var result_json = [];
-                    for (var i = 0; i < userData.result.length; i++) {
-                        var objectToInsert = {};
-                        objectToInsert['name'] = userData.result[i].name;
-                        objectToInsert['contact'] = userData.result[i].contact;
-                        objectToInsert['course'] = userData.result[i].course;
-                        objectToInsert['counsellor'] = userData.result[i].counsellor;
-                        var iterLen = 0;
-                        // get list of last 8 eight classes
-                        // check if devotee present for that day
-                        // search for date in attendance array for given counsellor/course
-                        // if yes add present else absent
-                        for (var j = 0; j < 8; j++) {
-                            if (classList[j] && userData.result[i].attendance !== undefined) {
-                                var status_1 = {};
-                                status_1 = _this.checkIfDevoteePresntForGivenDate(classList[j], userData.result[i].attendance);
-                                if (status_1 !== undefined) {
-                                    // console.log("status", status);
-                                    if (objectToInsert['status'] !== 'active') {
-                                        objectToInsert['status'] = 'active';
-                                    }
-                                    objectToInsert[classList[j]] = status_1['present'];
-                                }
-                            }
-                        }
-                        result_json.push(objectToInsert);
-                    }
-                    // console.log('object to insert', result_json);
-                    var ws_name = 'Attendance';
-                    var wb = { SheetNames: [], Sheets: {} };
-                    var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
-                    wb.SheetNames.push(ws_name);
-                    wb.Sheets[ws_name] = ws;
-                    var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
-                    function s2ab(s) {
-                        var buf = new ArrayBuffer(s.length);
-                        var view = new Uint8Array(buf);
-                        for (var i = 0; i !== s.length; ++i) {
-                            view[i] = s.charCodeAt(i) & 0xFF;
-                        }
-                        return buf;
-                    }
-                    Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.course + '_' + form.value.counsellor + '.xlsx');
-                });
-            }
-        });
-    };
-    DownloadsComponent.prototype.downloadToExcel = function (form) {
-        form.value.date = this._userService.parseDate(form.value.date);
-        this._userService.downloadToExcel(form.value)
-            .subscribe(function (userData) {
-            var result_json = [];
-            for (var i = 0; i < userData.result.length; i++) {
-                var objectToInsert = {};
-                objectToInsert['name'] = userData.result[i].name;
-                objectToInsert['contact'] = userData.result[i].contact;
-                objectToInsert['course'] = userData.result[i].course;
-                objectToInsert['counsellor'] = userData.result[i].counsellor;
-                if (userData.result[i].attendance !== undefined) {
-                    for (var j = 0; j < userData.result[i].attendance.length; j++) {
-                        if (userData.result[i].attendance[j].date.localeCompare(form.value.date) === 0) {
-                            objectToInsert['date'] = userData.result[i].attendance[j].date;
-                            objectToInsert['present'] = userData.result[i].attendance[j].present;
-                            objectToInsert['topic'] = userData.result[i].attendance[j].topic;
-                            objectToInsert['speaker'] = userData.result[i].attendance[j].speaker;
-                            break;
-                        }
-                    }
-                }
-                result_json.push(objectToInsert);
-            }
-            var ws_name = 'Attendance';
-            var wb = { SheetNames: [], Sheets: {} };
-            var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
-            wb.SheetNames.push(ws_name);
-            wb['!autofilter'] = { ref: 'C4' };
-            wb.Sheets[ws_name] = ws;
-            var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
-            function s2ab(s) {
-                var buf = new ArrayBuffer(s.length);
-                var view = new Uint8Array(buf);
-                for (var i = 0; i !== s.length; ++i) {
-                    view[i] = s.charCodeAt(i) & 0xFF;
-                }
-                return buf;
-            }
-            Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.date + '_' + form.value.course + '.xlsx');
-        });
-    };
-    DownloadsComponent.prototype.downloadCourseExcel = function (form) {
-        this._userService.downloadCourseExcel(form.value)
-            .subscribe(function (userData) {
-            var result_json = [];
-            for (var i = 0; i < userData.result.length; i++) {
-                var objectToInsert = {};
-                objectToInsert['name'] = userData.result[i].name;
-                objectToInsert['contact'] = userData.result[i].contact;
-                objectToInsert['course'] = userData.result[i].course;
-                objectToInsert['counsellor'] = userData.result[i].counsellor;
-                objectToInsert['email'] = userData.result[i].email;
-                result_json.push(objectToInsert);
-            }
-            var ws_name = 'Attendance';
-            var wb = { SheetNames: [], Sheets: {} };
-            var ws = __WEBPACK_IMPORTED_MODULE_2_xlsx__["utils"].json_to_sheet(result_json);
-            wb.SheetNames.push(ws_name);
-            wb.Sheets[ws_name] = ws;
-            var wbout = Object(__WEBPACK_IMPORTED_MODULE_2_xlsx__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
-            function s2ab(s) {
-                var buf = new ArrayBuffer(s.length);
-                var view = new Uint8Array(buf);
-                for (var i = 0; i !== s.length; ++i) {
-                    view[i] = s.charCodeAt(i) & 0xFF;
-                }
-                return buf;
-            }
-            Object(__WEBPACK_IMPORTED_MODULE_3_file_saver__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), form.value.course + '.xlsx');
-        });
-    };
     DownloadsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-downloads',
             template: __webpack_require__("../../../../../src/app/downloads/downloads.component.html"),
             styles: [__webpack_require__("../../../../../src/app/downloads/downloads.component.css")],
             providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]])
     ], DownloadsComponent);
     return DownloadsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/dyshandler/dyshandler.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/dyshandler/dyshandler.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div>\n          \n    <h6>Please select the topic for which attendance to be taken</h6>\n    <!--form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"-->\n    <form #dystopic=\"ngForm\" (ngSubmit)=\"handleDysTopic(dystopic)\" >\n         <mat-form-field>  \n\n           <mat-select [(ngModel)]=\"dysclass\" name=\"dystopic\" placeholder=\"Topic\" required>\n             <mat-option  *ngFor=\"let co of data.res\" [value]=\"co.topic\">{{co.topic}}</mat-option>      \n           </mat-select >\n        </mat-form-field>                                                          \n              \n\n        <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Submit the topic name\">\n          <i class=\"fa fa-fw fa-book\"></i>Submit</button>\n      </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/dyshandler/dyshandler.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DyshandlerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var DyshandlerComponent = /** @class */ (function () {
+    function DyshandlerComponent(route, dialog, _userService, router, dialogRef, data) {
+        this.route = route;
+        this.dialog = dialog;
+        this._userService = _userService;
+        this.router = router;
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.dystopic = '';
+    }
+    DyshandlerComponent.prototype.ngOnInit = function () {
+    };
+    DyshandlerComponent.prototype.handleDysTopic = function (form) {
+        this.dialogRef.close(form.value);
+    };
+    DyshandlerComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    DyshandlerComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-dyshandler',
+            template: __webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]],
+        }),
+        __param(5, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["a" /* MAT_DIALOG_DATA */])),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MatDialogRef */], Object])
+    ], DyshandlerComponent);
+    return DyshandlerComponent;
 }());
 
 
