@@ -221,7 +221,7 @@ var AppComponent = /** @class */ (function () {
                 if (ctokenRes.result === 'ok') {
                     _this.isLoggedIn = true;
                     _this.userName = localStorage.getItem('cname');
-                    console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
+                    // console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
                 }
             });
         }
@@ -522,7 +522,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin: 30px;\n\twidth: 900px;\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 35%;\n\t        flex: 0 0 35%;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n}", ""]);
+exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin: 30px;\n\twidth: 900px;\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 22%;\n\t        flex: 0 0 22%;\n}\n\n.mat-cell:nth-child(2), .mat-header-cell:nth-child(2) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 18%;\n\t        flex: 0 0 18%;\n}\n\n.mat-cell:nth-child(1), .mat-header-cell:nth-child(1) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 20%;\n\t        flex: 0 0 20%;\n}\n\n.mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 12%;\n\t        flex: 0 0 12%;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n}", ""]);
 
 // exports
 
@@ -535,7 +535,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/attendance/attendance.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"course\">\n                      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.course}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\" matTooltip=\"Click here to mark present\" >\n                       <i class=\"fa fa-fw fa-user\"></i>\n                     </button>  \n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                     <!--button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\" \n                     matTooltip=\"Edit Details\">\n                     <i class=\"fa fa-edit\"></i>\n                     \n                  \n                    </button-->\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" (page)=\"pageEvent = getPageDetails($event)\"\n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
+module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n\t\t\t\t\n\n\t\t\t\t\t<mat-form-field>\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"course\">\n                      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.course}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"facilitator\">\n                      <mat-header-cell *matHeaderCellDef> Facilitator </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.facilitator}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      <button *ngIf=\"showAllSwitch\"\n                        mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                        (click)=\"markPresent(element)\" \n                        class=\"btn btn-primary\" matTooltip=\"Click here to mark present\" >\n                       <i class=\"fa fa-fw fa-user\"></i>\n                     </button>  \n\n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                     <!--button\n                     mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                     (click)=\"editDevoteeDialog(element)\" \n                     class=\"btn btn-primary\" \n                     matTooltip=\"Edit Details\">\n                     <i class=\"fa fa-edit\"></i>\n                     \n                  \n                    </button-->\n\n                    \n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" \n                 \n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -592,13 +592,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 var AttendanceComponent = /** @class */ (function () {
     function AttendanceComponent(route, dialog, _userService, router, snackBar, appComp) {
+        var _this = this;
         this.route = route;
         this.dialog = dialog;
         this._userService = _userService;
         this.router = router;
         this.snackBar = snackBar;
         this.appComp = appComp;
-        this.displayedColumns = ['name', 'contact', 'counsellor', 'course', 'actions'];
+        this.displayedColumns = ['name', 'contact', 'counsellor', 'course', 'facilitator', 'actions'];
         this.ELEMENT_DATA = [];
         this.DETAILS_DATA = [];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
@@ -633,7 +634,32 @@ var AttendanceComponent = /** @class */ (function () {
             { value: 'UMANG' },
             { value: 'DYS' },
         ];
+        this.facilitators = [
+            { sgp: ['HG Madhav Caran Das'] },
+            { kvp: ['HG Anant Nimai Das'] },
+            { pvnp: [''] },
+            { jnp: ['HG Vraj Jana Ranjan Das'] },
+            { vcp: ['HG Shastra chaksu Das', 'HG Kishan Kanhyia Prabhuji'] },
+        ];
+        this.findKey = function (username) {
+            //  console.log('element ', this.facilitators[0]);
+            switch (username) {
+                case 'sgp':
+                    return _this.facilitators[0]['sgp'];
+                case 'kvp':
+                    return _this.facilitators[1]['kvp'];
+                case 'vcp':
+                    return _this.facilitators[4]['vcp'];
+                case 'pvnp':
+                    return _this.facilitators[2]['pvnp'];
+                case 'jnp':
+                    return _this.facilitators[3]['jnp'];
+                case 'admin':
+                    return [];
+            }
+        };
     }
+    // (page)="pageEvent = getPageDetails($event)"
     /* getPageDetails(e) {
       console.log(e.pageSize);
       this._getDevotees({course:5});
@@ -718,7 +744,10 @@ var AttendanceComponent = /** @class */ (function () {
             if (userData.result[0].attendance) {
                 _this.dataSourceDetails.data = userData.result[0].attendance;
                 userData.result[0].dataSourceDetails = _this.dataSourceDetails;
+                console.log('counsellor', _this.findKey(_this.appComp.userName));
+                userData.result[0].facilitators = _this.findKey(_this.appComp.userName);
             }
+            console.log('data is ', userData.result[0]);
             var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__showdetails_showdetails_component__["a" /* ShowdetailsComponent */], {
                 width: '100vh',
                 hasBackdrop: false,
@@ -883,7 +912,6 @@ var MainAttendanceComponent = /** @class */ (function () {
                 _this.dStatus['topic'] = _this.topic;
                 _this.dStatus['speaker'] = _this.getSpeakerOfThisTopic(dysClassData, _this.topic);
                 _this.dStatus['contact'] = contact;
-                console.log('d status is  ', _this.dStatus);
                 _this._userService.markAttendance(_this.dStatus)
                     .subscribe(function (userDataNew) {
                     if (userDataNew['result'] === 'ok') {
@@ -1243,7 +1271,7 @@ var MainAttendanceComponent = /** @class */ (function () {
     };
     MainAttendanceComponent.prototype.markAttendance = function (course, contact, name) {
         var _this = this;
-        console.log('mark attendance', course, this.devoteeData);
+        // console.log('mark attendance', course, this.devoteeData);
         if (course === 'DYS') {
             this.handleDysAttendance(course, contact, name);
         }
@@ -1570,7 +1598,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin-left: 19px;\n    margin-top: 13px;\n}\n\n.filters{\n\tmargin: 17px;\n}\n\n.fhead{\n\tmargin-left: 18px;\n    margin-top: 17px;\n}\n\n.comment{\n\twidth: 127px;\n}\n\n.locked {\n\tpointer-events:none;\n\topacity: 0.5 !important; /* Fade effect */\n    cursor: not-allowed; /* Cursor change to disabled state*/\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 16%;\n\t        flex: 0 0 16%;\n}\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n\t.comment {\n\t\twidth:127px;\n\t}\n\n}", ""]);
+exports.push([module.i, ".form-container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t    -ms-flex-direction: column;\n\t        flex-direction: column;\n\tpadding: 20px;\n\tborder: 2px solid wheat;\n}\n\n.form-container>* {\n\twidth: 100%;\n}\n.formClass{\n\tborder:2px solid brown;\n\tborder-radius: 15px;\n\tfont-weight: bold;\n}\n\nmat-form-field {\n\tmargin-left: 19px;\n    margin-top: 13px;\n}\n\n.filters{\n\tmargin: 17px;\n}\n\n.fhead{\n\tmargin-left: 18px;\n    margin-top: 17px;\n}\n\n.comment{\n\twidth: 127px;\n}\n\n.locked {\n\tpointer-events:none;\n\topacity: 0.5 !important; /* Fade effect */\n    cursor: not-allowed; /* Cursor change to disabled state*/\n}\n\n.mat-row, .mat-header-row {\n\twidth: 200vw;\n}\n\n.mat-form-field-infix {\n\twidth: 900px;\n}\n\n.mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 10%;\n\t        flex: 0 0 10%;\n}\n\n.mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 20%;\n\t        flex: 0 0 20%;\n}\n\n.mat-cell:nth-child(1), .mat-header-cell:nth-child(1) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 20%;\n\t        flex: 0 0 20%;\n}\n.mat-cell:nth-child(2), .mat-header-cell:nth-child(2) {\n\t-webkit-box-flex: 0;\n\t    -ms-flex: 0 0 20%;\n\t        flex: 0 0 20%;\n}\n\n\n .content-wrapper{\n\tmargin-top: 80px;\n}\n\n.container-fluid{\n\tz-index: 1;\n\topacity: 0.8;\n\tposition: relative;\n  /*  top: 100px;*/\n}\n\n\n/* Desktops and laptops ----------- */\n@media only screen  and (min-width : 1200px) {\n\t/* Styles */\n\t.mat-row, .mat-header-row {\n\t\twidth: auto;\n\t}\n\n\tmat-form-field {\n\t\twidth: 800px;\n\t}\n\n\t.comment {\n\t\twidth:127px;\n\t}\n\n}", ""]);
 
 // exports
 
@@ -1583,7 +1611,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/calling-details/calling-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n        <!--div class=\"filters\" >\n          <h5>Select checkbox to filter out devotees</h5>\n          <br/>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'OTP')\" \n            value=\"OTP\" >\n            OTP\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'TSSV-B10')\"\n             value=\"TSSV-B10\">\n             TSSV-B10\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'ASHRAY')\"\n             value=\"ASHRAY\">\n             ASHRAY\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'BSS')\"\n             value=\"BSS\">\n             BSS\n          </mat-checkbox>\n          <mat-checkbox [ngClass]=\"isCourseSelected ? '':'locked'\"\n            (change)=\"changeBox($event, 'Active')\"\n             value=\"Active\">\n             Active\n          </mat-checkbox>\n        </div-->\n         <h5 class=\"fhead\">Select course to filter out devotees</h5>\n         \n         <div class=\"cfilters\">\n            <mat-form-field style=\"width: 500px;\">\n               <mat-select [(ngModel)]=\"selectedCourse\"\n                (ngModelChange)=\"OnSelectCourse($event)\"\n                name=\"coursefilter\"  \n                placeholder=\"Course Filter\">                                      \n                  <mat-option value=\"OTP\"> OTP </mat-option>\n                  <mat-option value=\"TSSV-B10\">TSSV-B10 </mat-option>\n                  <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> \n                  <mat-option value=\"BSS\"> BSS </mat-option>\n               </mat-select> \n             </mat-form-field> \n             <mat-checkbox [(ngModel)]=\"selectedBox\" [ngClass]=\"isCourseSelected ? '':'locked'\"\n             (change)=\"changeBox($event, 'Active')\"\n              value=\"Active\">\n              Active\n           </mat-checkbox>\n\n          \n          </div>\n        \n          \n\t\t\t\t\t<mat-form-field>\n              <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"course\">\n                      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.course}} </mat-cell>\n                    </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      \n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n                     <div [ngClass]=\"element.locked ? 'locked':''\" >\n                     <mat-form-field [ngClass]=\"element.lockedDate === getDate() ? 'locked':''\"\n                        class=\"comment\">                                                             \n                        <mat-select name=\"comment\" value={{element.selected}} \n                        [(ngModel)]=\"element.selected\"\n                         placeholder=\"Comment\" required>                                      \n                           <mat-option value=\"CA\"> CA </mat-option>\n                           <mat-option value=\"NC\"> NC </mat-option>\n                           <mat-option value=\"Coming\"> Coming </mat-option> \n                           <mat-option value=\"Not Reachable\"> Not Reachable </mat-option>\n                           <mat-option value=\"Switch Off\"> Switch Off </mat-option>          \n                        </mat-select>                                                              \n                      </mat-form-field> \n\n                      <i (click)=\"lockIt(element, $event)\" style=\"cursor:pointer\"\n                      matTooltip=\"Click to lock it for the day\" class=\"fa fa-lock\"></i>\n                     </div>\n                      \n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" \n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
+module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"container-fluid\">  \n             <!-- Breadcrumbs-->\n             <ol class=\"breadcrumb\" >\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol>  \n      <!-- Add New Devotee-->\n     \n        \n        <!-- Add new devotee End-->\n      <!-- Example DataTables Card-->\n    <div class=\"card mb-3 col-md-offset-2 mat-elevation-z12\" style=\"margin-top:42px;\">\n        <div class=\"card-header\" \n          style=\"background-color:yellow;\">\n          <i class=\"fa fa-table\"></i> Devotee List\n\n          <button *ngIf=\"showAddDevotee\" \n          mat-raised-button\n          (click)=\"handleDevoteeDialog()\" \n          class=\"btn btn-primary pull-right\" matTooltip=\"Add New Devotee\">\n          Add Devotee\n        </button>\n          \n        </div>\n\n        <div class=\"card-body\" >\n          <div class=\"table-responsive formClass mat-elevation-z12\" >\n\n        <!--div class=\"filters\" >\n          <h5>Select checkbox to filter out devotees</h5>\n          <br/>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'OTP')\" \n            value=\"OTP\" >\n            OTP\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'TSSV-B10')\"\n             value=\"TSSV-B10\">\n             TSSV-B10\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'ASHRAY')\"\n             value=\"ASHRAY\">\n             ASHRAY\n          </mat-checkbox>\n          <mat-checkbox \n            (change)=\"changeBox($event, 'BSS')\"\n             value=\"BSS\">\n             BSS\n          </mat-checkbox>\n          <mat-checkbox [ngClass]=\"isCourseSelected ? '':'locked'\"\n            (change)=\"changeBox($event, 'Active')\"\n             value=\"Active\">\n             Active\n          </mat-checkbox>\n        </div-->\n         <h5 class=\"fhead\">Select course to filter out devotees</h5>\n         \n         <div class=\"cfilters\">\n            <mat-form-field style=\"width: 500px;\">\n               <mat-select [(ngModel)]=\"selectedCourse\"\n                (ngModelChange)=\"OnSelectCourse($event)\"\n                name=\"coursefilter\"  \n                placeholder=\"Course Filter\">                                      \n                  <mat-option value=\"OTP\"> OTP </mat-option>\n                  <mat-option value=\"TSSV-B10\">TSSV-B10 </mat-option>\n                  <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> \n                  <mat-option value=\"BSS\"> BSS </mat-option>\n               </mat-select> \n             </mat-form-field> \n             <mat-checkbox [(ngModel)]=\"selectedBox\" [ngClass]=\"isCourseSelected ? '':'locked'\"\n             (change)=\"changeBox($event, 'Active')\"\n              value=\"Active\">\n              Active\n           </mat-checkbox>\n\n          \n          </div>\n        \n          \n\t\t\t\t\t<mat-form-field>\n              <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n              <mat-table #table [dataSource]=\"dataSource\">\n\n                  <ng-container matColumnDef=\"name\">\n                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"contact\">\n                    <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.contact}} </mat-cell>\n                  </ng-container>\n              \n                  <ng-container matColumnDef=\"counsellor\">\n                    <mat-header-cell *matHeaderCellDef> Counsellor </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{element.counsellor}} </mat-cell>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"course\">\n                      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>\n                      <mat-cell *matCellDef=\"let element\"> {{element.course}} </mat-cell>\n                    </ng-container>\n              \n                  <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\">\n                      \n                     <button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"showDetails(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Show Details\">\n                      <i class=\"fa fa-address-card\"></i>\n                     </button>\n                     <div [ngClass]=\"element.locked ? 'locked':''\" >\n                     <mat-form-field [ngClass]=\"element.lockedDate === getDate() ? 'locked':''\"\n                        class=\"comment\">                                                             \n                        <mat-select name=\"comment\" value={{element.selected}} \n                        [(ngModel)]=\"element.selected\"\n                         placeholder=\"Comment\" required>                                      \n                           <mat-option value=\"CA\"> CA </mat-option>\n                           <mat-option value=\"NC\"> NC </mat-option>\n                           <mat-option value=\"Coming\"> Coming </mat-option> \n                           <mat-option value=\"Not Reachable\"> Not Reachable </mat-option>\n                           <mat-option value=\"Switch Off\"> Switch Off </mat-option>          \n                        </mat-select>                                                              \n                      </mat-form-field> \n\n                      <i (click)=\"lockIt(element, $event)\" style=\"cursor:pointer\"\n                      matTooltip=\"Click to lock it for the day\" class=\"fa fa-lock\"></i>\n\n                     <i (click)=\"showDetails(element, $event)\" style=\"cursor:pointer\"\n                      matTooltip=\"Show Details\" class=\"fa fa fa-address-card\"></i>\n                     </div>\n\n                      \n\n\n                     <!--button *ngIf=\"isLoggedIn\"\n                      mat-raised-button style=\"margin:2px;\" type=\"submit\" \n                      (click)=\"delRecord(element)\" \n                      class=\"btn btn-primary\" matTooltip=\"Delete Record\">\n                      <i class=\"fa fa-trash\"></i>\n\n                     </button-->\n\n                    </mat-cell>\n                  </ng-container>\n              \n                  <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                  <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n              \n                </mat-table>\n                <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20, 50]\" \n                 >\n             </mat-paginator> \n            \n          </div>\n        </div>\n        <div class=\"card-footer small text-muted\">\n        </div>\n\n      </div>\n    <!-- /.container-fluid-->\n    <!-- /.content-wrapper-->"
 
 /***/ }),
 
@@ -1596,10 +1624,19 @@ module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"containe
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_sweetalert2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_sweetalert2__);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1617,8 +1654,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CallingDetailsComponent = /** @class */ (function () {
     function CallingDetailsComponent(route, dialog, _userService, _dataService, router, appComp, snackBar) {
+        var _this = this;
         this.route = route;
         this.dialog = dialog;
         this._userService = _userService;
@@ -1637,7 +1676,45 @@ var CallingDetailsComponent = /** @class */ (function () {
         this.originalCopy = [];
         this.displayedColumns = ['name', 'contact', 'counsellor', 'course', 'actions'];
         this.ELEMENT_DATA = [];
+        this.DETAILS_DATA = [];
         this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["I" /* MatTableDataSource */](this.ELEMENT_DATA);
+        this.dataSourceDetails = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["I" /* MatTableDataSource */](this.DETAILS_DATA);
+        this.facilitators = [
+            { sgp: ['HG Madhav Caran Das'] },
+            { kvp: ['HG Anant Nimai Das'] },
+            { pvnp: [''] },
+            { jnp: ['HG Vraj Jana Ranjan Das'] },
+            { vcp: ['HG Shastra chaksu Das', 'HG Kishan Kanhyia Prabhuji'] },
+        ];
+        // [ngClass]="isLocked(element) ? '':'locked'"
+        /*isLocked(element) {
+            console.log('element ', element.contact);
+            if ( element.calling && element.calling.length > 0 ) {
+              element.calling.forEach(data => {
+                if (data.date === this.getDate()) {
+                  console.log('data is ', data);
+                  return true;
+                }
+              });
+            }
+        }*/
+        this.findKey = function (username) {
+            //  console.log('element ', this.facilitators[0]);
+            switch (username) {
+                case 'sgp':
+                    return _this.facilitators[0]['sgp'];
+                case 'kvp':
+                    return _this.facilitators[1]['kvp'];
+                case 'vcp':
+                    return _this.facilitators[4]['vcp'];
+                case 'pvnp':
+                    return _this.facilitators[2]['pvnp'];
+                case 'jnp':
+                    return _this.facilitators[3]['jnp'];
+                case 'admin':
+                    return [];
+            }
+        };
     }
     CallingDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1646,11 +1723,11 @@ var CallingDetailsComponent = /** @class */ (function () {
            this.dataSource.data = message;
          });*/
         var getLoggedIn = localStorage.getItem('ctoken');
-        console.log('getLogged in ', getLoggedIn);
+        // console.log('getLogged in ', getLoggedIn);
         if (getLoggedIn) {
             this._userService.iscTokenVerified(getLoggedIn)
                 .subscribe(function (tokenRes) {
-                console.log('data is ', tokenRes);
+                //  console.log('data is ', tokenRes);
                 if (tokenRes.result === 'ok') {
                     _this.route.params.subscribe(function (params) {
                         _this._userService.getCounsellorData(params['username'])
@@ -1680,18 +1757,27 @@ var CallingDetailsComponent = /** @class */ (function () {
         var datenew = date.getDate() + '-' + month + '-' + date.getFullYear();
         return datenew;
     };
-    // [ngClass]="isLocked(element) ? '':'locked'"
-    /*isLocked(element) {
-        console.log('element ', element.contact);
-        if ( element.calling && element.calling.length > 0 ) {
-          element.calling.forEach(data => {
-            if (data.date === this.getDate()) {
-              console.log('data is ', data);
-              return true;
+    CallingDetailsComponent.prototype.showDetails = function (dv) {
+        var _this = this;
+        this._userService.getDetails(dv['_id'])
+            .subscribe(function (userData) {
+            if (userData.result[0].attendance) {
+                _this.dataSourceDetails.data = userData.result[0].attendance;
+                userData.result[0].dataSourceDetails = _this.dataSourceDetails;
+                console.log('counsellor', _this.findKey(_this.appComp.userName));
+                userData.result[0].facilitators = _this.findKey(_this.appComp.userName);
             }
-          });
-        }
-    }*/
+            console.log('data is ', userData.result[0]);
+            var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__showdetails_showdetails_component__["a" /* ShowdetailsComponent */], {
+                width: '100vh',
+                hasBackdrop: false,
+                data: __assign({}, userData.result[0])
+            });
+            /*dialogRef.afterClosed().subscribe(result => {
+              console.log('result is', result);
+            });*/
+        });
+    };
     CallingDetailsComponent.prototype.lockIt = function (element, event) {
         //  console.log('element ', element.calling);
         element['locked'] = true;
@@ -1699,7 +1785,7 @@ var CallingDetailsComponent = /** @class */ (function () {
             .subscribe(function (result) {
             console.log('result is ', result);
             if (result.result === 'ok') {
-                __WEBPACK_IMPORTED_MODULE_6_sweetalert2___default()({
+                __WEBPACK_IMPORTED_MODULE_7_sweetalert2___default()({
                     type: 'success',
                     title: 'Hare Krishna, Status locked for the day',
                     html: 'Hari Bol!!',
@@ -1708,7 +1794,7 @@ var CallingDetailsComponent = /** @class */ (function () {
                 });
             }
             else {
-                __WEBPACK_IMPORTED_MODULE_6_sweetalert2___default()({
+                __WEBPACK_IMPORTED_MODULE_7_sweetalert2___default()({
                     type: 'success',
                     title: 'Hare Krishna, Status already locked for the day',
                     html: 'Hari Bol!!',
@@ -1799,6 +1885,10 @@ var CallingDetailsComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatPaginator */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatPaginator */])
+    ], CallingDetailsComponent.prototype, "paginatorDetails", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatPaginator */])
     ], CallingDetailsComponent.prototype, "paginator", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["F" /* MatSort */]),
@@ -1813,8 +1903,8 @@ var CallingDetailsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_2__angular_material__["D" /* MatSnackBar */]])
     ], CallingDetailsComponent);
     return CallingDetailsComponent;
@@ -2057,8 +2147,10 @@ module.exports = "<div class=\"content-wrapper\">\n    <div class=\"container\" 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_sweetalert2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2068,6 +2160,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2119,6 +2212,15 @@ var CounsellorLoginComponent = /** @class */ (function () {
                 _this.appComp.isLoggedIn = true;
                 _this.appComp.userName = form.value.username;
             }
+            else {
+                __WEBPACK_IMPORTED_MODULE_3_sweetalert2___default()({
+                    type: 'error',
+                    title: 'Invalid Login Crdentials',
+                    html: 'Hari Bol:(',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
         });
     };
     CounsellorLoginComponent = __decorate([
@@ -2132,8 +2234,8 @@ var CounsellorLoginComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_3__data_service__["a" /* DataService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]])
+            __WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]])
     ], CounsellorLoginComponent);
     return CounsellorLoginComponent;
 }());
@@ -2412,10 +2514,8 @@ var UserService = /** @class */ (function () {
         }
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        // headers.append('token', 'token');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', courseName);
-        // searchParams.append('token', token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'getDevotees', options)
             .map(function (response) {
@@ -2491,8 +2591,7 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        // searchParams.append('token', token);
-        headers.append('token', token);
+        headers.append('Authorization', 'Bearer ' + token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'isTokenVerified', options)
             .map(function (response) {
@@ -2503,8 +2602,8 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
-        //  searchParams.append('token', token);
-        headers.append('ctoken', token);
+        //    headers.append('ctoken', token);
+        headers.append('Authorization', 'Bearer ' + token);
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'iscTokenVerified', options)
             .map(function (response) {
@@ -2913,7 +3012,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/showdetails/showdetails.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n    <div class=\"\">  \n             <!-- Breadcrumbs-->\n             <!--ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol-->  \n\n              <div class=\"\" style=\"margin-top:15px;\">\n                  <div class=\"card-header\" style=\"background-color:yellow;\">\n                    <i class=\"fa fa-table\"></i> Devotee Details\n                  </div>\n                  <div class=\"formClass\">\n                      <form #devoteeForm=\"ngForm\">\n                          \n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> <input matInput\n                                 name=\"contact\" [(ngModel)]=\"data.contact\"\n                                placeholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n                            <mat-form-field> <input matInput required\n                                 name=\"name\" [(ngModel)]=\"data.name\"\n                                placeholder=\"Name\" > </mat-form-field>\t\n                            \n                                \n                            <mat-form-field> <input type=\"email\" matInput\n                              required\n                                 name=\"email\" [(ngModel)]=\"data.email\"\n                                placeholder=\"Email\" > </mat-form-field>\n\n                                <mat-form-field> <input type=\"text\" matInput\n                                  required\n                                     name=\"area\" [(ngModel)]=\"data.area\"\n                                  placeholder=\"Location\" > </mat-form-field>\n\n                            \n                        <mat-form-field>                                                              \n                        <input matInput name=\"dob\" [(ngModel)]=\"data.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>                                   \n                      </mat-form-field>   \n\n                      <mat-form-field>\n                      <mat-select name=\"course\" placeholder=\"Course\" required\n                        [(ngModel)]=\"data.course\"> <mat-option\n                        value=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV-B10\">\n                      TSSV-B10 </mat-option> <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> <mat-option\n                        value=\"BSS\"> BSS </mat-option> <mat-option value=\"UMANG\">\n                          UMANG </mat-option></mat-select> </mat-form-field>\n\n                      <mat-form-field>\n                      <mat-select name=\"counsellor\" placeholder=\"Counsellor\" required\n                        [(ngModel)]=\"data.counsellor\"> <mat-option\n                        value=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\">\n                      HG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n                        value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                        <mat-option\n                        value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji \n                      </mat-option>\n                      <mat-option\n                      value=\"NA\"> NA \n                    </mat-option>\n                        </mat-select> </mat-form-field>\n\n                        <!--mat-form-field>                                                              \n                            <input matInput name=\"fp\" [(ngModel)]=\"devoteeData.fp\" \n                             [matDatepicker]=\"picker\" placeholder=\"First Program\" required>       \n                            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                            <mat-datepicker #picker></mat-datepicker>                                   \n                        </mat-form-field-->  \n                        \n                      <mat-form-field>\n                        <mat-select name=\"bace\" placeholder=\"Is BACE Devotee?\" required\n                          [(ngModel)]=\"data.bace\"> \n                          <mat-option value=\"YES\"> YES </mat-option> \n                          <mat-option value=\"NO\"> NO </mat-option> \n                        </mat-select>\n                       </mat-form-field>\n                       <mat-form-field>                                                             \n                        <mat-select name=\"isAlumni\" [(ngModel)]=\"data.isAlumni\" \n                           placeholder=\"Update if devotee is alumni now\" required>                                      \n                           <mat-option value=\"YES\"> YES </mat-option>          \n                           <mat-option value=\"NO\"> NO </mat-option>          \n                        </mat-select>                                                              \n                     </mat-form-field>  \n                      <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n                      (click)=\"updateDevotee(devoteeForm)\">Update Devotee</button>\n                </form>\n          <div class=\"card mb-3 col-md-offset-2\" style=\"margin-top:25px;\">\n              <div class=\"card-header\" style=\"background-color:yellow;\">\n                  <i class=\"fa fa-table\"></i> Programs attended till date\n                </div>\n\n                        <mat-table #table *ngIf=\"data.attendance\" [dataSource]=\"data.dataSourceDetails\">\n                            <!-- Position Column -->\n                            <ng-container matColumnDef=\"Date\">\n                              <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.date}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Name Column -->\n                            <ng-container matColumnDef=\"Speaker\">\n                              <mat-header-cell *matHeaderCellDef> Speaker </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.speaker}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Weight Column -->\n                            <ng-container matColumnDef=\"Topic\">\n                              <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.topic}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Symbol Column -->\n                            <ng-container matColumnDef=\"Attendance\">\n                              <mat-header-cell *matHeaderCellDef> Attendance </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.present}} </mat-cell>\n                            </ng-container>\n                        \n                            <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                            <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n                        \n                          </mat-table>\n                          <mat-paginator #data.dataSourceDetails.paginatorDetails\n                           [pageSize]=\"10\"\n                           [pageSizeOptions]=\"[5, 10, 20]\"\n                           >\n                       </mat-paginator>\n                    </div>\n                  </div>\n                  <div class=\"card-footer small text-muted\">\n                  </div>\n    </div>\n</div>"
+module.exports = "<div class=\"\">\n    <div class=\"\">  \n             <!-- Breadcrumbs-->\n             <!--ol class=\"breadcrumb\" style=\"margin-top:20px;\">\n                <li class=\"breadcrumb-item\">\n                  <a href=\"#\">COURSES</a>\n                </li>\n                <li class=\"breadcrumb-item active\">Attendance</li>\n              </ol-->  \n\n              <div class=\"\" style=\"margin-top:15px;\">\n                  <div class=\"card-header\" style=\"background-color:yellow;\">\n                    <i class=\"fa fa-table\"></i> Devotee Details\n                  </div>\n                  <div class=\"formClass\">\n                      <form #devoteeForm=\"ngForm\">\n                          \n                          <mat-progress-spinner [diameter]=\"40\" [strokeWidth]=\"10\"\n                          mode=\"indeterminate\" *ngIf=\"loading\"></mat-progress-spinner>\n                        \n                            <mat-form-field> <input matInput\n                                 name=\"contact\" [(ngModel)]=\"data.contact\"\n                                placeholder=\"Contact\" maxlength=\"10\" minlength=\"10\" required> </mat-form-field>\n                            <mat-form-field> <input matInput required\n                                 name=\"name\" [(ngModel)]=\"data.name\"\n                                placeholder=\"Name\" > </mat-form-field>\t\n                            \n                                \n                            <mat-form-field> <input type=\"email\" matInput\n                              required\n                                 name=\"email\" [(ngModel)]=\"data.email\"\n                                placeholder=\"Email\" > </mat-form-field>\n\n                                <mat-form-field> <input type=\"text\" matInput\n                                  required\n                                     name=\"area\" [(ngModel)]=\"data.area\"\n                                  placeholder=\"Location\" > </mat-form-field>\n\n                            \n                        <mat-form-field>                                                              \n                        <input matInput name=\"dob\" [(ngModel)]=\"data.dob\" \n                         [matDatepicker]=\"picker\" placeholder=\"Date of Birth\" required>       \n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>                                   \n                      </mat-form-field>   \n\n                      <mat-form-field>\n                      <mat-select name=\"course\" placeholder=\"Course\" required\n                        [(ngModel)]=\"data.course\"> <mat-option\n                        value=\"OTP\"> OTP </mat-option> <mat-option value=\"TSSV-B10\">\n                      TSSV-B10 </mat-option> <mat-option value=\"ASHRAY\"> ASHRAY </mat-option> <mat-option\n                        value=\"BSS\"> BSS </mat-option> <mat-option value=\"UMANG\">\n                          UMANG </mat-option></mat-select> </mat-form-field>\n\n                      <mat-form-field>\n                      <mat-select name=\"counsellor\" placeholder=\"Counsellor\" required\n                        [(ngModel)]=\"data.counsellor\"> <mat-option\n                        value=\"HG Shyam Gopal Prabhuji\"> HG Shyam Gopal Prabhuji </mat-option>\n                      <mat-option value=\"HG Kalpvraksha Prabhuji\">\n                      HG Kalpvraksha Prabhuji </mat-option> <mat-option value=\"HG Vaidant Chaitnya Prabhuji\"> HG Vaidant Chaitnya Prabhuji </mat-option> <mat-option\n                        value=\"HG Pundrik Vidhyanidhi Prabhuji\"> HG Pundrik Vidhyanidhi Prabhuji </mat-option>\n                        <mat-option\n                        value=\"HG Jagadanand Pandit Prabhuji\"> HG Jagadanand Pandit Prabhuji \n                      </mat-option>\n                      <mat-option\n                      value=\"NA\"> NA \n                    </mat-option>\n                        </mat-select> </mat-form-field>\n\n                        <!--mat-form-field>                                                              \n                            <input matInput name=\"fp\" [(ngModel)]=\"devoteeData.fp\" \n                             [matDatepicker]=\"picker\" placeholder=\"First Program\" required>       \n                            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>    \n                            <mat-datepicker #picker></mat-datepicker>                                   \n                        </mat-form-field-->  \n                        \n                      <mat-form-field>\n                        <mat-select name=\"bace\" placeholder=\"Is BACE Devotee?\" required\n                          [(ngModel)]=\"data.bace\"> \n                          <mat-option value=\"YES\"> YES </mat-option> \n                          <mat-option value=\"NO\"> NO </mat-option> \n                        </mat-select>\n                       </mat-form-field>\n                       <mat-form-field>                                                             \n                        <mat-select name=\"isAlumni\" [(ngModel)]=\"data.isAlumni\" \n                           placeholder=\"Update if devotee is alumni now\" required>                                      \n                           <mat-option value=\"YES\"> YES </mat-option>          \n                           <mat-option value=\"NO\"> NO </mat-option>          \n                        </mat-select>                                                              \n                     </mat-form-field>  \n                  <mat-form-field>                                                             \n                    <mat-select name=\"facilitator\" [(ngModel)]=\"data.facilitator\" \n                     placeholder=\"Assign facilitator\" required>                                      \n                        <mat-option *ngFor=\"let co of data.facilitators\" [value]=\"co\"> {{co}} </mat-option>          \n                      </mat-select>                                                              \n                   </mat-form-field>  \n\n                      <button mat-raised-button color=\"primary\" style=\"margin-left:8px;\"\n                      (click)=\"updateDevotee(devoteeForm)\">Update Devotee</button>\n                </form>\n          <div class=\"card mb-3 col-md-offset-2\" style=\"margin-top:25px;\">\n              <div class=\"card-header\" style=\"background-color:yellow;\">\n                  <i class=\"fa fa-table\"></i> Programs attended till date\n                </div>\n\n                        <mat-table #table *ngIf=\"data.attendance\" [dataSource]=\"data.dataSourceDetails\">\n                            <!-- Position Column -->\n                            <ng-container matColumnDef=\"Date\">\n                              <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.date}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Name Column -->\n                            <ng-container matColumnDef=\"Speaker\">\n                              <mat-header-cell *matHeaderCellDef> Speaker </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.speaker}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Weight Column -->\n                            <ng-container matColumnDef=\"Topic\">\n                              <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.topic}} </mat-cell>\n                            </ng-container>\n                        \n                            <!-- Symbol Column -->\n                            <ng-container matColumnDef=\"Attendance\">\n                              <mat-header-cell *matHeaderCellDef> Attendance </mat-header-cell>\n                              <mat-cell *matCellDef=\"let element\"> {{element.present}} </mat-cell>\n                            </ng-container>\n                        \n                            <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                            <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n                        \n                          </mat-table>\n                          <mat-paginator #data.dataSourceDetails.paginatorDetails\n                           [pageSize]=\"10\"\n                           [pageSizeOptions]=\"[5, 10, 20]\"\n                           >\n                       </mat-paginator>\n                    </div>\n                  </div>\n                  <div class=\"card-footer small text-muted\">\n                  </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -2986,7 +3085,7 @@ var ShowdetailsComponent = /** @class */ (function () {
     };
     ShowdetailsComponent.prototype.updateDevotee = function (form) {
         form.value._id = this.data['_id'];
-        //   console.log('update devotee ', form.value);
+        // console.log('update devotee ', form.value);
         this._userService.editDevotee(form.value)
             .subscribe(function (userData) {
             if (userData['result'] === 'ok') {
