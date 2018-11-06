@@ -52,7 +52,7 @@ app.use(cors(
   }
 ));
 var csrfValue = function(req) {
-  console.log('req body', req.body, req.headers, req.csrfToken());
+//  console.log('req body', req.body, req.headers, req.csrfToken());
   var token = (req.body && req.body._csrf)
     || (req.query && req.query._csrf)
     || (req.csrfToken())

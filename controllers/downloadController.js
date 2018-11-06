@@ -53,6 +53,7 @@ exports.downloadToExCounsellor =  function(req, res, next) {
               { 
                 course:req.query.course, 
                 counsellor:req.query.counsellor, 
+                isAlumni:"NO",
               }
               ).toArray(function(err, result) {
                 if (err) {
