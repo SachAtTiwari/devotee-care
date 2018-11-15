@@ -131,7 +131,8 @@ exports.addDevotee = function(req, res, next) {
                 course:req.body.body.course,
                 counsellor:req.body.body.counsellor,
                 email:req.body.body.email,
-                dob:req.body.body.dob
+                dob:req.body.body.dob,
+                isAlumni: "NO"
               }
               console.log("in update", valuesToUpdate);
               var query = {_id: new mongo.ObjectID(req.body.body._id)};
