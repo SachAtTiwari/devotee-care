@@ -2358,7 +2358,7 @@ var UserService = /** @class */ (function () {
             });
         };
         this.downloadCallReportCounsellor = function (dTe) {
-            console.log('downlods call report', dTe);
+            // console.log('downlods call report', dTe);
             var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
             var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
@@ -2371,7 +2371,7 @@ var UserService = /** @class */ (function () {
             });
         };
         this.downloadToExcel = function (dTe) {
-            console.log('downlods', dTe);
+            // console.log('downlods', dTe);
             var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
             var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
@@ -2405,7 +2405,7 @@ var UserService = /** @class */ (function () {
             searchParams.append('course', dTe.course);
             searchParams.append('counsellor', dTe.counsellor);
             var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-            console.log('options ', options);
+            // console.log('options ', options);
             return _this._http.get(_this._url + 'downloadToExCounsellor', options)
                 .map(function (response) {
                 return response.json();
@@ -2785,7 +2785,7 @@ var DownloadsComponent = /** @class */ (function () {
                             objectToInsert['contact'] = userData.result[i].contact;
                             objectToInsert['course'] = userData.result[i].course;
                             objectToInsert['counsellor'] = userData.result[i].counsellor;
-                            objectToInsert['dob'] = _this._userService.parseDate(userData.result[i].dob);
+                            // objectToInsert['dob'] = this._userService.parseDate(userData.result[i].dob);
                             var iterLen = 0;
                             // get list of last 8 eight classes
                             // check if devotee present for that day
@@ -2868,7 +2868,7 @@ var DownloadsComponent = /** @class */ (function () {
                     _this.appComp.isLoggedIn = true;
                     _this.appComp.userName = localStorage.getItem('cname');
                     // this.userName = localStorage.getItem('cname');
-                    console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
+                    // console.log('c log in  ', cLogIn, localStorage.getItem('cname'));
                 }
             });
         }

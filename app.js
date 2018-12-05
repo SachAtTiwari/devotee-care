@@ -20,7 +20,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-var allowedOrigins = ['http://localhost:4200', 'http://localhost:3000',
+var allowedOrigins = ['http://localhost:4200',
                       'https://devotee-care.herokuapp.com'];
 
 // uncomment after placing your favicon in /public
@@ -29,12 +29,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-// Create link to Angular build directory
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
-
-/// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet())
 app.use(cors(
   {
@@ -52,19 +47,18 @@ app.use(cors(
   }
 ));
 var csrfValue = function(req) {
-//  console.log('req body', req.body, req.headers, req.csrfToken());
   var token = (req.body && req.body._csrf)
     || (req.query && req.query._csrf)
-    || (req.csrfToken())
     || (req.headers['x-csrf-token'])
     || (req.headers['x-xsrf-token'])
+    || (req.csrfToken());
   return token;
 };
 
 
 const cookieOptions = {
   key: 'XSRF-TOKEN',
-  secure: true,
+  secure: false,
   httpOnly: false,
   maxAge: 3600
 }
@@ -93,6 +87,11 @@ app.use('/isTokenVerified', index);
 app.use('/checkDevoteeStatusForGivenDate', index);
 
 
+
+
+//app.get('/test', (req,res) => {
+//  return res.end('Api working');
+//})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
