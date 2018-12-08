@@ -2829,6 +2829,7 @@ var DownloadsComponent = /** @class */ (function () {
                     objectToInsert['counsellor'] = userData.result[i].counsellor;
                     objectToInsert['dob'] = _this._userService.parseDate(userData.result[i].dob);
                     if (userData.result[i].attendance !== undefined) {
+                        objectToInsert['classcount'] = userData.result[i].attendance.length;
                         for (var j = 0; j < userData.result[i].attendance.length; j++) {
                             if (userData.result[i].attendance[j].date.localeCompare(form.value.date) === 0) {
                                 objectToInsert['date'] = userData.result[i].attendance[j].date;
