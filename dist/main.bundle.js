@@ -2785,7 +2785,12 @@ var DownloadsComponent = /** @class */ (function () {
                             objectToInsert['contact'] = userData.result[i].contact;
                             objectToInsert['course'] = userData.result[i].course;
                             objectToInsert['counsellor'] = userData.result[i].counsellor;
-                            // objectToInsert['dob'] = this._userService.parseDate(userData.result[i].dob);
+                            if (userData.result[i].dob) {
+                                objectToInsert['dob'] = _this._userService.parseDate(userData.result[i].dob);
+                            }
+                            if (userData.result[i].attendance !== undefined) {
+                                objectToInsert['classcount'] = userData.result[i].attendance.length;
+                            }
                             var iterLen = 0;
                             // get list of last 8 eight classes
                             // check if devotee present for that day
