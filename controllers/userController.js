@@ -17,6 +17,7 @@ exports.addDevoteeGeneric = function(req, res, next) {
        //if devotee not found add one with attendance
       }else{
         if (dvData.length === 0){
+          req.body.body["isAlumni"] = "NO";   
           db.collection("devotees")
           .insertOne(req.body.body, function(err, createRes) {
             if (err) {
@@ -108,6 +109,7 @@ exports.addDevotee = function(req, res, next) {
               if(!req.body.body.counsellor){ 
                 req.body.body.counsellor = sdlResult[0].speaker;
               }
+              req.body.body["isAlumni"] = "NO";   
               let attendance = {
                   date:date, 
                   speaker:sdlResult[0].speaker,
