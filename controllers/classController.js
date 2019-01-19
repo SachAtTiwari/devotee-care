@@ -1,4 +1,5 @@
 const assert = require('assert');
+var mongo = require('mongodb');
  
 
 exports.markAttendance = function(req, res, next) {
@@ -199,3 +200,30 @@ exports.getSdlClasses = function(req, res, next) {
       console.log("Exception:", err);
     }
 }
+
+exports.delClass = function(req, res, next) {
+  try{
+    console.log("i m in delete", req.query.id);
+    let db = req.app.locals.db;
+    
+    db.listCollections().toArray(function(err, collections){     
+        if (collections === undefined){
+          res.send({error:"No Collections present in DB"});
+        }else{
+          db.collection("entity").deleteOne({_id:new mongo.ObjectID(req.query.id)},
+    
+            function(err, res) {
+              if (err) {
+		            console.log("err ", err)
+                 res.send({error:500});            
+	            }
+              //console.log("1 document deleted", res.result);
+      
+           });
+        }
+    });
+   res.send({result:"ok"});
+  }catch(err){
+    console.log("Exception ", err);
+  }
+};

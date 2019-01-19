@@ -20,8 +20,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-var allowedOrigins = ['http://localhost:4200', 'http://localhost:3000',
-                      'https://devotee-care.herokuapp.com'];
+var allowedOrigins = ['http://localhost:4200', 'http://localhost:3000','https://devotee-care.herokuapp.com'];
+//var allowedOrigins = []
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -36,6 +36,7 @@ app.use(express.static(distDir));
 
 /// app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet())
+//app.use(cors())
 app.use(cors(
   {
     origin: function(origin, callback){
@@ -82,12 +83,14 @@ app.use('/checkClassSdl', index);
 app.use('/SdlClass', index);
 app.use('/getSdlClasses', index);
 app.use('/delRecord', index);
+app.use('/delClass', index);
 app.use('/getDetails', index);
 app.use('/getAllDevotees', index);
 app.use('/getSearchedDevotee', index);
 app.use('/getTodayAttendance', index);
 app.use('/addDevoteeGeneric', index);
 app.use('/adminLogin', index);
+app.use('/counLogin', index);
 app.use('/isTokenVerified', index);
 app.use('/checkDevoteeStatusForGivenDate', index);
 

@@ -87,6 +87,10 @@ router.get('/getSdlClassesCourse', classController.getSdlClassesCourse);
 /* Get today Class attendance */
 router.get('/getTodayAttendance', classController.getTodayAttendance);
 
+/* Delete class*/
+router.delete('/delClass', classController.delClass);
+
+
 
 
 ///Download Controller
