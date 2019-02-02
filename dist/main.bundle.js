@@ -309,13 +309,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__ = __webpack_require__("../../../../../src/app/admin-login/admin-login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__ = __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__ = __webpack_require__("../../../../../src/app/calling-details/calling-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__dyshandler_dyshandler_component__ = __webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_service_worker__ = __webpack_require__("../../../service-worker/esm5/service-worker.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -382,7 +384,6 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__["a" /* CallingDetailsComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */],
             ],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["f" /* MarkpresentComponent */],
@@ -391,7 +392,6 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
                 __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_5_angular_datatables__["a" /* DataTablesModule */],
@@ -432,7 +432,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["M" /* MatTooltipModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["H" /* MatStepperModule */],
                 __WEBPACK_IMPORTED_MODULE_19_ng2_smart_table__["a" /* Ng2SmartTableModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true })
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
+                __WEBPACK_IMPORTED_MODULE_24__angular_service_worker__["a" /* ServiceWorkerModule */].register('ngsw-worker.js', { enabled: __WEBPACK_IMPORTED_MODULE_25__environments_environment__["a" /* environment */].production })
             ],
             exports: [
                 // Material Modules
@@ -557,8 +558,7 @@ module.exports = " \n <div class=\"content-wrapper\">\n    <div class=\"containe
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_sweetalert2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dyshandler_dyshandler_component__ = __webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -579,7 +579,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-
 
 
 
@@ -851,7 +850,7 @@ var AttendanceComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]])
     ], AttendanceComponent);
     return AttendanceComponent;
 }());
@@ -1008,42 +1007,40 @@ var MainAttendanceComponent = /** @class */ (function () {
                 _this.router.navigateByUrl('/classSdl');
             }
             else if (sdlresult.result.length !== 0 && course === 'DYS') {
-                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */], {
-                    width: '280px',
-                    disableClose: true,
-                    hasBackdrop: false,
-                    data: { res: sdlresult.result }
-                });
-                dialogRef.afterClosed().subscribe(function (result) {
-                    if (result.dystopic === undefined) {
-                        _this.topic = sdlresult.result[0].topic;
-                        _this.devoteeData.counsellor = _this.getSpeakerOfThisTopic(sdlresult, sdlresult.result[0].topic);
-                    }
-                    else {
-                        _this.topic = result.dystopic;
-                        _this.devoteeData.counsellor = _this.getSpeakerOfThisTopic(sdlresult, result.dystopic);
-                    }
-                    _this.devoteeData.course = 'DYS';
-                });
+                /* const dialogRef = this.dialog.open(DyshandlerComponent, {
+                  width: '280px',
+                  disableClose: true,
+                  hasBackdrop: false,
+                  data: {res: sdlresult.result}
+                }); */
+                /* dialogRef.afterClosed().subscribe(result => {
+                  if (result.dystopic === undefined) {
+                    this.topic = sdlresult.result[0].topic;
+                    this.devoteeData.counsellor = this.getSpeakerOfThisTopic(sdlresult, sdlresult.result[0].topic);
+                  } else {
+                    this.topic = result.dystopic;
+                    this.devoteeData.counsellor = this.getSpeakerOfThisTopic(sdlresult, result.dystopic);
+                  }
+                  this.devoteeData.course = 'DYS';
+                }); */
             }
             else if (sdlresult.result.length !== 0 && course === 'TSSV-B10') {
-                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__dyshandler_dyshandler_component__["a" /* DyshandlerComponent */], {
-                    width: '280px',
-                    disableClose: true,
-                    hasBackdrop: false,
-                    data: { res: sdlresult.result }
-                });
-                dialogRef.afterClosed().subscribe(function (result) {
-                    if (result.dystopic === undefined) {
-                        _this.topic = sdlresult.result[0].topic;
-                        _this.devoteeData.counsellor = _this.getSpeakerOfThisTopic(sdlresult, sdlresult.result[0].topic);
-                    }
-                    else {
-                        _this.topic = result.dystopic;
-                        _this.devoteeData.counsellor = _this.getSpeakerOfThisTopic(sdlresult, result.dystopic);
-                    }
-                    _this.devoteeData.course = 'TSSV-B10';
-                });
+                /* const dialogRef = this.dialog.open(DyshandlerComponent, {
+                  width: '280px',
+                  disableClose: true,
+                  hasBackdrop: false,
+                  data: {res: sdlresult.result}
+                }); */
+                /* dialogRef.afterClosed().subscribe(result => {
+                  if (result.dystopic ===  undefined) {
+                    this.topic = sdlresult.result[0].topic;
+                    this.devoteeData.counsellor = this.getSpeakerOfThisTopic(sdlresult, sdlresult.result[0].topic);
+                  } else {
+                    this.topic = result.dystopic;
+                    this.devoteeData.counsellor = this.getSpeakerOfThisTopic(sdlresult, result.dystopic);
+                  }
+                  this.devoteeData.course = 'TSSV-B10';
+                }); */
             }
             else {
                 _this.topic = sdlresult.result[0].topic;
@@ -1382,7 +1379,7 @@ var MainAttendanceComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */],
             __WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]])
     ], MainAttendanceComponent);
     return MainAttendanceComponent;
 }());
@@ -1714,7 +1711,7 @@ var CallingDetailsComponent = /** @class */ (function () {
         this.pageEvent = function (e) {
             console.log('event is ', e);
             _this.route.params.subscribe(function (params) {
-                _this._userService.getCounsellorData(params['username'], e.pageIndex, e.pageSize)
+                _this._userService.getCounsellorData(params['username'])
                     .subscribe(function (data) {
                     console.log('data is 2 ', data);
                     // this.length = data.total;
@@ -1825,7 +1822,7 @@ var CallingDetailsComponent = /** @class */ (function () {
                 //  console.log('data is ', tokenRes);
                 if (tokenRes.result === 'ok') {
                     _this.route.params.subscribe(function (params) {
-                        _this._userService.getCounsellorData(params['username'], _this.pageIndex, _this.pageSize)
+                        _this._userService.getCounsellorData(params['username'])
                             .subscribe(function (data) {
                             console.log('data is ', data);
                             _this.length = data.total;
@@ -2068,7 +2065,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ClassComponent = /** @class */ (function () {
     function ClassComponent(_userService, router, appComp) {
-        var _this = this;
         this._userService = _userService;
         this.router = router;
         this.appComp = appComp;
@@ -2099,20 +2095,6 @@ var ClassComponent = /** @class */ (function () {
         this.topic = '';
         this.date = '';
         this.isLoggedIn = false;
-        this.DeleteClass = function (element) {
-            _this._userService.deleteClass(element._id)
-                .subscribe(function (delClass) {
-                if (delClass['result'] === 'ok') {
-                    __WEBPACK_IMPORTED_MODULE_4_sweetalert2___default()({
-                        type: 'success',
-                        title: 'Class Deleted ',
-                        html: 'Hari Bol!!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-            });
-        };
     }
     ClassComponent.prototype.ngAfterViewInit = function () {
         this.dataSource.paginator = this.paginator;
@@ -2156,6 +2138,20 @@ var ClassComponent = /** @class */ (function () {
             $('.left-pane')[0].style.display = 'none';
         }
     };
+    /* DeleteClass = (element) => {
+      this._userService.deleteClass(element._id)
+          .subscribe(delClass => {
+            if (delClass['result'] === 'ok') {
+              swal({
+                type: 'success',
+                title: 'Class Deleted ',
+                html: 'Hari Bol!!',
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }
+        });
+    } */
     ClassComponent.prototype.sdlClass = function (form) {
         form.value.date = this._userService.parseDate(form.value.date);
         if (!form.value.date || !form.value.speaker || !form.value.course
@@ -2418,7 +2414,8 @@ var UserService = /** @class */ (function () {
     function UserService(_http) {
         var _this = this;
         this._http = _http;
-        //private _url: string = 'http://localhost:3000/';
+        // private _url: string = 'http://localhost:3000/';
+        //private _url: string = 'http://192.168.0.111:3000/';
         this._url = '/';
         this.addDevotee = function (body) {
             return _this._http.post(_this._url + 'addDevotee', {
@@ -2587,13 +2584,13 @@ var UserService = /** @class */ (function () {
             return response.json();
         });
     };
-    UserService.prototype.getCounsellorData = function (name, pageIndex, pageSize) {
+    UserService.prototype.getCounsellorData = function (name) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('username', name);
-        searchParams.append('skip', pageIndex);
-        searchParams.append('limit', pageSize);
+        searchParams.append('skip', '10');
+        searchParams.append('limit', '10');
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
         return this._http.get(this._url + 'getCounsellorData', options)
             .map(function (response) {
@@ -3030,95 +3027,6 @@ var DownloadsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]])
     ], DownloadsComponent);
     return DownloadsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/dyshandler/dyshandler.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/dyshandler/dyshandler.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "\n<div>\n          \n    <h6>Please select the topic for which attendance to be taken</h6>\n    <!--form #download3=\"ngForm\" (ngSubmit)=\"downloadCourseExcel(download3)\"-->\n    <form #dystopic=\"ngForm\" (ngSubmit)=\"handleDysTopic(dystopic)\" >\n         <mat-form-field>  \n\n           <mat-select [(ngModel)]=\"dysclass\" name=\"dystopic\" placeholder=\"Topic\" required>\n             <mat-option  *ngFor=\"let co of data.res\" [value]=\"co.topic\">{{co.topic}}</mat-option>      \n           </mat-select >\n        </mat-form-field>                                                          \n              \n\n        <button mat-raised-button type=\"submit\" class=\"btn btn-primary\" matTooltip=\"Submit the topic name\">\n          <i class=\"fa fa-fw fa-book\"></i>Submit</button>\n      </form>\n</div>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/dyshandler/dyshandler.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DyshandlerComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__devotee_service__ = __webpack_require__("../../../../../src/app/devotee.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-var DyshandlerComponent = /** @class */ (function () {
-    function DyshandlerComponent(route, dialog, _userService, router, dialogRef, data) {
-        this.route = route;
-        this.dialog = dialog;
-        this._userService = _userService;
-        this.router = router;
-        this.dialogRef = dialogRef;
-        this.data = data;
-        this.dystopic = '';
-    }
-    DyshandlerComponent.prototype.ngOnInit = function () {
-    };
-    DyshandlerComponent.prototype.handleDysTopic = function (form) {
-        this.dialogRef.close(form.value);
-    };
-    DyshandlerComponent.prototype.onNoClick = function () {
-        this.dialogRef.close();
-    };
-    DyshandlerComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-dyshandler',
-            template: __webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/dyshandler/dyshandler.component.css")],
-            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]],
-        }),
-        __param(5, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["a" /* MAT_DIALOG_DATA */])),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
-            __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MatDialogRef */], Object])
-    ], DyshandlerComponent);
-    return DyshandlerComponent;
 }());
 
 
