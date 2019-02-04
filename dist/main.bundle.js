@@ -262,10 +262,7 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
-                __WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */]
-            ]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatDialog */],
@@ -287,30 +284,31 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_cdk_table__ = __webpack_require__("../../../cdk/esm5/table.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_cdk_a11y__ = __webpack_require__("../../../cdk/esm5/a11y.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_cdk_bidi__ = __webpack_require__("../../../cdk/esm5/bidi.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_cdk_overlay__ = __webpack_require__("../../../cdk/esm5/overlay.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_cdk_platform__ = __webpack_require__("../../../cdk/esm5/platform.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_cdk_observers__ = __webpack_require__("../../../cdk/esm5/observers.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_cdk_portal__ = __webpack_require__("../../../cdk/esm5/portal.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__class_class_component__ = __webpack_require__("../../../../../src/app/class/class.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__ = __webpack_require__("../../../../../src/app/attendance/attendance.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__ = __webpack_require__("../../../../../src/app/downloads/downloads.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng2_smart_table__ = __webpack_require__("../../../../ng2-smart-table/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__ = __webpack_require__("../../../../../src/app/admin-login/admin-login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__ = __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__ = __webpack_require__("../../../../../src/app/calling-details/calling-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_service_worker__ = __webpack_require__("../../../service-worker/esm5/service-worker.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_cdk_table__ = __webpack_require__("../../../cdk/esm5/table.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_cdk_a11y__ = __webpack_require__("../../../cdk/esm5/a11y.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_cdk_bidi__ = __webpack_require__("../../../cdk/esm5/bidi.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_cdk_overlay__ = __webpack_require__("../../../cdk/esm5/overlay.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_cdk_platform__ = __webpack_require__("../../../cdk/esm5/platform.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_cdk_observers__ = __webpack_require__("../../../cdk/esm5/observers.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_cdk_portal__ = __webpack_require__("../../../cdk/esm5/portal.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__class_class_component__ = __webpack_require__("../../../../../src/app/class/class.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__ = __webpack_require__("../../../../../src/app/attendance/attendance.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__downloads_downloads_component__ = __webpack_require__("../../../../../src/app/downloads/downloads.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng2_smart_table__ = __webpack_require__("../../../../ng2-smart-table/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__showdetails_showdetails_component__ = __webpack_require__("../../../../../src/app/showdetails/showdetails.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__admin_login_admin_login_component__ = __webpack_require__("../../../../../src/app/admin-login/admin-login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__counsellor_login_counsellor_login_component__ = __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__calling_details_calling_details_component__ = __webpack_require__("../../../../../src/app/calling-details/calling-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_service_worker__ = __webpack_require__("../../../service-worker/esm5/service-worker.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -349,20 +347,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
-    { path: 'showDetails/:id', component: __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */] },
-    { path: 'classSdl', component: __WEBPACK_IMPORTED_MODULE_16__class_class_component__["a" /* ClassComponent */] },
-    { path: 'attendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["b" /* AttendanceComponent */] },
-    { path: 'otpattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
-    { path: 'tssvattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
-    { path: 'bssattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
-    { path: 'umangattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
-    { path: 'dysattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
-    { path: 'ashrayattendance', component: __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
-    { path: 'downloads', component: __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__["a" /* DownloadsComponent */] },
-    { path: 'adminLogin', component: __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */] },
-    { path: 'counLogin', component: __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */] },
-    { path: 'callingdetails/:username', component: __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__["a" /* CallingDetailsComponent */] },
+    { path: 'showDetails/:id', component: __WEBPACK_IMPORTED_MODULE_21__showdetails_showdetails_component__["a" /* ShowdetailsComponent */] },
+    { path: 'classSdl', component: __WEBPACK_IMPORTED_MODULE_17__class_class_component__["a" /* ClassComponent */] },
+    { path: 'attendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["b" /* AttendanceComponent */] },
+    { path: 'otpattendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'tssvattendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'bssattendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'umangattendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'dysattendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'ashrayattendance', component: __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */] },
+    { path: 'downloads', component: __WEBPACK_IMPORTED_MODULE_19__downloads_downloads_component__["a" /* DownloadsComponent */] },
+    { path: 'adminLogin', component: __WEBPACK_IMPORTED_MODULE_22__admin_login_admin_login_component__["a" /* AdminLoginComponent */] },
+    { path: 'counLogin', component: __WEBPACK_IMPORTED_MODULE_23__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */] },
+    { path: 'callingdetails/:username', component: __WEBPACK_IMPORTED_MODULE_24__calling_details_calling_details_component__["a" /* CallingDetailsComponent */] },
     { path: '', redirectTo: 'classSdl', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -371,116 +370,117 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__class_class_component__["a" /* ClassComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["b" /* AttendanceComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__downloads_downloads_component__["a" /* DownloadsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["f" /* MarkpresentComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["a" /* AddDevoteeComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["c" /* EditDevoteeComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
-                __WEBPACK_IMPORTED_MODULE_21__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__calling_details_calling_details_component__["a" /* CallingDetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__class_class_component__["a" /* ClassComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["b" /* AttendanceComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__downloads_downloads_component__["a" /* DownloadsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["f" /* MarkpresentComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__showdetails_showdetails_component__["a" /* ShowdetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["a" /* AddDevoteeComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["c" /* EditDevoteeComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
+                __WEBPACK_IMPORTED_MODULE_22__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__counsellor_login_counsellor_login_component__["a" /* CounsellorLoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__calling_details_calling_details_component__["a" /* CallingDetailsComponent */],
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["f" /* MarkpresentComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["a" /* AddDevoteeComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["c" /* EditDevoteeComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
-                __WEBPACK_IMPORTED_MODULE_17__attendance_attendance_component__["e" /* MainAttendanceComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__showdetails_showdetails_component__["a" /* ShowdetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["f" /* MarkpresentComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["a" /* AddDevoteeComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["c" /* EditDevoteeComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["d" /* EditDevoteeConfirm */],
+                __WEBPACK_IMPORTED_MODULE_18__attendance_attendance_component__["e" /* MainAttendanceComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__showdetails_showdetails_component__["a" /* ShowdetailsComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_5_angular_datatables__["a" /* DataTablesModule */],
+                __WEBPACK_IMPORTED_MODULE_6_angular_datatables__["a" /* DataTablesModule */],
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["b" /* NoopAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["b" /* MatAutocompleteModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MatButtonModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["d" /* MatButtonToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["e" /* MatCardModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["f" /* MatCheckboxModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["g" /* MatChipsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["h" /* MatDatepickerModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["j" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["l" /* MatExpansionModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["m" /* MatFormFieldModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["n" /* MatGridListModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["o" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["p" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["q" /* MatListModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MatMenuModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["s" /* MatNativeDateModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["u" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MatProgressBarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["w" /* MatProgressSpinnerModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["x" /* MatRadioModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["y" /* MatRippleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["z" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["A" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["C" /* MatSliderModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["B" /* MatSlideToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["E" /* MatSnackBarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["G" /* MatSortModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["J" /* MatTableModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["K" /* MatTabsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["L" /* MatToolbarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["M" /* MatTooltipModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["H" /* MatStepperModule */],
-                __WEBPACK_IMPORTED_MODULE_19_ng2_smart_table__["a" /* Ng2SmartTableModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
-                __WEBPACK_IMPORTED_MODULE_24__angular_service_worker__["a" /* ServiceWorkerModule */].register('ngsw-worker.js', { enabled: __WEBPACK_IMPORTED_MODULE_25__environments_environment__["a" /* environment */].production })
+                __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["b" /* NoopAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["b" /* MatAutocompleteModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["c" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["d" /* MatButtonToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["e" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["f" /* MatCheckboxModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["g" /* MatChipsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["h" /* MatDatepickerModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["j" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["l" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["m" /* MatFormFieldModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["n" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["o" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["p" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["q" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["r" /* MatMenuModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["s" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["u" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["v" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["w" /* MatProgressSpinnerModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["x" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["y" /* MatRippleModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["z" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["A" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["C" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["B" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["E" /* MatSnackBarModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["G" /* MatSortModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["J" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["K" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["L" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["M" /* MatTooltipModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["H" /* MatStepperModule */],
+                __WEBPACK_IMPORTED_MODULE_20_ng2_smart_table__["a" /* Ng2SmartTableModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
+                __WEBPACK_IMPORTED_MODULE_25__angular_service_worker__["a" /* ServiceWorkerModule */].register('./ngsw-worker.js', { enabled: __WEBPACK_IMPORTED_MODULE_26__environments_environment__["a" /* environment */].production })
             ],
             exports: [
                 // Material Modules
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["b" /* MatAutocompleteModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MatButtonModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["d" /* MatButtonToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["e" /* MatCardModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["f" /* MatCheckboxModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["g" /* MatChipsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["J" /* MatTableModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["h" /* MatDatepickerModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["j" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["l" /* MatExpansionModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["m" /* MatFormFieldModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["n" /* MatGridListModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["o" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["p" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["q" /* MatListModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MatMenuModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["u" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MatProgressBarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["w" /* MatProgressSpinnerModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["x" /* MatRadioModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["y" /* MatRippleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["z" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["A" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["B" /* MatSlideToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["C" /* MatSliderModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["E" /* MatSnackBarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["G" /* MatSortModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["K" /* MatTabsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["L" /* MatToolbarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["M" /* MatTooltipModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["s" /* MatNativeDateModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["H" /* MatStepperModule */],
-                __WEBPACK_IMPORTED_MODULE_8__angular_cdk_table__["m" /* CdkTableModule */],
-                __WEBPACK_IMPORTED_MODULE_9__angular_cdk_a11y__["a" /* A11yModule */],
-                __WEBPACK_IMPORTED_MODULE_10__angular_cdk_bidi__["a" /* BidiModule */],
-                __WEBPACK_IMPORTED_MODULE_13__angular_cdk_observers__["a" /* ObserversModule */],
-                __WEBPACK_IMPORTED_MODULE_11__angular_cdk_overlay__["d" /* OverlayModule */],
-                __WEBPACK_IMPORTED_MODULE_12__angular_cdk_platform__["b" /* PlatformModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_cdk_portal__["g" /* PortalModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */],
-                __WEBPACK_IMPORTED_MODULE_19_ng2_smart_table__["a" /* Ng2SmartTableModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["b" /* MatAutocompleteModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["c" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["d" /* MatButtonToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["e" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["f" /* MatCheckboxModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["g" /* MatChipsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["J" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["h" /* MatDatepickerModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["j" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["l" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["m" /* MatFormFieldModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["n" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["o" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["p" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["q" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["r" /* MatMenuModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["u" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["v" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["w" /* MatProgressSpinnerModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["x" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["y" /* MatRippleModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["z" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["A" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["B" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["C" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["E" /* MatSnackBarModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["G" /* MatSortModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["K" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["L" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["M" /* MatTooltipModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["s" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_material__["H" /* MatStepperModule */],
+                __WEBPACK_IMPORTED_MODULE_9__angular_cdk_table__["m" /* CdkTableModule */],
+                __WEBPACK_IMPORTED_MODULE_10__angular_cdk_a11y__["a" /* A11yModule */],
+                __WEBPACK_IMPORTED_MODULE_11__angular_cdk_bidi__["a" /* BidiModule */],
+                __WEBPACK_IMPORTED_MODULE_14__angular_cdk_observers__["a" /* ObserversModule */],
+                __WEBPACK_IMPORTED_MODULE_12__angular_cdk_overlay__["d" /* OverlayModule */],
+                __WEBPACK_IMPORTED_MODULE_13__angular_cdk_platform__["b" /* PlatformModule */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_cdk_portal__["g" /* PortalModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_router__["c" /* RouterModule */],
+                __WEBPACK_IMPORTED_MODULE_20_ng2_smart_table__["a" /* Ng2SmartTableModule */],
             ],
             providers: [],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -842,9 +842,7 @@ var AttendanceComponent = /** @class */ (function () {
             selector: 'app-attendance',
             template: __webpack_require__("../../../../../src/app/attendance/attendance.component.html"),
             styles: [__webpack_require__("../../../../../src/app/attendance/attendance.component.css")],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */],
-            ]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__devotee_service__["a" /* UserService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */],
@@ -2334,7 +2332,7 @@ var CounsellorLoginComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/counsellor-login/counsellor-login.component.css")],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_1__devotee_service__["a" /* UserService */]
             ]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
@@ -2355,7 +2353,8 @@ var CounsellorLoginComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2369,7 +2368,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DataService = /** @class */ (function () {
     function DataService() {
-        this.messageSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["a" /* BehaviorSubject */]([]);
+        this.messageSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["BehaviorSubject"]([]);
         this.currentMessage = this.messageSource.asObservable();
     }
     DataService.prototype.changeMessage = function (message) {
@@ -2391,10 +2390,9 @@ var DataService = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_mergeMap__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/mergeMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2404,7 +2402,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -2418,30 +2415,29 @@ var UserService = /** @class */ (function () {
         this.addDevotee = function (body) {
             return _this._http.post(_this._url + 'addDevotee', {
                 body: body
-            }).map(function (res) {
+            }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
                 return res.json();
             }, function (err) {
                 return err.json();
-            });
+            }));
         };
         this.addDevoteeGeneric = function (body) {
             return _this._http.post(_this._url + 'addDevoteeGeneric', {
                 body: body
-            }).map(function (res) {
+            }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
                 return res.json();
             }, function (err) {
                 return err.json();
-            });
+            }));
         };
         this.editDevotee = function (body) {
             return _this._http.put(_this._url + 'updateDevotee', {
                 body: body
-            })
-                .map(function (res) {
+            }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
                 return res.json();
             }, function (err) {
                 return err.json();
-            });
+            }));
         };
         this.SdlClass = function (body) {
             _this._http.post(_this._url + 'sdlClass', {
@@ -2456,119 +2452,113 @@ var UserService = /** @class */ (function () {
             //  console.log('atten is ', attendance);
             return _this._http.post(_this._url + 'markAttendance', {
                 attendance: attendance
-            })
-                .map(function (res) {
+            }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
                 return res.json();
             }, function (err) {
                 err.json();
-            });
+            }));
         };
         this.downloadCallReportCounsellor = function (dTe) {
             // console.log('downlods call report', dTe);
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
-            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
             searchParams.append('date', dTe.date);
             searchParams.append('counsellor', dTe.counsellor);
-            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-            return _this._http.get(_this._url + 'downloadCallReportCounsellor', options)
-                .map(function (response) {
+            var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'downloadCallReportCounsellor', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
                 return response.json();
-            });
+            }));
         };
         this.downloadToExcel = function (dTe) {
             // console.log('downlods', dTe);
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
-            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
             searchParams.append('date', dTe.date);
             searchParams.append('course', dTe.course);
             searchParams.append('counsellor', dTe.counsellor);
-            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-            return _this._http.get(_this._url + 'downloadToExcel', options)
-                .map(function (response) {
+            var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'downloadToExcel', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
                 return response.json();
-            });
+            }));
         };
         this.downloadCourseExcel = function (dTe) {
             // console.log("atten is ", dTe);
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
-            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
             searchParams.append('course', dTe.course);
             searchParams.append('isAlumni', dTe.isAlumni);
-            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-            return _this._http.get(_this._url + 'downloadCourseExcel', options)
-                .map(function (response) {
+            var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'downloadCourseExcel', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
                 return response.json();
-            });
+            }));
         };
         this.downloadToExCounsellor = function (dTe) {
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
-            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
             searchParams.append('date', dTe.date);
             searchParams.append('course', dTe.course);
             searchParams.append('counsellor', dTe.counsellor);
-            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
             // console.log('options ', options);
-            return _this._http.get(_this._url + 'downloadToExCounsellor', options)
-                .map(function (response) {
+            return _this._http.get(_this._url + 'downloadToExCounsellor', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
                 return response.json();
-            });
+            }));
         };
         this.getTodayAttendance = function (course) {
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
             headers.append('Content-Type', 'application/json');
-            var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+            var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
             searchParams.append('course', course);
-            var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-            return _this._http.get(_this._url + 'getTodayAttendance', options)
-                .map(function (response) {
+            var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+            return _this._http.get(_this._url + 'getTodayAttendance', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
                 return response.json();
-            });
+            }));
         };
     }
     UserService.prototype.adminLogin = function (form) {
         return this._http.post(this._url + 'adminLogin', {
             body: form
-        }).map(function (res) {
+        }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
-        });
+        }));
     };
     UserService.prototype.counLogin = function (form) {
         return this._http.post(this._url + 'counLogin', {
             body: form
-        }).map(function (res) {
+        }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
-        });
+        }));
     };
     UserService.prototype.getOTPDevotees = function () {
-        return this._http.get(this._url + 'getOTPDevotees').map(function (response) {
+        return this._http.get(this._url + 'getOTPDevotees').pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.updateComment = function (element) {
         return this._http.post(this._url + 'updateComment', {
             body: element
-        }).map(function (res) {
+        }).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
-        });
+        }));
     };
     UserService.prototype.getSearchedDevotee = function (contact, course) {
         var isContact = false;
         if (!isNaN(parseInt(contact))) {
             isContact = true;
         }
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         if (isContact === true) {
             searchParams.append('contact', contact);
         }
@@ -2576,24 +2566,22 @@ var UserService = /** @class */ (function () {
             searchParams.append('email', contact);
         }
         searchParams.append('course', course);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'getSearchedDevotee', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getSearchedDevotee', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.getCounsellorData = function (name) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('username', name);
         searchParams.append('skip', '10');
         searchParams.append('limit', '10');
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'getCounsellorData', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getCounsellorData', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.getDevotees = function (course) {
         var courseName = '';
@@ -2620,20 +2608,19 @@ var UserService = /** @class */ (function () {
                 courseName = 'DYS';
                 break;
         }
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', courseName);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'getDevotees', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getDevotees', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.getDetails = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         var token = localStorage.getItem('token');
         var ctoken = localStorage.getItem('ctoken');
         if (token) {
@@ -2645,104 +2632,95 @@ var UserService = /** @class */ (function () {
             headers.append('ctoken', ctoken);
         }
         searchParams.append('id', id);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'getDetails', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getDetails', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.getSdlClasses = function () {
-        return this._http.get(this._url + 'getSdlClasses')
-            .map(function (response) {
+        return this._http.get(this._url + 'getSdlClasses').pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.getSdlClassesCourse = function (course) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', course);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'getSdlClassesCourse', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getSdlClassesCourse', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.checkIfDevoteePresentForGivenDate = function (date, counsellor, course) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', course);
         searchParams.append('date', date);
         searchParams.append('counsellor', counsellor);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'checkDevoteeStatusForGivenDate')
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'checkDevoteeStatusForGivenDate').pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.checkIfClassSdlForCourse = function (course, date) {
         // console.log('check sdl class', course, date);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         searchParams.append('course', course);
         searchParams.append('date', date);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'checkClassSdl', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'checkClassSdl', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.isTokenVerified = function (token) {
         // console.log("token in devotee", token);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         headers.append('Authorization', 'Bearer ' + token);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'isTokenVerified', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'isTokenVerified', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.iscTokenVerified = function (token) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var searchParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var searchParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         //    headers.append('ctoken', token);
         headers.append('Authorization', 'Bearer ' + token);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
-        return this._http.get(this._url + 'iscTokenVerified', options)
-            .map(function (response) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'iscTokenVerified', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (response) {
             return response.json();
-        });
+        }));
     };
     UserService.prototype.deleteClass = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var delParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var delParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         delParams.append('id', id);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: delParams });
-        return this._http.delete(this._url + 'delClass', options)
-            .map(function (res) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: delParams });
+        return this._http.delete(this._url + 'delClass', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
-        });
+        }));
     };
     UserService.prototype.delRecord = function (contact) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        var delParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var delParams = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* URLSearchParams */]();
         delParams.append('contact', contact);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers, params: delParams });
-        return this._http.delete(this._url + 'delRecord', options)
-            .map(function (res) {
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers, params: delParams });
+        return this._http.delete(this._url + 'delRecord', options).pipe(Object(__WEBPACK_IMPORTED_MODULE_0_rxjs_operators__["a" /* map */])(function (res) {
             return res.json();
         }, function (err) {
             return err.json();
-        });
+        }));
     };
     UserService.prototype.parseDate = function (date) {
         var temp_datetime_obj = new Date(date);
@@ -2751,8 +2729,8 @@ var UserService = /** @class */ (function () {
         return date;
     };
     UserService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
     ], UserService);
     return UserService;
 }());
