@@ -361,6 +361,9 @@ exports.updateDevotee = function(req, res, next) {
     if(req.body.body.facilitator){
       valuesToUpdate["facilitator"] = req.body.body.facilitator;
     }
+    if(req.body.body.multiplecourse){
+      valuesToUpdate["multiplecourse"] = req.body.body.multiplecourse;
+    }
 
     console.log("value to update", valuesToUpdate);
     let db = req.app.locals.db;

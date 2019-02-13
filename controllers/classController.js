@@ -76,6 +76,36 @@ exports.checkClassSdl = function(req, res, next) {
     }
   }
 
+//get classes for the date
+exports.getClassesOfDate = function(req, res, next) {
+  try{
+    console.log("get classed for date", req.query);
+    let db = req.app.locals.db;
+    
+    db.listCollections().toArray(function(err, collections){
+          if (collections === undefined){
+            res.send({error:"No Collections present in DB"});
+         }else{
+            db.collection("entity").find(
+            { 
+              date:req.query.date
+            }
+          ).toArray(function(err, result) {
+            if (err) {
+          			console.log("err is ", err);
+                	res.send({error:500});
+	          }else{
+              console.log(result);
+             res.send({result:result});
+	          }
+          });
+        }
+      });
+    }catch(err){
+      console.log("Exception:", err);
+    }
+  }
+
 exports.sdlClass = function(req, res, next) {
   try{
     console.log("sdl class", req.body.body);

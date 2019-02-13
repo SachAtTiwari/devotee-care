@@ -82,6 +82,7 @@ app.use('/downloadToExCounsellor', index);
 app.use('/checkClassSdl', index);
 app.use('/SdlClass', index);
 app.use('/getSdlClasses', index);
+app.use('/getclassesofdate', index);
 app.use('/delRecord', index);
 app.use('/delClass', index);
 app.use('/getDetails', index);
@@ -93,6 +94,7 @@ app.use('/adminLogin', index);
 app.use('/counLogin', index);
 app.use('/isTokenVerified', index);
 app.use('/checkDevoteeStatusForGivenDate', index);
+app.use('/getCounselorDataForDate', index);
 
 
 

@@ -5,7 +5,7 @@ const assert = require('assert');
 exports.downloadToExcel =  function(req, res, next) {
   try{
     let db = req.app.locals.db;
-
+    console.log('topic is ', req.query.topic)
     db.listCollections().toArray(function(err, collections){
         if (collections === undefined){
               res.send({error:"No Collections present in DB"});
@@ -16,7 +16,7 @@ exports.downloadToExcel =  function(req, res, next) {
               }
             }else {
               query = {
-                course:req.query.course, 
+                "attendance.topic":req.query.topic, 
                 "attendance.date": req.query.date,  
               }
             }

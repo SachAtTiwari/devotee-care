@@ -3,6 +3,7 @@ var userController = require('../controllers/userController');
 var classController = require('../controllers/classController');
 var downloadController = require('../controllers/downloadController');
 var counsellorLogin = require('../controllers/counsellorLogin');
+var counsellorDetails = require('../controllers/counsellorDetail');
 var router = express.Router();
 
 // const dbClient = require('mongodb').MongoClient;
@@ -81,6 +82,9 @@ router.get('/checkClassSdl', classController.checkClassSdl);
 /* Get All Sdl Classes */
 router.get('/getSdlClasses', classController.getSdlClasses);
 
+/* Get  Sdl Classes for date */
+router.get('/getclassesofdate', classController.getClassesOfDate);
+
 /* Get  Sdl Classes for course */
 router.get('/getSdlClassesCourse', classController.getSdlClassesCourse);
 
@@ -90,6 +94,9 @@ router.get('/getTodayAttendance', classController.getTodayAttendance);
 /* Delete class*/
 router.delete('/delClass', classController.delClass);
 
+
+/*counsellor Details */
+router.get('/getCounselorDataForDate', counsellorDetails.getCounsellorDataForDate);
 
 
 
