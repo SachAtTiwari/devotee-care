@@ -5,7 +5,7 @@ const assert = require('assert');
 exports.downloadToExcel =  function(req, res, next) {
   try{
     let db = req.app.locals.db;
-    console.log('topic is ', req.query.topic)
+    console.log('query is ', req.query)
     db.listCollections().toArray(function(err, collections){
         if (collections === undefined){
               res.send({error:"No Collections present in DB"});
@@ -15,10 +15,23 @@ exports.downloadToExcel =  function(req, res, next) {
                 "attendance.date": req.query.date,  
               }
             }else {
-              query = {
-                "attendance.topic":req.query.topic, 
-                "attendance.date": req.query.date,  
+              const yr = parseInt(req.query.date.split('-')[2])
+              const mo = parseInt(req.query.date.split('-')[1]) - 1
+              const day = parseInt(req.query.date.split('-')[0])
+              if (new Date(yr, mo, day) > new Date(2019, 03, 07) ) {
+                 console.log('date less 7Mar', new Date(yr, mo, day), new Date(2019, 03, 07))
+                 query = {
+                   "attendance.course":req.query.course, 
+                   "attendance.date": req.query.date,  
+                 }
+              } else {
+                 console.log('date greater 7Mar', new Date(yr, mo, day), new Date(2019, 03, 07))
+                 query = {
+                   course:req.query.course, 
+                   "attendance.date": req.query.date,  
+                 }
               }
+ 
             }
              db.collection("devotees").find(
               query
