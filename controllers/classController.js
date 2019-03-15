@@ -189,6 +189,34 @@ exports.getSdlClasses = function(req, res, next) {
       }
   };
 
+
+exports.getSdlClassCourseCounselor = function(req, res, next) {
+  try{
+    console.log("Get sdl classes for course and counsellor", req.query.course, req.query.counsellor );
+    let db = req.app.locals.db;
+    
+    db.listCollections().toArray(function(err, collections){
+          if (collections === undefined){
+            res.send({error:"No Collections present in DB"});
+         }else{
+            db.collection("entity").find({course: req.query.course, speaker: req.query.counsellor }).sort({_id:-1}).toArray(function(err, result) {
+              if (err) {
+                console.log("err is ", err);
+                res.send({result:"notok"});
+              }else{
+                console.log("result",result);
+                res.send({result:result});
+              }
+            });
+          }
+      });
+    }catch(err){
+      console.log("Exception:", err);
+
+    }
+};
+
+
  exports.getTodayAttendance =  function(req, res, next) {
   try{
     console.log("today attendance", req.query);

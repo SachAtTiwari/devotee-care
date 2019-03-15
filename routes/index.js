@@ -88,6 +88,9 @@ router.get('/getclassesofdate', classController.getClassesOfDate);
 /* Get  Sdl Classes for course */
 router.get('/getSdlClassesCourse', classController.getSdlClassesCourse);
 
+/* Get  Sdl Classes for course iand counsellor*/
+router.get('/getSdlClassCourseCounselor', classController.getSdlClassCourseCounselor);
+
 /* Get today Class attendance */
 router.get('/getTodayAttendance', classController.getTodayAttendance);
 

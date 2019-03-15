@@ -82,6 +82,7 @@ app.use('/downloadToExCounsellor', index);
 app.use('/checkClassSdl', index);
 app.use('/SdlClass', index);
 app.use('/getSdlClasses', index);
+app.use('/getSdlClassCourseCounselor', index);
 app.use('/getclassesofdate', index);
 app.use('/delRecord', index);
 app.use('/delClass', index);
