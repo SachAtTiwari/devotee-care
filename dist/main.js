@@ -2695,7 +2695,7 @@ var UserService = /** @class */ (function () {
         var _this = this;
         this._http = _http;
         // private _url: string = 'http://localhost:3000/';
-        // private _url: string = 'http://192.168.0.111:3000/';
+        //  private _url: string = 'http://192.168.0.111:3000/';
         this._url = '/';
         this.addDevotee = function (body) {
             return _this._http.post(_this._url + 'addDevotee', {
@@ -2958,6 +2958,17 @@ var UserService = /** @class */ (function () {
             return response.json();
         }));
     };
+    UserService.prototype.getSdlClassCourseCounselor = function (course, counsellor) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var searchParams = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["URLSearchParams"]();
+        searchParams.append('course', course);
+        searchParams.append('counsellor', counsellor);
+        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["RequestOptions"]({ headers: headers, params: searchParams });
+        return this._http.get(this._url + 'getSdlClassCourseCounselor', options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])(function (response) {
+            return response.json();
+        }));
+    };
     UserService.prototype.checkIfDevoteePresentForGivenDate = function (date, counsellor, course) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]();
         headers.append('Content-Type', 'application/json');
@@ -3029,7 +3040,7 @@ var UserService = /** @class */ (function () {
         }));
     };
     UserService.prototype.parseDate = function (date) {
-        //  console.log('date is', date);
+        // console.log('date is', date);
         var temp_datetime_obj = new Date(date);
         var month = temp_datetime_obj.getMonth() + 1;
         date = temp_datetime_obj.getDate() + '-' + month + '-' + temp_datetime_obj.getFullYear();
@@ -3172,57 +3183,37 @@ var DownloadsComponent = /** @class */ (function () {
         };
         this.downloadExCounsellor = function (form) {
             var classList = [];
-            _this._userService.getSdlClassesCourse(_this.course)
-                .subscribe(function (sdlClass) {
-                for (var j = 0; j < 8; j++) {
-                    if (!sdlClass.result[j]) {
-                        break;
-                    }
-                    else {
-                        classList.push(sdlClass.result[j].date);
-                    }
-                }
-                // console.log('in class list', classList, classList.length);
-                if (classList.length > 0) {
-                    _this._userService.downloadToExCounsellor(form.value)
-                        .subscribe(function (userData) {
-                        var result_json = [];
-                        for (var i = 0; i < userData.result.length; i++) {
-                            var objectToInsert = {};
-                            objectToInsert['name'] = userData.result[i].name;
-                            objectToInsert['contact'] = userData.result[i].contact;
-                            objectToInsert['course'] = userData.result[i].course;
-                            objectToInsert['counsellor'] = userData.result[i].counsellor;
-                            if (userData.result[i].dob) {
-                                objectToInsert['dob'] = _this._userService.parseDate(userData.result[i].dob);
-                            }
-                            if (userData.result[i].attendance !== undefined) {
-                                objectToInsert['classcount'] = userData.result[i].attendance.length;
-                            }
-                            var iterLen = 0;
-                            // get list of last 8 eight classes
-                            // check if devotee present for that day
-                            // search for date in attendance array for given counsellor/course
-                            // if yes add present else absent
-                            for (var j = 0; j < 8; j++) {
-                                if (classList[j] && userData.result[i].attendance !== undefined) {
-                                    var status_1 = {};
-                                    status_1 = _this.checkIfDevoteePresntForGivenDate(classList[j], userData.result[i].attendance);
-                                    if (status_1 !== undefined) {
-                                        // console.log("status", status);
-                                        if (objectToInsert['status'] !== 'active') {
-                                            objectToInsert['status'] = 'active';
-                                        }
-                                        objectToInsert[classList[j]] = status_1['present'];
-                                    }
-                                }
-                            }
-                            result_json.push(objectToInsert);
+            if (_this.course === 'OTP') {
+                _this._userService.getSdlClassesCourse(_this.course)
+                    .subscribe(function (sdlClass) {
+                    for (var j = 0; j < 8; j++) {
+                        if (!sdlClass.result[j]) {
+                            break;
                         }
-                        _this.excelGenerator(form.value.course, form.value.counsellor, result_json);
-                    });
-                }
-            });
+                        else {
+                            classList.push(sdlClass.result[j].date);
+                        }
+                    }
+                });
+            }
+            else {
+                _this._userService.getSdlClassCourseCounselor(_this.course, _this.counsellor)
+                    .subscribe(function (sdlClass) {
+                    console.log('sdl class', sdlClass);
+                    for (var j = 0; j < 8; j++) {
+                        if (!sdlClass.result[j]) {
+                            // console.log('break');
+                            break;
+                        }
+                        else {
+                            // console.log('else', sdlClass.result[j]);
+                            classList.push(sdlClass.result[j].date);
+                        }
+                    }
+                    console.log('in class list inside', classList, classList.length);
+                    _this.downloadCounsellorEx(classList, form);
+                });
+            }
         };
         this.downloadToExcel = function (form) {
             form.value.date = _this._userService.parseDate(form.value.date);
@@ -3300,6 +3291,48 @@ var DownloadsComponent = /** @class */ (function () {
         }
         if ($(window).width() < 600) {
             $('.left-pane')[0].style.display = 'none';
+        }
+    };
+    DownloadsComponent.prototype.downloadCounsellorEx = function (classList, form) {
+        var _this = this;
+        if (classList.length > 0) {
+            this._userService.downloadToExCounsellor(form.value)
+                .subscribe(function (userData) {
+                var result_json = [];
+                for (var i = 0; i < userData.result.length; i++) {
+                    var objectToInsert = {};
+                    objectToInsert['name'] = userData.result[i].name;
+                    objectToInsert['contact'] = userData.result[i].contact;
+                    objectToInsert['course'] = userData.result[i].course;
+                    objectToInsert['counsellor'] = userData.result[i].counsellor;
+                    if (userData.result[i].dob) {
+                        objectToInsert['dob'] = _this._userService.parseDate(userData.result[i].dob);
+                    }
+                    if (userData.result[i].attendance !== undefined) {
+                        objectToInsert['classcount'] = userData.result[i].attendance.length;
+                    }
+                    var iterLen = 0;
+                    // get list of last 8 eight classes
+                    // check if devotee present for that day
+                    // search for date in attendance array for given counsellor/course
+                    // if yes add present else absent
+                    for (var j = 0; j < 8; j++) {
+                        if (classList[j] && userData.result[i].attendance !== undefined) {
+                            var status_1 = {};
+                            status_1 = _this.checkIfDevoteePresntForGivenDate(classList[j], userData.result[i].attendance);
+                            if (status_1 !== undefined) {
+                                // console.log("status", status);
+                                if (objectToInsert['status'] !== 'active') {
+                                    objectToInsert['status'] = 'active';
+                                }
+                                objectToInsert[classList[j]] = status_1['present'];
+                            }
+                        }
+                    }
+                    result_json.push(objectToInsert);
+                }
+                _this.excelGenerator(form.value.course, form.value.counsellor, result_json);
+            });
         }
     };
     DownloadsComponent = __decorate([
