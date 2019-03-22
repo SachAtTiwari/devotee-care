@@ -199,7 +199,8 @@ exports.getSdlClassCourseCounselor = function(req, res, next) {
           if (collections === undefined){
             res.send({error:"No Collections present in DB"});
          }else{
-            db.collection("entity").find({course: req.query.course, speaker: req.query.counsellor }).sort({_id:-1}).toArray(function(err, result) {
+            db.collection("entity").find({course: req.query.course, speaker: req.query.counsellor }).sort({_id:-1}).skip(0).limit(4)
+            .toArray(function(err, result) {
               if (err) {
                 console.log("err is ", err);
                 res.send({result:"notok"});

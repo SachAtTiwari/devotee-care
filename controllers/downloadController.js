@@ -20,6 +20,9 @@ exports.downloadToExcel =  function(req, res, next) {
               const day = parseInt(req.query.date.split('-')[0])
               if (new Date(yr, mo, day) > new Date(2019, 2, 07) ) {
                  console.log('date less 7Mar', new Date(yr, mo, day), new Date(2019, 2, 07))
+                 if (req.query.course === 'TSSV-B10' ) {
+                     req.query.course = 'VL2'
+                 }
                  query = {
                    "attendance.course":req.query.course, 
                    "attendance.date": req.query.date,  

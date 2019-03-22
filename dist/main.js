@@ -2694,7 +2694,7 @@ var UserService = /** @class */ (function () {
     function UserService(_http) {
         var _this = this;
         this._http = _http;
-        // private _url: string = 'http://localhost:3000/';
+        //   private _url: string = 'http://localhost:3000/';
         //  private _url: string = 'http://192.168.0.111:3000/';
         this._url = '/';
         this.addDevotee = function (body) {
@@ -3134,6 +3134,32 @@ var DownloadsComponent = /** @class */ (function () {
             { value: 'HG Jagadanand Pandit Prabhuji' },
             { value: 'NA' },
         ];
+        this.excelGeneratorCustom = function (d1, d2, result_json, absenteeData, reportData) {
+            var ws_name = 'Attendance';
+            var wb = { SheetNames: [], Sheets: {} };
+            var ws = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].json_to_sheet(result_json);
+            wb.SheetNames.push(ws_name);
+            wb['!autofilter'] = { ref: 'C4' };
+            wb.Sheets[ws_name] = ws;
+            var ws_name1 = 'no_presence';
+            var ws1 = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].json_to_sheet(absenteeData);
+            wb.SheetNames.push(ws_name1);
+            wb.Sheets[ws_name1] = ws1;
+            var ws_name2 = 'Final_report';
+            var ws2 = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].json_to_sheet(reportData);
+            wb.SheetNames.push(ws_name2);
+            wb.Sheets[ws_name2] = ws2;
+            var wbout = Object(xlsx__WEBPACK_IMPORTED_MODULE_2__["write"])(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
+            function s2ab(s) {
+                var buf = new ArrayBuffer(s.length);
+                var view = new Uint8Array(buf);
+                for (var i = 0; i !== s.length; ++i) {
+                    view[i] = s.charCodeAt(i) & 0xFF;
+                }
+                return buf;
+            }
+            Object(file_saver__WEBPACK_IMPORTED_MODULE_3__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), d1 + '_' + d2 + '.xlsx');
+        };
         this.excelGenerator = function (d1, d2, result_json) {
             var ws_name = 'Attendance';
             var wb = { SheetNames: [], Sheets: {} };
@@ -3151,6 +3177,29 @@ var DownloadsComponent = /** @class */ (function () {
                 return buf;
             }
             Object(file_saver__WEBPACK_IMPORTED_MODULE_3__["saveAs"])(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), d1 + '_' + d2 + '.xlsx');
+        };
+        this.checkHowManyDevoteePresntForGivenDate = function (date, myArray) {
+            var count = 0;
+            for (var i = 0; i < myArray.length; i++) {
+                if (myArray[i].date === date) {
+                    count += 1;
+                }
+            }
+            return count;
+        };
+        this.generateReport = function (date, userData) {
+            var count = 0;
+            for (var i = 0; i < userData.result.length; i++) {
+                if (userData.result[i].attendance !== undefined) {
+                    for (var j = 0; j < userData.result[i].attendance.length; j++) {
+                        if (userData.result[i].attendance[j].date === date) {
+                            count += 1;
+                            break;
+                        }
+                    }
+                }
+            }
+            return count;
         };
         this.checkIfDevoteePresntForGivenDate = function (date, myArray) {
             for (var i = 0; i < myArray.length; i++) {
@@ -3199,8 +3248,8 @@ var DownloadsComponent = /** @class */ (function () {
             else {
                 _this._userService.getSdlClassCourseCounselor(_this.course, _this.counsellor)
                     .subscribe(function (sdlClass) {
-                    console.log('sdl class', sdlClass);
-                    for (var j = 0; j < 8; j++) {
+                    //  console.log('sdl class', sdlClass);
+                    for (var j = 0; j < 4; j++) {
                         if (!sdlClass.result[j]) {
                             // console.log('break');
                             break;
@@ -3210,7 +3259,7 @@ var DownloadsComponent = /** @class */ (function () {
                             classList.push(sdlClass.result[j].date);
                         }
                     }
-                    console.log('in class list inside', classList, classList.length);
+                    // console.log('in class list inside', classList, classList.length);
                     _this.downloadCounsellorEx(classList, form);
                 });
             }
@@ -3299,8 +3348,26 @@ var DownloadsComponent = /** @class */ (function () {
             this._userService.downloadToExCounsellor(form.value)
                 .subscribe(function (userData) {
                 var result_json = [];
+                var absenteeData = [];
+                var reportData = [];
+                var count = 0;
+                for (var k = 0; k < 4; k++) {
+                    var finalReport = {};
+                    // day, date, topic, speaker, presence, absence, total
+                    count = _this.generateReport(classList[k], userData);
+                    // console.log('count is ', count, classList[k]);
+                    finalReport['Date'] = classList[k];
+                    finalReport['Topic'] = 'NA';
+                    finalReport['Speaker'] = form.value.counsellor;
+                    finalReport['Presence'] = count;
+                    finalReport['Absence'] = userData.result.length - count;
+                    finalReport['Total'] = userData.result.length;
+                    reportData.push(finalReport);
+                }
+                // console.log('report data', reportData);
                 for (var i = 0; i < userData.result.length; i++) {
                     var objectToInsert = {};
+                    var absenteeObject = {};
                     objectToInsert['name'] = userData.result[i].name;
                     objectToInsert['contact'] = userData.result[i].contact;
                     objectToInsert['course'] = userData.result[i].course;
@@ -3311,12 +3378,16 @@ var DownloadsComponent = /** @class */ (function () {
                     if (userData.result[i].attendance !== undefined) {
                         objectToInsert['classcount'] = userData.result[i].attendance.length;
                     }
-                    var iterLen = 0;
+                    // console.log('date, absentee list, presntee count, total, name',
+                    //     classList[0], userData.result.length - userData.result[i].attendance.length,
+                    //     userData.result[i].attendance.length, userData.result.length,
+                    //     userData.result[i].name );
                     // get list of last 8 eight classes
                     // check if devotee present for that day
                     // search for date in attendance array for given counsellor/course
                     // if yes add present else absent
-                    for (var j = 0; j < 8; j++) {
+                    var presentAll = [];
+                    for (var j = 0; j < 4; j++) {
                         if (classList[j] && userData.result[i].attendance !== undefined) {
                             var status_1 = {};
                             status_1 = _this.checkIfDevoteePresntForGivenDate(classList[j], userData.result[i].attendance);
@@ -3327,11 +3398,25 @@ var DownloadsComponent = /** @class */ (function () {
                                 }
                                 objectToInsert[classList[j]] = status_1['present'];
                             }
+                            else {
+                                // console.log('user result', userData.result[i].name);
+                                presentAll.push('NO');
+                                if (presentAll.length === 4) {
+                                    // console.log('clearing not present any days');
+                                    presentAll = [];
+                                    // add in absentdata
+                                    absenteeObject['name'] = userData.result[i].name;
+                                    absenteeObject['contact'] = userData.result[i].contact;
+                                    absenteeObject['course'] = userData.result[i].course;
+                                    absenteeObject['counsellor'] = userData.result[i].counsellor;
+                                    absenteeData.push(absenteeObject);
+                                }
+                            }
                         }
                     }
                     result_json.push(objectToInsert);
                 }
-                _this.excelGenerator(form.value.course, form.value.counsellor, result_json);
+                _this.excelGeneratorCustom(form.value.course, form.value.counsellor, result_json, absenteeData, reportData);
             });
         }
     };
