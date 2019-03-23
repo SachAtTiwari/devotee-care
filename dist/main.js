@@ -2694,7 +2694,7 @@ var UserService = /** @class */ (function () {
     function UserService(_http) {
         var _this = this;
         this._http = _http;
-        //   private _url: string = 'http://localhost:3000/';
+        //  private _url: string = 'http://localhost:3000/';
         //  private _url: string = 'http://192.168.0.111:3000/';
         this._url = '/';
         this.addDevotee = function (body) {
