@@ -14,6 +14,12 @@ exports.downloadToExcel =  function(req, res, next) {
               query = {
                 "attendance.date": req.query.date,  
               }
+
+            } else if (req.query.course === 'OTP') {
+                 query = {
+                   course:req.query.course, 
+                   "attendance.date": req.query.date,  
+                 }
             }else {
               const yr = parseInt(req.query.date.split('-')[2])
               const mo = parseInt(req.query.date.split('-')[1]) - 1
