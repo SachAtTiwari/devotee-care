@@ -2,6 +2,8 @@ const assert = require('assert');
 var mongo = require('mongodb');
  
 
+
+
 exports.markAttendance = function(req, res, next) {
   try{
     let db = req.app.locals.db;
@@ -286,3 +288,33 @@ exports.delClass = function(req, res, next) {
     console.log("Exception ", err);
   }
 };
+
+
+exports.getTopicForDateCouns = function(req, res, next) {
+    try{
+      console.log("Get Topic: ", req.query);
+      let db = req.app.locals.db;
+      
+      db.listCollections().toArray(function(err, collections){     
+          if (collections === undefined){
+            res.send({error:"No Collections present in DB"});
+          }else{
+
+            db.collection("entity").find(
+            {date: req.query.date, speaker:req.query.counsellor}
+            ).toArray(function(err, topicData) {
+              if (err) {
+              		console.log("err is ", err);
+              	res.send({erroe:500});
+                  	}else{
+              //console.log("result is ", topicData);
+              res.send({result:topicData});
+                  	}
+            });
+
+          }
+      });
+    }catch(err){
+      console.log("Exception ", err);
+  }
+}

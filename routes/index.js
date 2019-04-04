@@ -96,6 +96,7 @@ router.get('/getTodayAttendance', classController.getTodayAttendance);
 
 /* Delete class*/
 router.delete('/delClass', classController.delClass);
+router.get('/getTopicForDateCouns', classController.getTopicForDateCouns);
 
 
 /*counsellor Details */

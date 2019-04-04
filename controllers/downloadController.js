@@ -62,6 +62,36 @@ exports.downloadToExcel =  function(req, res, next) {
   }
 }
 
+//those who attend multiple classes
+function addOtherCourseDevotee(existingData, db, course, counsellor, res) {
+    let prevCourse = course
+    if (course === "TSSV-B10") {
+        course = "VL2"
+    }
+    console.log("course", course, prevCourse)
+    db.collection("devotees").find(
+     { 
+       "attendance.course":course, 
+       counsellor:counsellor, 
+       course:{$ne:prevCourse},
+       isAlumni:"NO",
+     }
+     ).toArray(function(err, otherCourseDev) {
+       if (err) {
+       		console.log("err is ", err);
+       	res.send({error:500});
+           	}else{
+       	// console.log("extra devotee ", otherCourseDev);
+                if (otherCourseDev.length > 0) {
+                    for (let i = 0; i < otherCourseDev.length; i++) {
+                        existingData.push(otherCourseDev[i])
+                    }
+                }
+                res.send({result:existingData});
+           	}
+     });
+}
+
 
 exports.downloadToExCounsellor =  function(req, res, next) {
   try{
@@ -83,7 +113,7 @@ exports.downloadToExCounsellor =  function(req, res, next) {
                 	res.send({error:500});
 	            	}else{
                 //console.log("result is ",result);
-                res.send({result:result});
+                 addOtherCourseDevotee(result, db, req.query.course,req.query.counsellor, res)
 	            	}
               });
         }
