@@ -109,10 +109,13 @@ exports.addDevotee = function(req, res, next) {
               if(!req.body.body.counsellor){ 
                 req.body.body.counsellor = sdlResult[0].speaker;
               }
+              if(!req.body.body.facilitator){ 
+                req.body.body.facilitator = sdlResult[0].facilitator;
+              }
               req.body.body["isAlumni"] = "NO";   
               let attendance = {
                   date:date, 
-                  speaker:sdlResult[0].speaker,
+                  speaker:sdlResult[0].speaker !== 'NA'? sdlResult[0].speaker: sdlResult[0].facilitator,
                   topic:sdlResult[0].topic,
                   present:"YES"
               }
@@ -276,9 +279,65 @@ exports.getDevotees = function(req, res, next) {
   }
  };
 
+exports.manageRoles = function(req, res, next) {
+  try{
+    console.log("im here", req.query, req.body);
+   let db = req.app.locals.db;
+   if (req.header('token')) {
+      var decoded = jwt.verify(req.header('token'), 'khsandasinasfnasiu2194u19u41142i210');
+   }
+
+   if (req.header('ctoken')) {
+      var decoded = jwt.verify(req.header('ctoken'), cLogin.secret);
+   }
+   if(decoded.user.length > 0){
+
+       db.collection("devotees").find(
+         { 
+           _id: new mongo.ObjectID(req.query.id),
+         }
+       ).toArray(function(err, result) {
+         if (err) {
+                 console.log("err is ", err);
+           	res.send({error:500});
+          }else{
+                  if(result.length !== 0 && req.body.action){                                           
+                    db.collection("devotees").update(
+                      {_id:new mongo.ObjectID(req.query.id)}, 
+                      {$push:{roles:req.body.rolename}},
+                      {upsert:false}, 
+                      function(err, resatt) {
+                        if (err) {
+                    	  console.log("err is ", err);
+                          res.send({result:"notok"});
+                        }
+                        res.send({result:"ok"});
+                     });
+                  }else{
+                    db.collection("devotees").update(
+                      {_id:new mongo.ObjectID(req.query.id)}, 
+                      {$pull:{roles:req.body.rolename}},
+                      {upsert:false}, 
+                      function(err, resatt) {
+                        if (err) {
+                    	  console.log("err is ", err);
+                          res.send({result:"notok"});
+                        }
+                        res.send({result:"ok"});
+                     });
+                  }
+           }
+       });
+    }
+    }catch(err){
+      console.log("Exception :", err);
+
+    }
+}
+
 exports.getDevoteeDetail = function(req, res, next) {
   try{
-    console.log("im here", req.query, cLogin.secret);
+    console.log("im here", req.query, 'ctoken', req.header('ctoken'), 'token', req.header('token'));
    let db = req.app.locals.db;
    if (req.header('token')) {
       var decoded = jwt.verify(req.header('token'), 'khsandasinasfnasiu2194u19u41142i210');

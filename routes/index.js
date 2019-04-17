@@ -67,6 +67,9 @@ router.put('/updateDevotee', userController.updateDevotee);
 /* Searched Devotee */
 router.get('/getSearchedDevotee', userController.getSearchedDevotee);
 
+/* Manage Roles*/
+router.get('/manageroles', userController.manageRoles);
+
 
 
 ///CLASS ROUTES

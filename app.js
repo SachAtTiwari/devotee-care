@@ -97,6 +97,7 @@ app.use('/isTokenVerified', index);
 app.use('/checkDevoteeStatusForGivenDate', index);
 app.use('/getCounselorDataForDate', index);
 app.use('/getTopicForDateCouns', index);
+app.use('/mangeroles', index);
 
 
 
