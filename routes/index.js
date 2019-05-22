@@ -120,7 +120,10 @@ router.get('/downloadToExCounsellor', downloadController.downloadToExCounsellor)
 /*Download to course excel*/
 router.get('/downloadCourseExcel', downloadController.downloadCourseExcel);
 
-/*Download devottee status for given date*/
+/*Download devotee status for given date*/
 router.get('/checkDevoteeStatusForGivenDate', downloadController.checkDevoteeStatusForGivenDate);
+
+/*Download facilitator excel*/
+router.get('/downloadFacilitatorExcel', downloadController.downloadFacilitatorExcel);
 
 module.exports = router;

@@ -194,6 +194,38 @@ exports.downloadCourseExcel =  function(req, res, next) {
   }
 }
 
+
+exports.downloadFacilitatorExcel =  function(req, res, next) {
+  try{
+    let db = req.app.locals.db;
+
+    db.listCollections().toArray(function(err, collections){
+        if (collections === undefined){
+              res.send({error:"No Collections present in DB"});
+        }else{
+           
+             db.collection("devotees").find(
+              { 
+                facilitator:req.query.facilitator, 
+              }
+              ).toArray(function(err, result) {
+                if (err) {
+            			console.log("err is ", err);
+                	res.send({error:500});
+	            	}else{
+                //console.log("result is ",result);
+                res.send({result:result});
+	            	}
+              });
+        }
+    });
+  }catch(err){
+    console.log("Exception:", err);
+
+  }
+}
+
+
 exports.checkDevoteeStatusForGivenDate = function(req, res, next){
   try{
     let db = req.app.locals.db;
