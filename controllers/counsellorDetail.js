@@ -40,10 +40,10 @@ function findCounsellor(username) {
           cslr = 'HG Kalpvraksha Prabhuji';
           break;
         case 'vcp':
-          cslr = 'HG Vaidant Chaitnya Prabhuji';
+          cslr = 'HG Vedanta Chaitanya Prabhuji';
           break;
         case 'pvnp':
-          cslr = 'HG Pundrik Vidhyanidhi Prabhuji';
+          cslr = 'HG Pundarika Vidyanidhi Prabhuji';
           break;
         case 'jnp':
           cslr = 'HG Jagadanand Pandit Prabhuji';
