@@ -2337,6 +2337,7 @@ var ClassComponent = /** @class */ (function () {
             { value: 'Anant Nimai Prabhu' },
             { value: 'Rasraj Gaur Prabhu' },
             { value: 'Vraj Jana Ranjan Prabhu' },
+            { value: 'Giriraj Prabhu' },
             { value: 'NA' },
         ];
         this.courses = [
@@ -3319,6 +3320,7 @@ var DownloadsComponent = /** @class */ (function () {
             { value: 'Anant Nimai Prabhu' },
             { value: 'Rasraj Gaur Prabhu' },
             { value: 'Vraj Jana Ranjan Prabhu' },
+            { value: 'Giriraj Prabhu' },
             { value: 'NA' },
         ];
         this.excelGeneratorCustom = function (d1, d2, result_json, absenteeData, reportData) {
