@@ -2336,8 +2336,8 @@ var ClassComponent = /** @class */ (function () {
             { value: 'Raman Krishna Prabhu' },
             { value: 'Anant Nimai Prabhu' },
             { value: 'Rasraj Gaur Prabhu' },
+            { value: 'Krishan Kanhaya Prabhu' },
             { value: 'Vraj Jana Ranjan Prabhu' },
-            { value: 'Giriraj Prabhu' },
             { value: 'NA' },
         ];
         this.courses = [
@@ -3319,6 +3319,7 @@ var DownloadsComponent = /** @class */ (function () {
             { value: 'Raman Krishna Prabhu' },
             { value: 'Anant Nimai Prabhu' },
             { value: 'Rasraj Gaur Prabhu' },
+            { value: 'Krishan Kanhaya Prabhu' },
             { value: 'Vraj Jana Ranjan Prabhu' },
             { value: 'Giriraj Prabhu' },
             { value: 'NA' },
