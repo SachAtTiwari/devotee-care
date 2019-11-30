@@ -2850,12 +2850,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var UserService = /** @class */ (function () {
-    // private _url: string = 'http://192.168.0.111:3000/';
-    //private _url: string = '/';
     function UserService(_http) {
         var _this = this;
         this._http = _http;
-        this._url = 'http://localhost:3000/';
+        //  private _url: string = 'http://localhost:3000/';
+        // private _url: string = 'http://192.168.0.111:3000/';
+        this._url = '/';
         this.addDevotee = function (body) {
             return _this._http.post(_this._url + 'addDevotee', {
                 body: body
