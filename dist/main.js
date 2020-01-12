@@ -2333,9 +2333,6 @@ var ClassComponent = /** @class */ (function () {
         ];
         this.facilitators = [
             { value: 'Vaishnav Pran Prabhu' },
-            { value: 'Vallabh Prabhu' },
-            { value: 'Abhishek Jaiswal Prabhu' },
-            { value: 'Ashutosh Prabhu' },
             { value: 'Mohit Joshi Prabhu' },
             { value: 'Hemant Kumar Prabhu' },
             { value: 'Pawan Pandey Prabhu' },
@@ -2347,6 +2344,7 @@ var ClassComponent = /** @class */ (function () {
             { value: 'Rasraj Gaur Prabhu' },
             { value: 'Krishan Kanhaya Prabhu' },
             { value: 'Vraj Jana Ranjan Prabhu' },
+            { value: 'Dheeraj Kumar Prabhu' },
             { value: 'NA' },
         ];
         this.courses = [
@@ -3316,9 +3314,6 @@ var DownloadsComponent = /** @class */ (function () {
         ];
         this.facilitators = [
             { value: 'Vaishnav Pran Prabhu' },
-            { value: 'Vallabh Prabhu' },
-            { value: 'Abhishek Jaiswal Prabhu' },
-            { value: 'Ashutosh Prabhu' },
             { value: 'Mohit Joshi Prabhu' },
             { value: 'Hemant Kumar Prabhu' },
             { value: 'Pawan Pandey Prabhu' },
@@ -3331,6 +3326,7 @@ var DownloadsComponent = /** @class */ (function () {
             { value: 'Krishan Kanhaya Prabhu' },
             { value: 'Vraj Jana Ranjan Prabhu' },
             { value: 'Giriraj Prabhu' },
+            { value: 'Dheeraj Kumar Prabhu' },
             { value: 'NA' },
         ];
         this.excelGeneratorCustom = function (d1, d2, result_json, absenteeData, reportData) {
